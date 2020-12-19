@@ -13,7 +13,7 @@ First and foremost, make sure you have [Node](https://nodejs.org/) installed.
 - Clone the repository (`git clone https://github.com/HackBeanpot/livesite-2021`)
 - Move into the new local repo (`cd website-2021`)
 - Install dependencies (`npm install`)
-- Launch the environment locally (`npm start`)
+- Launch the environment locally (`npm start`), then open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## A Guide for Contributers
 1. Create a branch, named something like `name-typeofchanges` (ex. `sarah-navbar`)
