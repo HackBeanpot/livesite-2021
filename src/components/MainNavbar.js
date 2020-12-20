@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navbar } from 'react-bootstrap';
-import Logo from '../assets/logo.js';
+import Logo from '../assets/logo-white.js';
 
 const MainNavbar = () => {
   return (
