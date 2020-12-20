@@ -1,0 +1,20 @@
+.navbar {
+  background-color: $dark-green;
+}
+
+.navbar-logo {
+  max-width: 36px;
+  max-height: 36px;
+}
+
+.navbar .navbar-nav .navbar-text.nav-link {
+  margin: 0 12px;
+  color: white;
+  font-family: HelveticaNeueMed;
+  font-size: 20px;
+}
+
+.navbar .navbar-nav .navbar-text.nav-link:hover,
+.navbar .navbar-nav .navbar-text.nav-link:active {
+  color: white;
+}
