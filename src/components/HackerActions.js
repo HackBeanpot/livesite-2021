@@ -1,14 +1,17 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 
-const Mentors = () => (
+const HackerActions = () => (
   <Container className="mt-5">
     <Row>
       <Col>
-        <h1 id="mentors" className="font-weight-bold">Mentors</h1>
+        <h3>Send us your feedback</h3>
+      </Col>
+      <Col>
+        <h3>Apply to join Core!</h3>
       </Col>
     </Row>
   </Container>
 );
 
-export default Mentors;
+export default HackerActions;

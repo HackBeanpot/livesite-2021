@@ -2,7 +2,7 @@ import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 
 const Team = () => (
-  <Container className="mt-3">
+  <Container className="mt-5">
     <Row>
       <Col>
         <h1 id="team" className="font-weight-bold">Our Team</h1>
