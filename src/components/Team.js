@@ -1,8 +1,14 @@
 import React from 'react';
+import { Col, Container, Row } from 'react-bootstrap';
 
 const Team = () => (
-  <div className="">
-  </div>
+  <Container className="mt-3">
+    <Row>
+      <Col>
+        <h1 id="team" className="font-weight-bold">Our Team</h1>
+      </Col>
+    </Row>
+  </Container>
 );
 
-export { Team };
+export default Team;

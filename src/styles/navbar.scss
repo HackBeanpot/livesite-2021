@@ -3,9 +3,19 @@
 }
 
 .navbar-logo {
-  max-width: 50px;
-  max-height: 50px;
-  padding: 5px 0px 5px 20px;
+  width: 70px;
+  height: auto;
+  padding-left: 20px;
+}
+
+.navbar .navbar-nav .navbar-text.nav-link {
+  margin: 0.1rem 0.5rem;
+  color: white;
+  font-size: 15px;
+}
+
+.navbar .navbar-nav {
+  margin-left: auto;
 }
 
 .navbar .navbar-nav .navbar-text.nav-link:hover,
