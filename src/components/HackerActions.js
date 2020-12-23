@@ -12,7 +12,7 @@ const HackerActions = () => (
             and why we love hackbeanpot and organizing the event!
         </p>
         <a href="#">
-            <button type="button" class="btn primary-cta">Send Feedback</button>
+            <button type="button" className="btn primary-cta">Send Feedback</button>
         </a>
       </Col>
       <Col>
@@ -23,7 +23,7 @@ const HackerActions = () => (
             and why we love hackbeanpot and organizing the event!
         </p>
         <a href="#">
-            <button type="button" class="btn primary-cta">Apply</button>
+            <button type="button" className="btn primary-cta">Apply</button>
         </a>
       </Col>
     </Row>

@@ -1,10 +1,10 @@
 import React from 'react';
-import { Nav, Navbar, NavbarBrand, NavLink } from 'react-bootstrap';
+import { Nav, Navbar } from 'react-bootstrap';
 import Logo from '../assets/logo-white.js';
 
 const MainNavbar = () => {
   return (
-    <Navbar className="navbar-center-align" collapseOnSelect expand="lg" variant="dark" expand="lg" sticky="top">
+    <Navbar className="navbar-center-align" collapseOnSelect variant="dark" expand="lg" sticky="top">
       {/* <Navbar.Brand href="#home"> */}
       <div className="navbar-logo">
         <Logo/>
