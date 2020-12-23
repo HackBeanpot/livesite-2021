@@ -15,6 +15,10 @@ First and foremost, make sure you have [Node](https://nodejs.org/) installed.
 - Install dependencies (`npm install`)
 - Launch the environment locally (`npm start`), then open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
+## Running locally -- airtable API
+In order to run this locally, you will need an Airtable API key which you can obtain from our Airtable account page (the login for this page can be found in lastpass). Create a file at the root directory (with the gitignore and stuff, NOT in the /src folder!) called `.env`. The contents of this file should just be the line `REACT_APP_AIRTABLE_KEY=<your api key>`. Don't put quotation marks or anything around the key value. **DO NOT** commit this file to github!! If you need help with this, message @sarah
+
+
 ## A Guide for Contributers
 1. Create a branch, named something like `name-typeofchanges` (ex. `sarah-navbar`)
     - Pull your changes from the `main` branch 
