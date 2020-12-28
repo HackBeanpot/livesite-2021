@@ -11,7 +11,7 @@ const HackerActions = () => (
             and organizing the event! This is a blub about the core team 
             and why we love hackbeanpot and organizing the event!
         </p>
-        <a href="#">
+        <a href="/">
             <button type="button" className="btn primary-cta">Send Feedback</button>
         </a>
       </Col>
@@ -22,7 +22,7 @@ const HackerActions = () => (
             and organizing the event! This is a blub about the core team 
             and why we love hackbeanpot and organizing the event!
         </p>
-        <a href="#">
+        <a href="/">
             <button type="button" className="btn primary-cta">Apply</button>
         </a>
       </Col>
