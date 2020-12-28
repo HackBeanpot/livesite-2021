@@ -1,0 +1,11 @@
+.countdown {
+  position: fixed;
+  width: 208px;
+  height: 174px;
+  right: -69px;
+  top: 154px;
+
+  background: $light-green;
+  border-radius: 15px;
+  z-index: 1000;
+}
