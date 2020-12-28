@@ -1,16 +1,17 @@
 .countdown {
   position: fixed;
-  width: 139px;
-  height: 174px;
+  width: 140px;
+  height: 175px;
   right: 0px;
-  top: 154px;
+  top: 155px;
 
   background: $light-green;
   border-radius: 15px 0 0 15px;
   z-index: 1000;
 
   &__text-wrapper {
-    margin: 39px 0px 39px 23px;
+    margin-top: 40px;
+    margin-left: 25px;
   }
 
   &__text {
