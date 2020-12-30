@@ -1,0 +1,11 @@
+.resources {
+  &__card-label {
+    color: $mustard-yellow;
+    margin-left: 5px;
+    margin-bottom: 25px;
+  }
+
+  &__rounded-card {
+    border-radius: 18px;
+  }
+}
