@@ -7,12 +7,14 @@ import Navbar from './components/MainNavbar';
 import Resources from './components/Resources';
 import Schedule from './components/Schedule';
 import Team from './components/Team';
+import Countdown from './components/Countdown';
 
 function App() {
   return (
     <div>
       <Navbar />
       <Header />
+      <Countdown />
       <Schedule />
       <Challenges />
       <Mentors />

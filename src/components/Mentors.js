@@ -1,7 +1,7 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import { Card } from 'react-bootstrap';
-import { Col, Container, Row } from 'react-bootstrap';
-
+import { Col, Container, Row, Spinner } from 'react-bootstrap';
+import useAirtableAPI from '../hooks/api-hook';
 
 // Define the mentor card object 
 const MentorCard = ({ name, position, company, imageURL, active, phone, expertise }) => (
@@ -18,42 +18,27 @@ const MentorCard = ({ name, position, company, imageURL, active, phone, expertis
   </Col>
 );
 
+export const Mentors = () => {
+  const { data, isLoading } = useAirtableAPI('appexkZgUcQ9vucI9', 'mentors');
 
-// Mentors needs to be defined as a class in order for us to set the state
-class Mentors extends React.Component {
-	constructor(props) {
-    super(props);
-    this.state = {
-      mentorData: [],
-    };
-  }
-  
-  // Get mentor data from the airtable api
-  componentDidMount() {
-    fetch('https://api.airtable.com/v0/appexkZgUcQ9vucI9/mentors?api_key=' + process.env.REACT_APP_AIRTABLE_KEY)
-    .then((resp) => resp.json())
-    .then(data => {
-       this.setState({ mentorData: data.records });
-    }).catch(err => {
-      console.log(err);
-    });
-  }
-
-  // Define the section as a whole
-  render() {
-    return (
-      <Container className="mt-5">
-        <Row>
-          <Col>
-            <h1 id="mentors" className="font-weight-bold">Mentors</h1>
-          </Col>
-        </Row>
-        <Row>
-            {this.state.mentorData.map(mentor => <MentorCard {...mentor.fields} /> )}
-        </Row>
-      </Container>
-    );
-  }
-}
+  return (
+    <Container className='mt-5'>
+      <Row>
+        <Col>
+          <h1 id='mentors' className='font-weight-bold'>
+            Mentors
+          </h1>
+        </Col>
+      </Row>
+      <Row>
+        {isLoading && <Spinner animation='border' variant='primary' /> /* TODO import custom styled spinner component*/} 
+        {!data.length && <div>Nothing to see here...</div> /* TODO handle empty array in case of API error (or if its actually empty for any reason)*/}
+        {data.map((mentor) => (
+          <MentorCard {...mentor.fields} />
+        ))}
+      </Row>
+    </Container>
+  );
+};
 
 export default Mentors;
