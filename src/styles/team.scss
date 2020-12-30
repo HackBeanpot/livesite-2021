@@ -1,0 +1,12 @@
+.teams {
+    background-color: $dark-blue;
+    color: white;
+
+    &__button {
+        margin-right: 10px;
+    }
+
+    &__card {
+        color: black;
+    }
+}
