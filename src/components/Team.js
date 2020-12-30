@@ -4,31 +4,33 @@ import TeamPhoto from '../assets/team-photo.jpg';
 
 const teamData = [
   {
-    team: "tech",
-    name: "Sarah Wessel",
-    position: "tech lead",
-    school: "Northeastern",
-    year: "5th"
-    imageURL: [
-      { 
-        url: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.mercola.com%2FImageServer%2FPublic%2F2018%2FOctober%2FFB%2Fdog-breeds-for-active-people-fb.jpg&f=1&nofb=1"
-      }
-    ]
+    team: 'tech',
+    name: 'Sarah Wessel',
+    position: 'tech lead',
+    school: 'Northeastern',
+    year: '5th',
+    imageURL:  'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.mercola.com%2FImageServer%2FPublic%2F2018%2FOctober%2FFB%2Fdog-breeds-for-active-people-fb.jpg&f=1&nofb=1'
+  },
+  {
+    team: 'sponsib',
+    name: 'Daniel',
+    position: 'sponsib x tech',
+    school: 'Boston University',
+    year: '3rd',
+    imageURL:  'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.mercola.com%2FImageServer%2FPublic%2F2018%2FOctober%2FFB%2Fdog-breeds-for-active-people-fb.jpg&f=1&nofb=1'
   }
-]
+];
 
 // Define the team member card object 
-const MemberCard = ({ team, name, position, school, year }) => (
+const MemberCard = ({ team, name, position, school, year, imageURL }) => (
   <Col md="3">
     <Card className="teams__card">
-      {/* <Card.Img variant="top" src={imageURL[0].url} alt="Mentor profile photo" /> */}
+      <Card.Img variant="top" src={imageURL} alt="Mentor profile photo" />
       <Card.Body>
-        { console.log("name:" + name)}
-        <Card.Title><h5>{name}</h5></Card.Title>
         <Card.Text>
-          {team}
-          {year} Year, {school}
-          {position}
+          <b>{ name }</b><br/>
+          { year } Year, { school } <br/>
+          { position }
         </Card.Text>
       </Card.Body>
     </Card>
@@ -87,32 +89,7 @@ const Team = () => (
     </Row>
     <Container>
       <Row className="py-3">
-          {/* { teamData.map(member => <MemberCard {...member.fields} /> )} */}
-          {/* Temporarily hard-coded bit */}
-          <Col md="3">
-            <Card className="teams__card">
-              <Card.Img variant="top" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.organicauthority.com%2F.image%2Ft_share%2FMTU5MzI5NjYxMTcwNjIzNzAy%2Fimg_5121.jpg&f=1&nofb=1" alt="Mentor profile photo" />
-              <Card.Body>
-                <Card.Text>
-                  <b>Sarah Test</b><br/>
-                  4th Year, Northeastern <br/>
-                  Tech Lead
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
-          <Col md="3">
-            <Card className="teams__card">
-              <Card.Img variant="top" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.organicauthority.com%2F.image%2Ft_share%2FMTU5MzI5NjYxMTcwNjIzNzAy%2Fimg_5121.jpg&f=1&nofb=1" alt="Mentor profile photo" />
-              <Card.Body>
-                <Card.Text>
-                  <b>Sarah Test</b><br/>
-                  4th Year, Northeastern <br/>
-                  Tech Lead
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
+          { teamData.map(member => <MemberCard {...member} /> )}
       </Row>
 
     </Container>
