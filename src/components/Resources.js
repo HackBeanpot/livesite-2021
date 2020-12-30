@@ -33,7 +33,7 @@ const resources = [
 // Define the resource card object
 const ResourceCard = ({ name, link, imageURL }) => (
   <Col md="4">
-    <a href={link}>
+    <a href={link} target="_blank" rel="noreferrer">
       <Card className="resources__rounded-card">
         <Card.Img variant="top" src={imageURL} alt="Resource card" className="resources__rounded-card"/>
       </Card>
