@@ -1,5 +1,3 @@
-import React from 'react';
-
 // Define the data needed for the resources cards
 const ResourceItems = [
     {

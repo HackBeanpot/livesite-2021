@@ -20,7 +20,7 @@ const useAirtableAPI = (basePath, tableQuery) => {
         setIsLoading(false)
         console.log(err);
       }
-  }, []);
+  }, [basePath, tableQuery]);
 
   return { data, isLoading };
 };
