@@ -1,34 +1,6 @@
 import React from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
-
-// Define the data needed for the resources cards
-const resources = [
-    {
-        name: 'HACKER WELCOME GUIDE',
-        link: 'http://google.com',
-        imageURL: 'https://upload.wikimedia.org/wikipedia/commons/9/90/Blank_flag_large.PNG'
-    },
-    {
-        name: 'DEMO GUIDE',
-        link: 'http://google.com',
-        imageURL: 'https://upload.wikimedia.org/wikipedia/commons/9/90/Blank_flag_large.PNG'
-    },
-    {
-        name: 'PROJECT SUBMISSION RULES',
-        link: 'http://google.com',
-        imageURL: 'https://upload.wikimedia.org/wikipedia/commons/9/90/Blank_flag_large.PNG'
-    },
-    {
-        name: 'JUDGING PROCESS GUIDE',
-        link: 'http://google.com',
-        imageURL: 'https://upload.wikimedia.org/wikipedia/commons/9/90/Blank_flag_large.PNG'
-    },
-    {
-        name: 'BEGINNER RESOURCES',
-        link: 'http://google.com',
-        imageURL: 'https://upload.wikimedia.org/wikipedia/commons/9/90/Blank_flag_large.PNG'
-    }
-]
+import { ResourceItems } from '../data/resources';
 
 // Define the resource card object
 const ResourceCard = ({ name, link, imageURL }) => (
@@ -51,7 +23,7 @@ const Resources = () => (
       </Col>
     </Row>
     <Row>
-        { resources.map(resource =>
+        { ResourceItems.map(resource =>
           <ResourceCard name={resource.name} link={resource.link} imageURL={resource.imageURL}/>)}
     </Row>
   </Container>
