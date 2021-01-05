@@ -3,12 +3,12 @@
 // ---------------------------------------------------------------------------
 
 .primary-cta {
+  color: white;
+  background-color: $orange;
+  min-width: 150px;
+
+  &:hover {
     color: white;
     background-color: $orange;
-    min-width: 150px;
-  
-    &:hover {
-      color: white;
-      background-color: $orange;
-    }
   }
+}
