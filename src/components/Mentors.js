@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import { Card } from 'react-bootstrap';
 import { Col, Container, Row, Spinner } from 'react-bootstrap';
 import useAirtableAPI from '../hooks/api-hook';
