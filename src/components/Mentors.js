@@ -63,8 +63,27 @@ const MentorCard = ({ mentor }) => {
   )
 }
 
+// sets kick out duplicates
+const getMentorAttrs = (data, attr) => [...new Set(
+  // get attribute from each mentor
+  data.map(mentor => attr(mentor))
+  // flatten 2d array to 1d array
+  .flat()
+  // filter out falsey values
+  .filter(x => !!x)
+  // cherry on top
+  .sort()
+)]
+
 export const Mentors = () => {
   const { data, isLoading } = useAirtableAPI('appexkZgUcQ9vucI9', 'mentors');
+
+  const expertises = getMentorAttrs(data, mentor => mentor.fields.expertise)
+  const positions = getMentorAttrs(data, mentor => mentor.fields.position)
+  const companies = getMentorAttrs(data, mentor => mentor.fields.company)
+
+  // Uncomment to view data
+  // console.log(JSON.parse(JSON.stringify(data)))
 
   return (
     <Container className='mt-5 mentors'>
@@ -73,8 +92,35 @@ export const Mentors = () => {
           <h1 id='mentors' className='font-weight-bold'>
             Mentors
           </h1>
-          <p>Click on a mentor's photo for more details</p>
+          <p>Click on a mentor's photo for more details </p>
         </Col>
+      </Row>
+      <Row>
+        <h4>Filter: </h4>
+        <select multiple id="mentors-position-filter" class="mentor-filter">
+          <option value="default" selected="selected">Positions (all)</option>
+          {
+            positions.map(mentor => (
+              <option value={mentor}>{mentor}</option>
+            ))
+          }
+        </select>
+        <select multiple id="mentors-expertise-filter" class="mentor-filter">
+          <option value="default"  selected="selected">Expertise (all)</option>
+          {
+            expertises.map(mentor => (
+              <option value={mentor}>{mentor}</option>
+            ))
+          }
+        </select>
+        <select multiple id="mentors-company-filter" class="mentor-filter">
+          <option value="default" selected="selected">Companies (all)</option>
+          {
+            companies.map(mentor => (
+              <option value={mentor}>{mentor}</option>
+            ))
+          }
+        </select>
       </Row>
       <Row>
         {isLoading && <Spinner animation='border' variant='primary' /> /* TODO import custom styled spinner component*/} 
