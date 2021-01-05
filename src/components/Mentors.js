@@ -3,14 +3,9 @@ import { Card } from 'react-bootstrap';
 import { Col, Container, Row, Spinner } from 'react-bootstrap';
 import useAirtableAPI from '../hooks/api-hook';
 
-const MentorModal = ({ mentor, show, setShow }) => {
-  if (!show) {
-    return null
-  }
-  
+const MentorModal = ({ mentor, setShow }) => {
   const { name, position, company, imageURL, availability = "", expertise, slack } = mentor;
   const availabilityList = availability.split(", ")
-  // const expertiseList = expertise.split(", ") || []
 
   return (
     <div className={"modal fade show mentor-modal"} >
@@ -63,7 +58,7 @@ const MentorCard = ({ mentor }) => {
           </Card.Text>
         </Card.Body>
       </Card>
-      <MentorModal mentor={mentor} show={show} setShow={setShow} />
+      {show && <MentorModal mentor={mentor} setShow={setShow} />}
     </Col>
   )
 }
