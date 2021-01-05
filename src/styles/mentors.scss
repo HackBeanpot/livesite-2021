@@ -1,0 +1,105 @@
+.mentor-card {
+  &.card {
+    border-radius: 10px;
+    margin-bottom: 16px;
+    cursor: pointer;
+  }
+
+  .card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+
+  .card-text {
+    font-size: 14px;
+    line-height: 16px;
+  }
+}
+
+.mentor-modal.show {
+  display: flex;
+}
+
+.mentor-modal {
+  .modal-dialog {
+    margin: auto;
+    max-width: unset;
+  }
+
+  .modal-content {
+    flex-direction: row;
+    padding: 32px;
+    border-radius: 24px;
+    border: none;
+    position: relative;
+  }
+
+  .mentor-img {
+    width: 350px;
+    height: auto;
+    margin-bottom: 16px;
+    border-radius: 16px;
+  }
+
+  .mentor-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 4px;
+    margin-left: 8px;
+  }
+
+  .mentor-pos {
+    font-size: 14px;
+    line-height: 16px;
+    margin-left: 8px;
+    margin-bottom: 0;
+  }
+
+  &--heading {
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 8px 0 8px;
+  }
+
+  &--info {
+    margin-left: 48px;
+    min-width: 200px;
+    
+    &-section {
+      margin-bottom: 24px;
+    }
+  }
+
+  &--info ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  &--close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    cursor: pointer;
+    height: 24px;
+    width: 24px;
+  }
+  
+  &--close:before, &--close:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 24px;
+    width: 2px;
+    background-color: black;
+  }
+  
+  &--close:before {
+    transform: rotate(45deg);
+  }
+  
+  &--close:after {
+    transform: rotate(-45deg);
+  }
+}
