@@ -69,19 +69,19 @@ const Team = () => (
     <Row className="mt-5 pt-4">
       <div className="mx-auto">
         <div className="">
-          <button className="btn btn-light teams__button" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+          <button className="btn btn-light teams__button" type="button">
             Leadership Team
           </button>
-          <button className="btn btn-light teams__button" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+          <button className="btn btn-light teams__button" type="button">
             Design Team
           </button>
-          <button className="btn btn-light teams__button" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+          <button className="btn btn-light teams__button" type="button">
             Tech Team
           </button>
-          <button className="btn btn-light teams__button" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+          <button className="btn btn-light teams__button" type="button">
             Social/Outreach Team
           </button>
-          <button className="btn btn-light teams__button" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+          <button className="btn btn-light teams__button" type="button">
             Sponsorship Team
           </button>
         </div>
