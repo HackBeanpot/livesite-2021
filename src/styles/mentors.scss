@@ -56,14 +56,14 @@
     margin-bottom: 0;
   }
 
-  &--heading {
+  &__heading {
     font-size: 18px;
     font-weight: bold;
     text-transform: uppercase;
     margin: 8px 0 8px;
   }
 
-  &--info {
+  &__info {
     margin-left: 48px;
     min-width: 200px;
     
@@ -72,12 +72,12 @@
     }
   }
 
-  &--info ul {
+  &__info ul {
     list-style-type: none;
     padding: 0;
   }
 
-  &--close {
+  &__close {
     position: absolute;
     top: 24px;
     right: 24px;
@@ -86,7 +86,7 @@
     width: 24px;
   }
   
-  &--close:before, &--close:after {
+  &__close:before, &__close:after {
     position: absolute;
     left: 15px;
     content: ' ';
@@ -95,11 +95,11 @@
     background-color: black;
   }
   
-  &--close:before {
+  &__close:before {
     transform: rotate(45deg);
   }
   
-  &--close:after {
+  &__close:after {
     transform: rotate(-45deg);
   }
 }
