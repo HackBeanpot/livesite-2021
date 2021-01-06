@@ -1,31 +1,13 @@
-import React from 'react';
-import { Card, Col, Container, Row } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Card, Col, Container, Row, Spinner } from 'react-bootstrap';
 import TeamPhoto from '../assets/team-photo.jpg';
-
-const teamData = [
-  {
-    team: 'tech',
-    name: 'Sarah Wessel',
-    position: 'tech lead',
-    school: 'Northeastern',
-    year: '5th',
-    imageURL:  'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.mercola.com%2FImageServer%2FPublic%2F2018%2FOctober%2FFB%2Fdog-breeds-for-active-people-fb.jpg&f=1&nofb=1'
-  },
-  {
-    team: 'sponsib',
-    name: 'Daniel',
-    position: 'sponsib x tech',
-    school: 'Boston University',
-    year: '3rd',
-    imageURL:  'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.mercola.com%2FImageServer%2FPublic%2F2018%2FOctober%2FFB%2Fdog-breeds-for-active-people-fb.jpg&f=1&nofb=1'
-  }
-];
+import useAirtableAPI from '../hooks/api-hook';
 
 // Define the team member card object 
 const MemberCard = ({ team, name, position, school, year, imageURL }) => (
   <Col md="3">
     <Card className="teams__card">
-      <Card.Img variant="top" src={imageURL} alt="Mentor profile photo" />
+      <Card.Img variant="top" src={imageURL[0].url} alt="Member profile photo" />
       <Card.Body>
         <Card.Text>
           <b>{ name }</b><br/>
@@ -37,7 +19,11 @@ const MemberCard = ({ team, name, position, school, year, imageURL }) => (
   </Col>
 );
 
-const Team = () => (
+const Team = () => {
+  const { data, isLoading } = useAirtableAPI('appUyAIdcn5cxtJRf', 'team');
+  const [team, setTeam] = useState('leadership');
+
+  return (
   <div>
   <Container className="mt-5">
     <Row>
@@ -69,19 +55,19 @@ const Team = () => (
     <Row className="mt-5 pt-4">
       <div className="mx-auto">
         <div className="">
-          <button className="btn btn-light teams__button" type="button">
+          <button className="btn btn-light teams__button" type="button" onClick={() => setTeam('leadership')}>
             Leadership Team
           </button>
-          <button className="btn btn-light teams__button" type="button">
+          <button className="btn btn-light teams__button" type="button" onClick={() => setTeam('design')}>
             Design Team
           </button>
-          <button className="btn btn-light teams__button" type="button">
+          <button className="btn btn-light teams__button" type="button" onClick={() => setTeam('tech')}>
             Tech Team
           </button>
-          <button className="btn btn-light teams__button" type="button">
+          <button className="btn btn-light teams__button" type="button" onClick={() => setTeam('socialOutreach')}>
             Social/Outreach Team
           </button>
-          <button className="btn btn-light teams__button" type="button">
+          <button className="btn btn-light teams__button" type="button" onClick={() => setTeam('sponsorship')}>
             Sponsorship Team
           </button>
         </div>
@@ -89,12 +75,16 @@ const Team = () => (
     </Row>
     <Container>
       <Row className="py-3">
-          { teamData.map(member => <MemberCard {...member} /> )}
+          {isLoading && <Spinner animation='border' variant='primary' /> /* TODO import custom styled spinner component*/}
+          {!data.length && <div>Nothing to see here...</div> /* TODO handle empty array in case of API error (or if its actually empty for any reason)*/}
+          {data.map((member) => (
+            member.fields.team === team && <MemberCard {...member.fields} />
+          ))}
       </Row>
-
     </Container>
   </Container>
   </div>
-);
+  );
+};
 
 export default Team;
