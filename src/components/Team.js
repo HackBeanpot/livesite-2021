@@ -9,8 +9,8 @@ const MemberCard = ({ team, name, position, school, year, imageURL }) => (
     <Card className="teams__card">
       <Card.Img variant="top" src={imageURL[0].url} alt="Member profile photo" />
       <Card.Body>
+        <Card.Title>{ name }</Card.Title>
         <Card.Text>
-          <b>{ name }</b><br/>
           { year } Year, { school } <br/>
           { position }
         </Card.Text>

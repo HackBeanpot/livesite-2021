@@ -1,12 +1,38 @@
+.test {
+  background-color: white;
+}
+
 .teams {
-    background-color: $dark-blue;
-    color: white;
+  background-color: $dark-blue;
+  color: black;
 
-    &__button {
-        margin-right: 10px;
-    }
+  &__button {
+    margin-right: 10px;
 
-    &__card {
-        color: black;
+    &:focus {
+      color: white;
+      background-color: $orange;
+      border-width: 0;
+      box-shadow: none;
     }
+  }
+  
+  &__card {
+    &.card {
+      border-radius: 10px;
+      margin-bottom: 16px;
+      border-width: 0;
+    }
+        
+    .card-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+    
+    .card-text {
+      font-size: 14px;
+      line-height: 16px;
+    }
+  }
 }
