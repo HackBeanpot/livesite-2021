@@ -8,13 +8,13 @@
 
   &__button {
     margin-right: 10px;
+  }
 
-    &:focus {
-      color: white;
-      background-color: $orange;
-      border-width: 0;
-      box-shadow: none;
-    }
+  .selected {
+    color: white;
+    background-color: $orange;
+    border-width: 0;
+    box-shadow: none;
   }
   
   &__card {

@@ -55,19 +55,20 @@ const Team = () => {
     <Row className="mt-5 pt-4">
       <div className="mx-auto">
         <div className="">
-          <button className="btn btn-light teams__button" type="button" onClick={() => setTeam('leadership')}>
+          {/* {(this.state.team=='leadership')?'active-selection':''} */}
+          <button className={`btn btn-light teams__button ${(team==='leadership')?'selected':''}`} type="button" onClick={() => setTeam('leadership')}>
             Leadership Team
           </button>
-          <button className="btn btn-light teams__button" type="button" onClick={() => setTeam('design')}>
+          <button className={`btn btn-light teams__button ${(team==='design')?'selected':''}`} type="button" onClick={() => setTeam('design')}>
             Design Team
           </button>
-          <button className="btn btn-light teams__button" type="button" onClick={() => setTeam('tech')}>
+          <button className={`btn btn-light teams__button ${(team==='tech')?'selected':''}`} type="button" onClick={() => setTeam('tech')}>
             Tech Team
           </button>
-          <button className="btn btn-light teams__button" type="button" onClick={() => setTeam('socialOutreach')}>
+          <button className={`btn btn-light teams__button ${(team==='socialOutreach')?'selected':''}`} type="button" onClick={() => setTeam('socialOutreach')}>
             Social/Outreach Team
           </button>
-          <button className="btn btn-light teams__button" type="button" onClick={() => setTeam('sponsorship')}>
+          <button className={`btn btn-light teams__button ${(team==='sponsorship')?'selected':''}`} type="button" onClick={() => setTeam('sponsorship')}>
             Sponsorship Team
           </button>
         </div>
