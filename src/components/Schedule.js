@@ -2,7 +2,7 @@ import React from 'react';
 import { Col, Container, Row, Tabs, Tab, Table } from 'react-bootstrap';
 import CalendarIcon from '../assets/calendar_icon.svg';
 import Arrow from '../assets/arrow.svg';
-import data from "../assets/fake_data.json";
+import data from "../data/fake_data.json";
 
 const Schedule = () => {
   return (<Container className="mt-5">
