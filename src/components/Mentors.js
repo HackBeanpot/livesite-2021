@@ -74,6 +74,7 @@ const getMentorAttrs = (data, attr) => [...new Set(
   .sort()
 )]
 
+
 export const Mentors = () => {
   const { data, isLoading } = useAirtableAPI('appexkZgUcQ9vucI9', 'mentors');
 
@@ -81,7 +82,40 @@ export const Mentors = () => {
   const positions = getMentorAttrs(data, mentor => mentor.fields.position)
   const companies = getMentorAttrs(data, mentor => mentor.fields.company)
 
-  // Uncomment to view data
+  const [filterAttrs, setFilterAttrs] = useState(['e-all', 'p-all', 'c-all']);
+
+  // I abbreviate as: (e)xpertises, (p)ositions, (c)ompanies
+  // which mentors should we keep?
+  const shouldShowMentor = (mentor) => {
+    // universal set
+    if (['e-all', 'p-all', 'c-all'].some(U => filterAttrs.includes(U))) {
+      return true
+    }
+
+    // make sure they are truthy fields
+    const mentorEs = mentor.fields.expertise || []
+    const mentorP = mentor.fields.position ? [mentor.fields.position] : []
+    const mentorC = mentor.fields.company ? [mentor.fields.company] : []
+    const orMap = [...new Set([...mentorEs, ...mentorP, ...mentorC])]
+
+    return orMap.some(mentorAttr => filterAttrs.includes(mentorAttr));
+  }
+
+  const handleChange = e => {
+    const allOptions = Array.from(e.target.options, option => option.value)
+    const selectedOptions = Array.from(e.target.selectedOptions, option => option.value)
+
+    // set difference
+    const unselectedOptions = allOptions.filter(x => !selectedOptions.includes(x))
+
+    // union with selected options and then subtract unselected ones
+    let newFilterAttrs = [...new Set([...filterAttrs, ...selectedOptions])]
+      .filter(x => !unselectedOptions.includes(x))
+    
+    setFilterAttrs(newFilterAttrs)
+  }
+
+  // Uncomment to view data for debugging purposes
   // console.log(JSON.parse(JSON.stringify(data)))
 
   return (
@@ -96,27 +130,27 @@ export const Mentors = () => {
       </Row>
       <Row>
         <h4>Filter: </h4>
-        <select multiple id="mentors-position-filter" class="mentor-filter">
-          <option value="default" selected="selected">Positions (all)</option>
+        <select multiple id="mentors-position-filter" className="mentor-filter" onChange={handleChange}>
+          <option selected="selected" value="p-all">Positions (all)</option>
           {
-            positions.map(mentor => (
-              <option value={mentor}>{mentor}</option>
+            positions.map(p => (
+              <option value={p}>{p}</option>
             ))
           }
         </select>
-        <select multiple id="mentors-expertise-filter" class="mentor-filter">
-          <option value="default"  selected="selected">Expertise (all)</option>
+        <select multiple id="mentors-expertise-filter" className="mentor-filter" onChange={handleChange}>
+          <option selected="selected" value="e-all">Expertise (all)</option>
           {
-            expertises.map(mentor => (
-              <option value={mentor}>{mentor}</option>
+            expertises.map(e => (
+              <option value={e}>{e}</option>
             ))
           }
         </select>
-        <select multiple id="mentors-company-filter" class="mentor-filter">
-          <option value="default" selected="selected">Companies (all)</option>
+        <select multiple id="mentors-company-filter" className="mentor-filter" onChange={handleChange}>
+          <option selected="selected" value="c-all">Companies (all)</option>
           {
-            companies.map(mentor => (
-              <option value={mentor}>{mentor}</option>
+            companies.map(c => (
+              <option value={c}>{c}</option>
             ))
           }
         </select>
@@ -124,8 +158,10 @@ export const Mentors = () => {
       <Row>
         {isLoading && <Spinner animation='border' variant='primary' /> /* TODO import custom styled spinner component*/} 
         {!data.length && <div>Nothing to see here...</div> /* TODO handle empty array in case of API error (or if its actually empty for any reason)*/}
-        {data.map((mentor) => (
-          <MentorCard mentor={mentor.fields} key={mentor.fields.name} />
+        { data.map((mentor) => (
+              shouldShowMentor(mentor) // true
+              &&
+              (<MentorCard mentor={mentor.fields} key={mentor.fields.name} />)
         ))}
       </Row>
     </Container>
