@@ -10,25 +10,24 @@ const MentorModal = ({ mentor, setShow }) => {
   return (
     <div className={"modal fade show mentor-modal"} >
       <div className="modal-dialog" role="document" tabIndex="-1">
-      {/* onBlur={() => setShow(false)}> */}
         <div className="modal-content">
-          <div className="mentor-modal--close" onClick={() => setShow(false)}/>
+          <div className="mentor-modal__close" onClick={() => setShow(false)}/>
           <div>
             <img className="mentor-img" src={imageURL[0].url} alt={`${name}`} />
             <p className="mentor-name">{name}</p>
             <p className="mentor-pos">{position}, {company}</p>
           </div>
 
-          <div className="mentor-modal--info">
-            <div className="mentor-modal--info-section">
-              <p className="mentor-modal--heading">Shifts</p>
+          <div className="mentor-modal__info">
+            <div className="mentor-modal__info-section">
+              <p className="mentor-modal__heading">Shifts</p>
               <ul>
                 {availabilityList.map(time => <li>{time}</li>)}
               </ul>
               {/* TODO use some date-time library to deal with shifts and filtering */}
             </div>
-            <div className="mentor-modal--info-section">
-              <p className="mentor-modal--heading">Expertise</p>
+            <div className="mentor-modal__info-section">
+              <p className="mentor-modal__heading">Expertise</p>
               <ul>
                 {expertise.map(skill => <li>{skill}</li>)}
               </ul>
@@ -92,7 +91,7 @@ export const Mentors = () => {
           <h1 id='mentors' className='font-weight-bold'>
             Mentors
           </h1>
-          <p>Click on a mentor's photo for more details </p>
+          <p>Click on a mentor's photo for more details</p>
         </Col>
       </Row>
       <Row>
