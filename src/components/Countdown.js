@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 
 const calculateTimeLeft = () => {
   let year = new Date().getFullYear();
-  const difference = +new Date(`${year}-2-15`) - +new Date();
+  const endTime = new Date(year, 2, 15, 9, 30, 0, 0); // Feb 15, 9:30am
+  const difference = +endTime - +new Date();
   let timeLeft = {};
 
   if (difference > 0) {
