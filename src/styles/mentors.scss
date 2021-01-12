@@ -66,7 +66,7 @@
   &__info {
     margin-left: 48px;
     min-width: 200px;
-    
+
     &-section {
       margin-bottom: 24px;
     }
@@ -85,20 +85,21 @@
     height: 24px;
     width: 24px;
   }
-  
-  &__close:before, &__close:after {
+
+  &__close:before,
+  &__close:after {
     position: absolute;
     left: 15px;
-    content: ' ';
+    content: " ";
     height: 24px;
     width: 2px;
     background-color: black;
   }
-  
+
   &__close:before {
     transform: rotate(45deg);
   }
-  
+
   &__close:after {
     transform: rotate(-45deg);
   }
