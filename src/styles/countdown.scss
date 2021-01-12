@@ -9,9 +9,14 @@
   border-radius: 15px 0 0 15px;
   z-index: 1000;
 
+  // hide on smaller screens
+  @media (max-width: $md) {
+    display: none;
+  }
+
   &__text-wrapper {
     margin-top: 40px;
-    margin-left: 25px;
+    margin-left: 20px;
   }
 
   &__text {
@@ -21,7 +26,7 @@
   }
 
   &__timer {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 700;
     margin-top: 5px;
   }
