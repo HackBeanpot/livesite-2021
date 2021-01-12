@@ -1,0 +1,55 @@
+{
+    "schedule": [
+        {
+            "date": "Feb 19",
+            "events": [
+                {
+                    "time": "5:00-6:00pm",
+                    "type": "Everyone!", 
+                    "theme": "#E56138",
+                    "title": "Opening Ceremony",
+                    "location": "Zoom.zoom.com/32432ughioihio",
+                    "audience": "Beginner",
+                    "company": "Facebook"
+                },
+                {
+                    "time": "6:30-7:00pm",
+                    "type": "Workshop", 
+                    "theme": "#36BC7C",
+                    "title": "Tech Talk",
+                    "location": "Zoom.zoom.com/32432ughioihio",
+                    "audience": "",
+                    "company": ""
+                }
+            ]
+        },
+        {
+            "date": "Feb 20",
+            "events": [
+                {
+                    "time": "5:00-6:00pm",
+                    "type": "Activity!", 
+                    "theme": "#36BC7C",
+                    "title": "Opening Ceremony",
+                    "location": "Zoom.zoom.com/32432ughioihio",
+                    "audience": "Beginner",
+                    "company": "Drift"
+                }
+            ]
+        },
+        {
+            "date": "Feb 21",
+            "events": [
+                {
+                    "time": "5:00-6:00pm",
+                    "type": "HAHA", 
+                    "theme": "#F5D340",
+                    "title": "Opening Ceremony",
+                    "location": "Zoom.zoom.com/32432ughioihio",
+                    "audience": "Beginner",
+                    "company": "Facebook"
+                }
+            ]
+        }
+    ]
+}
