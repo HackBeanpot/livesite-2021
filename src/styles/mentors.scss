@@ -1,20 +1,5 @@
 .mentor-card {
-  &.card {
-    border-radius: 10px;
-    margin-bottom: 16px;
-    cursor: pointer;
-  }
-
-  .card-title {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 4px;
-  }
-
-  .card-text {
-    font-size: 14px;
-    line-height: 16px;
-  }
+  cursor: pointer;
 }
 
 .mentor-modal.show {
