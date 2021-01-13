@@ -1,15 +1,18 @@
 @charset "UTF-8";
 
 // Global helpers
-@import './_constants.scss';
-@import './helpers.scss';
-@import './global.scss';
+@import "./_constants.scss";
+@import "./helpers.scss";
+@import "./global.scss";
 
 // Components
-@import './navbar.scss';
+@import "./navbar.scss";
+@import "./countdown.scss";
+@import "./resources.scss";
+@import "./mentors.scss";
 
 // Pages
-@import './schedule.scss';
-@import './countdown.scss';
-@import './resources.scss';
-@import './mentors.scss';
+@import "./schedule.scss";
+@import "./countdown.scss";
+@import "./resources.scss";
+@import "./mentors.scss";
