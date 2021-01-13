@@ -1,14 +1,16 @@
-import React from 'react';
-import { Col, Container, Row, Tabs, Tab, Table } from 'react-bootstrap';
-import CalendarIcon from '../assets/calendar_icon.svg';
-import Arrow from '../assets/arrow.svg';
+import React from "react";
+import { Col, Container, Row, Tabs, Tab, Table } from "react-bootstrap";
+import CalendarIcon from "../assets/calendar_icon.svg";
+import Arrow from "../assets/arrow.svg";
 import data from "../data/fake_data.json";
 
 const Schedule = () => {
   return (<Container className="mt-5">
     <Row>
       <Col>
-        <h1 id="schedule" className="font-weight-bold">Event Schedule</h1>
+        <h1 id="schedule" className="font-weight-bold">
+          Event Schedule
+        </h1>
       </Col>
     </Row>
     <Row>

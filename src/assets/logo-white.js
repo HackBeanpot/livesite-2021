@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const LogoWhite = () => (
   <svg
@@ -11,7 +11,7 @@ const LogoWhite = () => (
   >
     <defs>
       <style>
-        {'.logo-navy-outline{fill:#FFFFFF;}.logo-fill{fill:#FFFFFF'}
+        {".logo-navy-outline{fill:#FFFFFF;}.logo-fill{fill:#FFFFFF"}
       </style>
     </defs>
     <title>Vertical White</title>
