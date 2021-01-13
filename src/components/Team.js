@@ -6,7 +6,7 @@ import useAirtableAPI from '../hooks/api-hook';
 // Define the team member card object 
 const MemberCard = ({ team, name, position, school, year, imageURL }) => (
   <Col md="3">
-    <Card className="teams__card">
+    <Card>
       <Card.Img variant="top" src={imageURL[0].url} alt="Member profile photo" />
       <Card.Body>
         <Card.Title>{ name }</Card.Title>
@@ -74,7 +74,7 @@ const Team = () => {
     <Container>
       <Row className="py-3">
           {isLoading && <Spinner animation='border' variant='primary' /> /* TODO import custom styled spinner component*/}
-          {!data.length && <div>Nothing to see here...</div> /* TODO handle empty array in case of API error (or if its actually empty for any reason)*/}
+          {!data.length && !isLoading && <div>Nothing to see here...</div> /* TODO handle empty array in case of API error (or if its actually empty for any reason)*/}
           {data.map((member) => (
             member.fields.team === team && <MemberCard {...member.fields} />
           ))}
