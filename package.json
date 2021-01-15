@@ -2,6 +2,8 @@
   "name": "livesite-2021",
   "version": "0.1.0",
   "private": true,
+  "author": "Team HackBeanpot <team@hackbeanpot.com>",
+  "prod": "gatsby serve",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
@@ -11,7 +13,14 @@
     "react-bootstrap": "^1.4.0",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.1",
-    "web-vitals": "^0.2.4"
+    "web-vitals": "^0.2.4", 
+    "react-icons": "^3.11.0",
+    "gatsby": "^2.24.86",
+    "gatsby-plugin-google-analytics": "^2.3.19",
+    "gatsby-plugin-mailchimp": "^5.2.2",
+    "gatsby-plugin-react-helmet": "^3.3.14",
+    "gatsby-plugin-resolve-src": "^2.1.0",
+    "gatsby-plugin-sitemap": "^2.4.17"
   },
   "scripts": {
     "start": "react-scripts start",
