@@ -1,0 +1,16 @@
+.teams {
+  background-color: $dark-blue;
+  color: black;
+
+  &__button {
+    margin-left: 10px;
+    margin-bottom: 10px;
+  }
+
+  .selected {
+    color: white;
+    background-color: $orange;
+    border-width: 0;
+    box-shadow: none;
+  }
+}
