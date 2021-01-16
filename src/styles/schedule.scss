@@ -1,88 +1,87 @@
 .audience {
-    display: flex;
-    flex-direction: row;
-    font-family: 'Roboto';
-    font-size: 20px;
+  display: flex;
+  flex-direction: row;
+  font-family: "Roboto";
+  font-size: 20px;
 
-    &__type {
-        background-color: $mint;
-        border-radius: 40px;
-        margin-top: 1rem;
-        padding: 0.5rem 1rem;
-    }
+  &__type {
+    background-color: $mint;
+    border-radius: 40px;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+  }
 
-    &__company {
-        background-color: $light-purple;
-        border-radius: 40px;
-        margin: 1rem;
-        padding: 0.5rem 1rem;
-    }
+  &__company {
+    background-color: $light-purple;
+    border-radius: 40px;
+    margin: 1rem;
+    padding: 0.5rem 1rem;
+  }
 }
 
 .category {
-    display: flex;
-    flex-direction: column;
-    font-family: 'Roboto';
-    font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto";
+  font-size: 20px;
 
-    &__time {
-        margin-bottom: 0;
-    }
+  &__time {
+    margin-bottom: 0;
+  }
 
-    &__type {
-        margin-bottom: 0;
-    }
+  &__type {
+    margin-bottom: 0;
+  }
 }
 
 .label {
-    padding: 0.2rem !important;
+  padding: 0.2rem !important;
 }
 
 .location {
-    display: flex;
-    flex-direction: column;
-    font-family: 'Roboto';
-    font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto";
+  font-size: 20px;
 
-    &__title {
-        font-weight: 600;
-        margin-bottom: 0;
-    }
+  &__title {
+    font-weight: 600;
+    margin-bottom: 0;
+  }
 
-    &__zoom {
-        color: #000;
-        margin-bottom: 0;
-    }
+  &__zoom {
+    color: #000;
+    margin-bottom: 0;
+  }
 }
 
 .table {
-    background-color: #fff;
-    margin-top: -2px;
+  background-color: #fff;
+  margin-top: -2px;
 
-    td {
-        vertical-align: middle;
-    }
+  td {
+    vertical-align: middle;
+  }
 }
 
 .nav {
-    font-size: 20px;
+  font-size: 20px;
 
-    .nav-link {
-        background-color: $orange;
-        color: #000;
-        border-bottom: none;
-        border-color: $orange;
-        border-width: 3px;
-        border-radius: 5px;
-        font-weight: 500;
-        margin-right: 3px;
-        padding: 0.5rem 5rem;
-    }
+  .nav-link {
+    background-color: $orange;
+    color: #000;
+    border-bottom: none;
+    border-color: $orange;
+    border-width: 3px;
+    border-radius: 5px;
+    font-weight: 500;
+    margin-right: 3px;
+    padding: 0.5rem 5rem;
+  }
 
-
-    .nav-link.active {
-        border-color: $orange;
-        color: $orange;
-        font-weight: 500;
-    }
+  .nav-link.active {
+    border-color: $orange;
+    color: $orange;
+    font-weight: 500;
+  }
 }
