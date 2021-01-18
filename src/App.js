@@ -1,20 +1,22 @@
 import Challenges from "./components/Challenges";
 import Footer from "./components/Footer";
 import HackerActions from "./components/HackerActions";
-import Header from "./components/Header";
+import Relevant from "./components/Relevant";
 import Mentors from "./components/Mentors";
 import Navbar from "./components/MainNavbar";
 import Resources from "./components/Resources";
 import Schedule from "./components/Schedule";
 import Team from "./components/Team";
 import Countdown from "./components/Countdown";
+import WelcomeIntro from "./components/WelcomeIntro";
 
 function App() {
   return (
     <div>
       <Navbar />
-      <Header />
+      <Relevant />
       <Countdown />
+      <WelcomeIntro />
       <Schedule />
       <Challenges />
       <Mentors />
