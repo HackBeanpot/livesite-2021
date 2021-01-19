@@ -8,11 +8,13 @@ import Resources from "./components/Resources";
 import Schedule from "./components/Schedule";
 import Team from "./components/Team";
 import Countdown from "./components/Countdown";
+import RelevantRightNow from "./components/RelevantRightNow";
 
 function App() {
   return (
     <div>
       <Navbar />
+      <RelevantRightNow />
       <Header />
       <Countdown />
       <Schedule />

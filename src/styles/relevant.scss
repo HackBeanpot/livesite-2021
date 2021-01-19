@@ -1,0 +1,45 @@
+.relevant {
+    height: 270 px;
+
+    .card-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 4px;
+    }
+
+    .card-text {
+        font-size: 18px;
+        line-height: 16px;
+    }
+}
+
+.blue-card {
+    .btn {
+        color: white;
+        background-color: $teal-blue;
+    }
+
+    .card-subtitle {
+        font-size: 18px;
+        color: $teal-blue;
+    }
+}
+
+.orange-card {
+    .btn {
+        color: white;
+        background-color: $orange;
+    }
+
+    .card-subtitle {
+        font-size: 18px;
+        color: $orange;
+    }
+}
+
+.scrolling-wrapper {
+    overflow-x: auto;
+}
+
+
+
