@@ -9,9 +9,9 @@ const calculateTimeLeft = () => {
   if (difference > 0) {
     timeLeft = {
       days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-      hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-      minutes: Math.floor((difference / 1000 / 60) % 60),
-      seconds: Math.floor((difference / 1000) % 60),
+      hours: String(Math.floor((difference / (1000 * 60 * 60)) % 24)).padStart(2, "0"),
+      minutes: String(Math.floor((difference / 1000 / 60) % 60)).padStart(2, "0"),
+      seconds: String(Math.floor((difference / 1000) % 60)).padStart(2, "0"),
     };
   }
 
@@ -22,10 +22,9 @@ const useCounter = () => {
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
   useEffect(() => {
-    setTimeout(() => {
-      setTimeLeft(calculateTimeLeft());
-    }, 1000);
-  }, [timeLeft]);
+    const interval = setInterval(() => setTimeLeft(calculateTimeLeft()), 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   return timeLeft;
 };
