@@ -18,7 +18,7 @@ const Schedule = () => {
   const extractedData = scheduleExtractor(data);
 
   return (
-    <Container className="mt-5">
+    <Container className="schedule mt-5">
       <Row>
         <Col>
           <h1 id="schedule" className="font-weight-bold">
@@ -34,68 +34,68 @@ const Schedule = () => {
             <Tabs defaultActiveKey={0}>
               {Object.keys(extractedData).map((element, idx) => {
                 return (
-                  <Tab eventKey={idx} title={element}>
-                    <Table hover>
+                  <Tab
+                    eventKey={idx}
+                    title={element}
+                    tabClassName="schedule__tab"
+                  >
+                    <Table hover className="schedule__table">
                       <tbody>
                         {extractedData[element].map((event, idx) => {
                           return (
-                            <tr key={idx}>
+                            <tr key={idx} className="schedule__row">
                               <td
-                                className="label"
+                                className="schedule__label"
                                 style={{ backgroundColor: event.theme }}
                               />
-                              {/* TODO: Need to change hardcoded width here */}
-                              <td width="50px">
+                              <td className="schedule__arrow">
                                 <div>
                                   <img src={Arrow} alt="arrow icon" />
                                 </div>
                               </td>
-                              {/* TODO: Need to change hardcoded width here */}
-                              <td width="200px">
-                                <div className="category">
-                                  <p className="category__time">{event.time}</p>
-                                  <p
-                                    className="category__type"
-                                    style={{ color: event.theme }}
-                                  >
-                                    {event.type}
-                                  </p>
-                                </div>
+                              <td className="schedule__category">
+                                <p className="schedule__category__time">
+                                  {event.time}
+                                </p>
+                                <p
+                                  className="schedule__category__type"
+                                  style={{ color: event.theme }}
+                                >
+                                  {event.type}
+                                </p>
                               </td>
-                              {/* TODO: Need to change hardcoded width here */}
-                              <td width="450px">
-                                <div className="location">
-                                  <p className="location__title">
-                                    {event.title}
-                                  </p>
-                                  <a
-                                    className="location__zoom"
-                                    href={event.location}
-                                  >
-                                    {event.location}
-                                  </a>
-                                </div>
+                              <td className="schedule__location">
+                                <p className="schedule__location__title">
+                                  {event.title}
+                                </p>
+                                <a
+                                  className="schedule__location__zoom"
+                                  href={event.location}
+                                >
+                                  {event.location}
+                                </a>
                               </td>
-                              {/* TODO: Need to change hardcoded width here */}
-                              <td width="300px">
-                                <div className="audience">
-                                  <p
-                                    className={
-                                      event.audience ? "audience__type" : ""
-                                    }
-                                  >
-                                    {event.audience}
-                                  </p>
-                                  <p
-                                    className={
-                                      event.company ? "audience__company" : ""
-                                    }
-                                  >
-                                    {event.company}
-                                  </p>
-                                </div>
+                              <td className="schedule__audience">
+                                <p
+                                  className={
+                                    event.audience
+                                      ? "schedule__audience__type"
+                                      : ""
+                                  }
+                                >
+                                  {event.audience}
+                                </p>
+                                <p
+                                  className={
+                                    event.company
+                                      ? "schedule__audience__company"
+                                      : ""
+                                  }
+                                >
+                                  {event.company}
+                                </p>
                               </td>
-                              <td>
+                              <td className="schedule__calendar">
                                 <img src={CalendarIcon} alt="calendar icon" />
                               </td>
                             </tr>
