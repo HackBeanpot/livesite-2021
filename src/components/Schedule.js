@@ -1,10 +1,14 @@
 import React from "react";
-import { Col, Container, Row, Tabs, Tab, Table } from "react-bootstrap";
+import { Col, Container, Row, Tabs, Tab, Table, Spinner } from "react-bootstrap";
 import CalendarIcon from "../assets/calendar_icon.svg";
 import Arrow from "../assets/arrow.svg";
-import data from "../data/fake_data.json";
+import useAirtableAPI from "../hooks/api-hook";
+import { scheduleExtractor } from "../utils/utils";
 
 const Schedule = () => {
+  const { data, isLoading } = useAirtableAPI("appUlVfygDJ873QXd", "schedule");
+  const extractedData = scheduleExtractor(data);
+
   return (
     <Container className="mt-5">
       <Row>
@@ -14,15 +18,15 @@ const Schedule = () => {
           </h1>
         </Col>
       </Row>
-      <Row>
+      {(isLoading || data.length === 0) ? <Spinner animation="border" variant="primary" /> : (<Row>
         <Col>
-          <Tabs defaultActiveKey={1}>
-            {data.schedule.map((element, idx) => {
+          <Tabs defaultActiveKey={0}>
+            {Object.keys(extractedData).map((element, idx) => {
               return (
-                <Tab eventKey={idx} title={element.date}>
+                <Tab eventKey={idx} title={element}>
                   <Table hover>
                     <tbody>
-                      {element.events.map((event, idx) => {
+                      {extractedData[element].map((event, idx) => {
                         return (
                           <tr key={idx}>
                             <td
@@ -36,7 +40,7 @@ const Schedule = () => {
                               </div>
                             </td>
                             {/* TODO: Need to change hardcoded width here */}
-                            <td width="180px">
+                            <td width="200px">
                               <div className="category">
                                 <p className="category__time">{event.time}</p>
                                 <p
@@ -91,7 +95,7 @@ const Schedule = () => {
             })}
           </Tabs>
         </Col>
-      </Row>
+      </Row>)}
     </Container>
   );
 };
