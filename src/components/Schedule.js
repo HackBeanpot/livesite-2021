@@ -49,31 +49,42 @@ const Schedule = () => {
                                 style={{ backgroundColor: event.theme }}
                               />
                               <td className="schedule__arrow">
-                                <div>
-                                  <img src={Arrow} alt="arrow icon" />
+                                <img
+                                  className="schedule__arrow__icon"
+                                  src={Arrow}
+                                  alt="arrow icon"
+                                />
+                              </td>
+                              <td className="schedule__responsive">
+                                <div className="schedule__category">
+                                  <p className="schedule__category__time">
+                                    {event.time}
+                                  </p>
+                                  <p
+                                    className="schedule__category__type"
+                                    style={{ color: event.theme }}
+                                  >
+                                    {event.type}
+                                  </p>
                                 </div>
-                              </td>
-                              <td className="schedule__category">
-                                <p className="schedule__category__time">
-                                  {event.time}
-                                </p>
-                                <p
-                                  className="schedule__category__type"
-                                  style={{ color: event.theme }}
-                                >
-                                  {event.type}
-                                </p>
-                              </td>
-                              <td className="schedule__location">
-                                <p className="schedule__location__title">
-                                  {event.title}
-                                </p>
-                                <a
-                                  className="schedule__location__zoom"
-                                  href={event.location}
-                                >
-                                  {event.location}
-                                </a>
+                                <div className="schedule__location">
+                                  <p
+                                    className="schedule__location__title"
+                                    title={event.title}
+                                  >
+                                    {event.title}
+                                  </p>
+                                  <a
+                                    className="schedule__location__zoom"
+                                    href={event.location}
+                                    title={event.location}
+                                    // make the link open in a new tab
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                  >
+                                    {event.location}
+                                  </a>
+                                </div>
                               </td>
                               <td className="schedule__audience">
                                 <p
