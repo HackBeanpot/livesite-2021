@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 
 const calculateTimeLeft = () => {
   let year = new Date().getFullYear();
-  const endTime = new Date(year, 1, 21, 9, 30, 0, 0); // Feb 21, 9:30am
+  // const endTime = new Date(year, 1, 21, 9, 30, 0, 0); // Feb 21, 9:30am
+  const endTime = new Date(year, 1, 19, 18, 0, 0, 0); // Feb 19, 6:00pm
   const difference = +endTime - +new Date();
   let timeLeft = {};
 
@@ -35,7 +36,8 @@ export default function Countdown() {
   return (
     <div className="countdown">
       <div className="countdown__text-wrapper">
-        <div className="countdown__text">Hacking time remaining</div>
+        {/* <div className="countdown__text">Hacking time remaining</div> */}
+        <div className="countdown__text">Hacking will begin in: </div>
         <div id="clock" className="font-weight-bold countdown__timer">
           {timeleft.days}:{timeleft.hours}:{timeleft.minutes}:{timeleft.seconds}
         </div>
