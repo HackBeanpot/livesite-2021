@@ -1,72 +1,136 @@
-.audience {
-  display: flex;
-  flex-direction: row;
-  font-family: "Roboto";
-  font-size: 20px;
-
-  &__type {
-    background-color: $mint;
-    border-radius: 40px;
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-  }
-
-  &__company {
-    background-color: $light-purple;
-    border-radius: 40px;
-    margin: 1rem;
-    padding: 0.5rem 1rem;
-  }
-}
-
-.category {
+@mixin textFlex {
   display: flex;
   flex-direction: column;
   font-family: "Roboto";
   font-size: 20px;
-
-  &__time {
-    margin-bottom: 0;
-  }
-
-  &__type {
-    margin-bottom: 0;
-  }
 }
 
-.label {
-  padding: 0.2rem !important;
-}
-
-.location {
-  display: flex;
-  flex-direction: column;
-  font-family: "Roboto";
-  font-size: 20px;
-
-  &__title {
-    font-weight: 600;
-    margin-bottom: 0;
+.schedule {
+  &__tab {
+    @media (max-width: $lg) {
+      display: inline-flex;
+      flex: 1;
+      // need !important to override default bootstrap padding on tabs
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      justify-content: center;
+      align-items: center;
+    }
   }
 
-  &__zoom {
-    color: #000;
-    margin-bottom: 0;
+  &__table {
+    background-color: #fff;
+    margin-top: -2px;
   }
-}
 
-.table {
-  background-color: #fff;
-  margin-top: -2px;
+  &__row {
+    display: flex;
+  }
 
-  td {
-    vertical-align: middle;
+  &__label {
+    padding: 0.2rem !important;
+  }
+
+  &__arrow {
+    display: flex;
+    align-items: center;
+    &__icon {
+      width: 50px;
+      @media (max-width: $lg) {
+        width: 20px;
+      }
+    }
+  }
+
+  &__responsive {
+    display: flex;
+    flex: 3;
+    flex-direction: row;
+    @media (max-width: $md) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__category {
+    padding-right: 1.5rem;
+    flex: 1;
+    @include textFlex;
+    @media (max-width: $md) {
+      padding-right: 0;
+      justify-content: space-between;
+      flex-direction: row;
+    }
+    &__time {
+      margin-bottom: 0;
+    }
+    &__type {
+      margin-bottom: 0;
+    }
+    // the longest a time can possibly be
+    min-width: 200px;
+  }
+
+  &__location {
+    flex: 2;
+    @include textFlex;
+    @media (max-width: $md) {
+      justify-content: space-between;
+    }
+    &__title {
+      font-weight: 600;
+      margin-bottom: 0;
+    }
+
+    &__zoom {
+      // kinda hacky, but I couldn't figure out how to properly ellipses and not exceed the width of the flex container
+      // tried using min-width: 0 but it didn't work
+      max-width: 20vw;
+      @media (max-width: $md) {
+        max-width: 60vw;
+      }
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: #000;
+      margin-bottom: 0;
+    }
+  }
+
+  &__audience {
+    flex: 2;
+    @include textFlex;
+    flex-direction: row;
+    align-items: center;
+    @media (max-width: $lg) {
+      display: none;
+    }
+    @mixin pill {
+      height: min-content;
+      border-radius: 40px;
+      padding: 0.5rem 1rem;
+      margin-bottom: 0;
+    }
+    &__type {
+      @include pill;
+      background-color: $mint;
+    }
+    &__company {
+      @include pill;
+      background-color: $light-purple;
+    }
+  }
+
+  &__calendar {
+    @media (max-width: $lg) {
+      display: none;
+    }
   }
 }
 
 .nav {
   font-size: 20px;
-
+  z-index: 1;
+  position: relative;
   .nav-link {
     background-color: $orange;
     color: #000;
