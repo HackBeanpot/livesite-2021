@@ -9,11 +9,11 @@ import '../styles/cabincup.scss';
 
 const WelcomeIntro = () => {
   return (
-    <Container className="mt-5">
+    <Container fluid className="mt-5">
       <Row>
         <Col>
-          <div className="cabin-cup"> 
-            <Row>
+          <div className="cabin-cup">
+            <Row className= "mt-5 pt4">
               <Col lg="4">
                 <h2>Cabin Cup Standings</h2> 
                 <br />
@@ -21,7 +21,7 @@ const WelcomeIntro = () => {
                   <p className= "cabin-intro">
                   Earn points for your cabin by bonding with you cabin mates 
                   and participating in cabin events! Use your points in the end 
-                  to enter raffles for awesome prizes!
+                  to enter raffles for awesome prizes! 
                  </p>
                   <a
                   className="cabin-info"
@@ -47,8 +47,7 @@ const WelcomeIntro = () => {
               </Col> */}
               
             </Row>
-            
-          </div>
+            </div>
         </Col>
         
         <Col>
