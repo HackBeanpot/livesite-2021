@@ -106,23 +106,21 @@ export const Mentors = () => {
   const positions = getMentorAttrs(data, mentor => mentor.fields.position)
   const companies = getMentorAttrs(data, mentor => mentor.fields.company)
 
-  const [filterAttrs, setFilterAttrs] = useState(['e-all', 'p-all', 'c-all']);
+  const [filterAttrs, setFilterAttrs] = useState([]);
 
   // I abbreviate as: (e)xpertises, (p)ositions, (c)ompanies
   // which mentors should we keep?
   const shouldShowMentor = (mentor) => {
-    // universal set
-    if (['e-all', 'p-all', 'c-all'].some(U => filterAttrs.includes(U))) {
-      return true
-    }
-
     // make sure they are truthy fields
     const mentorEs = mentor.fields.expertise || []
     const mentorP = mentor.fields.position ? [mentor.fields.position] : []
     const mentorC = mentor.fields.company ? [mentor.fields.company] : []
-    const orMap = [...new Set([...mentorEs, ...mentorP, ...mentorC])]
+    const allAttrs = [...new Set([...mentorEs, ...mentorP, ...mentorC])]
 
-    return orMap.some(mentorAttr => filterAttrs.includes(mentorAttr));
+    // all filter requirements must be satisfied
+    const andMap = filterAttrs.filter(attr => attr !== 'all');
+
+    return andMap.every(mentorAttr => allAttrs.includes(mentorAttr));
   }
 
   const handleChange = e => {
@@ -154,24 +152,24 @@ export const Mentors = () => {
       </Row>
       <Row>
         <h4>Filter: </h4>
-        <select multiple id="mentors-position-filter" className="mentor-filter" onChange={handleChange}>
-          <option selected="selected" value="p-all">Positions (all)</option>
+        <select id="mentors-position-filter" className="mentor-filter" onChange={handleChange}>
+          <option selected="selected" value="all">Positions (all)</option>
           {
             positions.map(p => (
               <option value={p}>{p}</option>
             ))
           }
         </select>
-        <select multiple id="mentors-expertise-filter" className="mentor-filter" onChange={handleChange}>
-          <option selected="selected" value="e-all">Expertise (all)</option>
+        <select id="mentors-expertise-filter" className="mentor-filter" onChange={handleChange}>
+          <option selected="selected" value="all">Expertise (all)</option>
           {
             expertises.map(e => (
               <option value={e}>{e}</option>
             ))
           }
         </select>
-        <select multiple id="mentors-company-filter" className="mentor-filter" onChange={handleChange}>
-          <option selected="selected" value="c-all">Companies (all)</option>
+        <select id="mentors-company-filter" className="mentor-filter" onChange={handleChange}>
+          <option selected="selected" value="all">Companies (all)</option>
           {
             companies.map(c => (
               <option value={c}>{c}</option>
