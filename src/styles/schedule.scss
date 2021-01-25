@@ -6,6 +6,17 @@
 }
 
 .schedule {
+  &__card {
+    border-radius: 0;
+    margin-bottom: 0;
+  }
+  
+  &__card-header {
+    background-color: #fff;
+    height: 90px;
+    padding: 0;
+  }
+
   &__tab {
     @media (max-width: $lg) {
       display: inline-flex;
@@ -25,6 +36,7 @@
 
   &__row {
     display: flex;
+    height: 100%;
   }
 
   &__label {
@@ -34,8 +46,16 @@
   &__arrow {
     display: flex;
     align-items: center;
+    transform: rotate(-90deg);
+    transition: transform .25s;
+
+    &__down {
+      transform: rotate(0deg);
+      transition: transform .25s;
+    }
+
     &__icon {
-      width: 50px;
+      width: 30px;
       @media (max-width: $lg) {
         width: 20px;
       }
@@ -43,11 +63,16 @@
   }
 
   &__responsive {
+    align-items: center;
     display: flex;
     flex: 3;
     flex-direction: row;
+    padding: 0 1rem;
+
     @media (max-width: $md) {
+      align-items: unset;
       flex-direction: column-reverse;
+      padding: 1rem;
     }
   }
 
@@ -117,10 +142,15 @@
     &__company {
       @include pill;
       background-color: $light-purple;
+      margin-left: 1rem;
     }
   }
 
   &__calendar {
+    align-items: center;
+    display: flex;
+    padding-right: 0.5rem;
+
     @media (max-width: $lg) {
       display: none;
     }

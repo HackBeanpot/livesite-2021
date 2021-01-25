@@ -18,6 +18,7 @@ export const eventsExtractor = (attributes) => {
     ? `${startTime}-${timeExtractor(attributes.endTime)}`
     : startTime;
   let event = {
+    description: attributes.description,
     time: time,
     type: attributes.type,
     theme: colorTheme(attributes.type),
