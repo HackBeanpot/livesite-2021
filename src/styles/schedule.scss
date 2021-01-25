@@ -15,6 +15,10 @@
     background-color: #fff;
     height: 90px;
     padding: 0;
+
+    @media (max-width: $md) {
+      height: unset;
+    }
   }
 
   &__tab {
@@ -35,6 +39,7 @@
   }
 
   &__row {
+    border-bottom: 1px solid #ccc;
     display: flex;
     height: 100%;
   }
@@ -62,6 +67,11 @@
     }
   }
 
+  &__info {
+    display: flex;
+    flex: 2;
+  }
+
   &__responsive {
     align-items: center;
     display: flex;
@@ -78,7 +88,7 @@
 
   &__category {
     padding-right: 1.5rem;
-    flex: 1;
+
     @include textFlex;
     @media (max-width: $md) {
       padding-right: 0;
@@ -92,7 +102,7 @@
       margin-bottom: 0;
     }
     // the longest a time can possibly be
-    min-width: 200px;
+    min-width: 250px;
   }
 
   &__location {
@@ -126,9 +136,7 @@
     @include textFlex;
     flex-direction: row;
     align-items: center;
-    @media (max-width: $lg) {
-      display: none;
-    }
+
     @mixin pill {
       height: min-content;
       border-radius: 40px;
@@ -151,14 +159,10 @@
     display: flex;
     padding-right: 0.5rem;
 
-    @media (max-width: $lg) {
-      display: none;
-    }
   }
 }
 
 .nav {
-  font-size: 20px;
   z-index: 1;
   position: relative;
   .nav-link {

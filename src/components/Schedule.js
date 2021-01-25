@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Accordion,
   Button,
@@ -15,10 +15,53 @@ import Arrow from "../assets/arrow.svg";
 import useAirtableAPI from "../hooks/api-hook";
 import { scheduleExtractor } from "../utils/utils";
 
+const AdditionalAttributes = ({
+  event
+}) => {
+  return (
+    <div className="schedule__info">
+      <div className="schedule__audience">
+        <p
+          className={
+            event.audience
+              ? "schedule__audience__type"
+              : ""
+          }
+        >
+          {event.audience}
+        </p>
+        <p
+          className={
+            event.company
+              ? "schedule__audience__company"
+              : ""
+          }
+        >
+          {event.company}
+        </p>
+      </div>
+      <div className="schedule__calendar">
+        <img src={CalendarIcon} alt="calendar icon" />
+      </div>
+    </div>
+  );
+};
+
 const Schedule = () => {
   const { data, isLoading } = useAirtableAPI("appUlVfygDJ873QXd", "schedule");
   const extractedData = scheduleExtractor(data);
+  const [isOpen, setIsOpen] = useState(false);
   const [clickedIdx, setClickedIdx] = useState(-1);
+  const [width, setWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const updateSize = () => {
+      setWidth(window.innerWidth);
+    }
+    window.addEventListener('resize', updateSize);
+    updateSize();
+    return () => window.removeEventListener('resize', updateSize);
+  }, []);
 
   return (
     <Container className="schedule mt-5">
@@ -47,8 +90,8 @@ const Schedule = () => {
                         return (
                           <Card className="schedule__card">
                             <Card.Header className="schedule__card-header">
-                              <tr key={idx} className="schedule__row">
-                                <td
+                              <div key={idx} className="schedule__row">
+                                <div
                                   className="schedule__label"
                                   style={{ backgroundColor: event.theme }}
                                 />
@@ -58,11 +101,12 @@ const Schedule = () => {
                                   eventKey={idx.toString()}
                                   onClick={() => {
                                     setClickedIdx(idx);
+                                    setIsOpen(idx===clickedIdx ? !isOpen : true)
                                   }}
                                 >
-                                  <td
+                                  <div
                                     className={
-                                      idx == clickedIdx
+                                      (idx === clickedIdx && isOpen)
                                         ? "schedule__arrow__down"
                                         : "schedule__arrow"
                                     }
@@ -72,9 +116,9 @@ const Schedule = () => {
                                       src={Arrow}
                                       alt="arrow icon"
                                     />
-                                  </td>
+                                  </div>
                                 </Accordion.Toggle>
-                                <td className="schedule__responsive">
+                                <div className="schedule__responsive">
                                   <div className="schedule__category">
                                     <p className="schedule__category__time">
                                       {event.time}
@@ -104,36 +148,15 @@ const Schedule = () => {
                                       {event.location}
                                     </a>
                                   </div>
-                                </td>
-                                <td className="schedule__audience">
-                                  <p
-                                    className={
-                                      event.audience
-                                        ? "schedule__audience__type"
-                                        : ""
-                                    }
-                                  >
-                                    {event.audience}
-                                  </p>
-                                  <p
-                                    className={
-                                      event.company
-                                        ? "schedule__audience__company"
-                                        : ""
-                                    }
-                                  >
-                                    {event.company}
-                                  </p>
-                                </td>
-                                <td className="schedule__calendar">
-                                  <img src={CalendarIcon} alt="calendar icon" />
-                                </td>
-                              </tr>
+                                </div>
+                                {width >= 1000 && <AdditionalAttributes event={event} />}
+                              </div>
                             </Card.Header>
                             <Accordion.Collapse eventKey={idx.toString()}>
                               <Card.Body>
                                 <strong>Description:&nbsp;</strong>
                                 {event.description}
+                                {width < 1000 && <AdditionalAttributes event={event} />}
                               </Card.Body>
                             </Accordion.Collapse>
                           </Card>
