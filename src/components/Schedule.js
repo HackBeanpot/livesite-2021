@@ -15,28 +15,14 @@ import Arrow from "../assets/arrow.svg";
 import useAirtableAPI from "../hooks/api-hook";
 import { scheduleExtractor } from "../utils/utils";
 
-const AdditionalAttributes = ({
-  event
-}) => {
+const AdditionalAttributes = ({ event }) => {
   return (
     <div className="schedule__info">
       <div className="schedule__audience">
-        <p
-          className={
-            event.audience
-              ? "schedule__audience__type"
-              : ""
-          }
-        >
+        <p className={event.audience ? "schedule__audience__type" : ""}>
           {event.audience}
         </p>
-        <p
-          className={
-            event.company
-              ? "schedule__audience__company"
-              : ""
-          }
-        >
+        <p className={event.company ? "schedule__audience__company" : ""}>
           {event.company}
         </p>
       </div>
@@ -57,10 +43,10 @@ const Schedule = () => {
   useEffect(() => {
     const updateSize = () => {
       setWidth(window.innerWidth);
-    }
-    window.addEventListener('resize', updateSize);
+    };
+    window.addEventListener("resize", updateSize);
     updateSize();
-    return () => window.removeEventListener('resize', updateSize);
+    return () => window.removeEventListener("resize", updateSize);
   }, []);
 
   return (
@@ -101,12 +87,14 @@ const Schedule = () => {
                                   eventKey={idx.toString()}
                                   onClick={() => {
                                     setClickedIdx(idx);
-                                    setIsOpen(idx===clickedIdx ? !isOpen : true)
+                                    setIsOpen(
+                                      idx === clickedIdx ? !isOpen : true
+                                    );
                                   }}
                                 >
                                   <div
                                     className={
-                                      (idx === clickedIdx && isOpen)
+                                      idx === clickedIdx && isOpen
                                         ? "schedule__arrow__down"
                                         : "schedule__arrow"
                                     }
@@ -149,14 +137,18 @@ const Schedule = () => {
                                     </a>
                                   </div>
                                 </div>
-                                {width >= 1000 && <AdditionalAttributes event={event} />}
+                                {width >= 1000 && (
+                                  <AdditionalAttributes event={event} />
+                                )}
                               </div>
                             </Card.Header>
                             <Accordion.Collapse eventKey={idx.toString()}>
                               <Card.Body>
                                 <strong>Description:&nbsp;</strong>
                                 {event.description}
-                                {width < 1000 && <AdditionalAttributes event={event} />}
+                                {width < 1000 && (
+                                  <AdditionalAttributes event={event} />
+                                )}
                               </Card.Body>
                             </Accordion.Collapse>
                           </Card>
