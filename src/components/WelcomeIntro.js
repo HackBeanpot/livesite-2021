@@ -1,13 +1,56 @@
 import React from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Row, Button } from "react-bootstrap";
+import Cabin1 from "../assets/Cabin1.svg";
+import Cabin2 from "../assets/Cabin2.svg";
+import Cabin3 from "../assets/Cabin3.svg";
+import Cabin4 from "../assets/Cabin4.svg";
+import '../styles/cabincup.scss';
+
 
 const WelcomeIntro = () => {
   return (
     <Container className="mt-5">
       <Row>
         <Col>
-          <div className="cabin">Cabin Intro</div>
+          <div className="cabin-cup"> 
+            <Row>
+              <Col lg="4">
+                <h2>Cabin Cup Standings</h2> 
+                <br />
+                <div className="cabin-cup-intro">
+                  <p className= "cabin-intro">
+                  Earn points for your cabin by bonding with you cabin mates 
+                  and participating in cabin events! Use your points in the end 
+                  to enter raffles for awesome prizes!
+                 </p>
+                  <a
+                  className="cabin-info"
+                  href={"https://hackbeanpot.com"}>
+                  learn more...
+                  </a>
+                  <br />
+                  <br />
+                  <Button className="score-sheet"> Official Score Sheet </Button>
+                </div>
+              </Col>  
+              <Col lg="4">
+                <img className="cabins" src={Cabin1} alt="cabin1 icon" />
+                <img className="cabins" src={Cabin3} alt="cabin3 icon" />
+              </Col>
+              <Col lg="3">
+                <img className="cabins" src={Cabin2} alt="cabin2 icon" />
+                <img className="cabins" src={Cabin4} alt="cabin4 icon" />
+              </Col>
+              
+              {/* <Col>
+             <img src={Cabin5} alt="cabin5 icon" />
+              </Col> */}
+              
+            </Row>
+            
+          </div>
         </Col>
+        
         <Col>
           <h1 className="font-weight-bold">Welcome to HackBeanpot 2021!</h1>
           <p className="introText">
