@@ -10,7 +10,7 @@
     border-radius: 0;
     margin-bottom: 0;
   }
-  
+
   &__card-header {
     background-color: #fff;
     height: 90px;
@@ -47,11 +47,11 @@
     display: flex;
     align-items: center;
     transform: rotate(-90deg);
-    transition: transform .25s;
+    transition: transform 0.25s;
 
     &__down {
       transform: rotate(0deg);
-      transition: transform .25s;
+      transition: transform 0.25s;
     }
 
     &__icon {
