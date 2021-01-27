@@ -1,11 +1,17 @@
 import React from "react";
-import Logo from "../assets/logo-vertical.js";
-import NewsletterSignup from "../data/NewsletterSignup.jsx";
+
 
 const Footer = () => (
   <div className="footer">
-    {/* Reference Hackbeanpot.com */}
-    <div className="footer__socials">
+   {/*import Logo from "../assets/logo-vertical.js";
+import Newsletter from '../data/newsletter.jsx';
+ <div className="footer__row">
+          
+        <Logo /> 
+      </div>
+        <div className="footer__column">
+      <Newsletter/> */}
+      <div className="footer__socials">
         <a
         href="https://www.facebook.com/hackbeanpot/"
         target="_blank"
@@ -42,25 +48,15 @@ const Footer = () => (
       >
         <i class="fab fa-twitter  fa-2x footer-social-icon footer-text"></i>
       </a>
-      
-    </div>
-
-    {/* Newsletter */}
-
-    <div className="footer__HBP">
-      <div className="logo">
-        <Logo />
       </div>
-
-      <NewsletterSignup />
-    </div>
-
+  
+    
+  {/*</div>*/} 
     <div className="footer__legal">
-      {/* Code of Conduct */}
       <p>HackBeanpot, Inc. is a registered 501(c)(3) organization. </p>
       <a href="https://hackbeanpot.com/code-of-conduct">Code of Conduct</a>
     </div>
-  </div>
+    </div>
 );
 
 export default Footer;
