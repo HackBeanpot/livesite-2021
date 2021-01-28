@@ -47,8 +47,9 @@ function timeText(start, end) {
 }
 
 function isTimeBetween(start, end) {
-  /* trying to choose a time near start of event to capture a few for screenshots*/
-  const currentTime = new Date("2021-02-19T22:30:00.000Z");
+  // used different date to capture screenshots
+  // using now means all will be filtered out
+  const currentTime = new Date();
   return isWithinInterval(currentTime, {
     start: parseISO(start),
     end: parseISO(end),
@@ -69,7 +70,6 @@ const RelevantRightNow = () => {
       </Row>
       <div className="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2">
         {isLoading && <Spinner animation="border" variant="primary" />}
-        {!data.length && !isLoading && <div>Nothing to see here...</div>}
         {data.map((rel) => (
           <RelevantCard {...rel.fields} />
         ))}
