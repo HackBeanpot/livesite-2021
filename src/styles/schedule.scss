@@ -42,6 +42,7 @@
     border-bottom: 1px solid #ccc;
     display: flex;
     height: 100%;
+    overflow: auto;
   }
 
   &__label {
