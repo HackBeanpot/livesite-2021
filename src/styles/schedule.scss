@@ -42,6 +42,7 @@
     border-bottom: 1px solid #ccc;
     display: flex;
     height: 100%;
+    overflow: auto;
   }
 
   &__label {
@@ -166,19 +167,23 @@
   position: relative;
   .nav-link {
     background-color: $orange;
-    color: #000;
+    color: white;
     border-bottom: none;
     border-color: $orange;
     border-width: 3px;
-    border-radius: 5px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
     font-weight: 500;
     margin-right: 3px;
     padding: 0.5rem 5rem;
+  }
+  
+  .nav-link:hover {
+    border-color: $orange;
   }
 
   .nav-link.active {
     border-color: $orange;
     color: $orange;
-    font-weight: 500;
   }
 }
