@@ -2,9 +2,9 @@ import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 
 const HackerActions = () => (
-  <Container className="my-5">
+  <Container className="mt-5">
     <Row>
-      <Col>
+      <Col md="6" className="mb-5">
         <h3>Send us your feedback</h3>
         <p>
           This is a blub about the core team and why we love hackbeanpot and
@@ -17,7 +17,7 @@ const HackerActions = () => (
           </button>
         </a>
       </Col>
-      <Col>
+      <Col md="6" className="mb-5">
         <h3>Apply to join Core!</h3>
         <p>
           This is a blub about the core team and why we love hackbeanpot and
