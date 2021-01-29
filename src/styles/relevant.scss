@@ -39,3 +39,17 @@
 .scrolling-wrapper {
   overflow-x: auto;
 }
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  background-color: rgba(16, 32, 55, .2);
+  width: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-clip: padding-box;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: transparent;
+  background-color: rgba(16, 32, 55, .5);
+}
