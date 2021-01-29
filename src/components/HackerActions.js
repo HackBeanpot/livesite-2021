@@ -24,10 +24,14 @@ const HackerActions = () => (
           organizing the event! This is a blub about the core team and why we
           love hackbeanpot and organizing the event!
         </p>
-        <a href="/">
-          <button type="button" className="btn primary-cta">
-            Apply
-          </button>
+        <a
+          class="btn primary-cta"
+          role="button"
+          href={"https://forms.gle/a7HFpsRLYkVw1U9c8"}
+          target="_blank"
+          rel="noreferrer"
+        >
+          Apply
         </a>
       </Col>
     </Row>
