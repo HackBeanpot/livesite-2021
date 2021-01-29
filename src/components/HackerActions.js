@@ -5,7 +5,7 @@ const HackerActions = () => (
   <Container className="mt-5">
     <Row>
       <Col md="6" className="mb-5">
-        <h3>Send us your feedback</h3>
+        <h2>Send us your feedback</h2>
         <p>
           This is a blub about the core team and why we love hackbeanpot and
           organizing the event! This is a blub about the core team and why we
@@ -18,7 +18,7 @@ const HackerActions = () => (
         </a>
       </Col>
       <Col md="6" className="mb-5">
-        <h3>Apply to join Core!</h3>
+        <h2>Apply to join Core!</h2>
         <p>
           This is a blub about the core team and why we love hackbeanpot and
           organizing the event! This is a blub about the core team and why we
