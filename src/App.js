@@ -10,11 +10,13 @@ import Team from "./components/Team";
 import Countdown from "./components/Countdown";
 import RelevantRightNow from "./components/RelevantRightNow";
 import WelcomeIntro from "./components/WelcomeIntro";
+import Judging from "./components/Judging";
 
 function App() {
   return (
     <div>
       <Navbar />
+      <Judging />
       <RelevantRightNow />
       <Countdown />
       <WelcomeIntro />

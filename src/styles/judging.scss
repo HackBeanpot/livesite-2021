@@ -1,0 +1,119 @@
+.judging-who-are-you {
+  background: #1D8A4F;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.who-are-you-title {
+  text-align: center;
+  font-weight: 900;
+  font-size: 64px;
+}
+
+.who-are-you-button {
+  width: 300px;
+  margin: 30px auto;
+  background: $dark-blue;
+  color: white;
+  font-size: 24px;
+}
+
+.judging-find-person {
+  background: #1D8A4F;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.welcome-title {
+  text-align: center;
+  font-weight: 900;
+  font-size: 64px;
+}
+
+.welcome-subtitle {
+  text-align: center;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 48px;
+}
+
+.judging-find-dropdown {
+  width: 300px;
+  margin: 30px auto;
+  box-sizing: border-box;
+}
+
+.judging-find-dropdown__input {
+  display: block;
+  height: 36px;
+  width: 100%;
+  padding: 0 16px;
+  background: #fff;
+  border: 1px solid transparent;
+  box-shadow: 0 .0625rem .125rem rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+  outline: none;
+  font-size: 14px;
+  text-align: left;
+  text-overflow: ellipsis;
+  line-height: 36px;
+  -webkit-appearance: none;
+}
+
+.judging-find-dropdown__select {
+  background: #fff;
+  box-shadow: 0 .0625rem .125rem rgba(0, 0, 0, 0.15);
+}
+
+/**
+ * Options
+ */
+.judging-find-dropdown__options {
+  list-style: none;
+}
+
+/**
+ * Option row
+ */
+.judging-find-dropdown__row:not(:first-child) {
+  border-top: 1px solid #eee;
+}
+
+/**
+ * Option
+ */
+.judging-find-dropdown__option,
+.judging-find-dropdown__not-found {
+  display: block;
+  height: 36px;
+  width: 100%;
+  padding: 0 16px;
+  background: #fff;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.judging-find-dropdown--multiple .judging-find-dropdown__option {
+  height: 48px;
+}
+
+.judging-find-dropdown__option.is-selected {
+  background: #2FCC8B;
+  color: #fff;
+}
+
+.judging-find-dropdown__option.is-highlighted,
+.judging-find-dropdown__option:not(.is-selected):hover {
+  background: rgba(47, 204, 139, 0.1);
+}
+
+.judging-find-dropdown__option.is-highlighted.is-selected,
+.judging-find-dropdown__option.is-selected:hover {
+  background: #2eb378;
+  color: #fff;
+}
