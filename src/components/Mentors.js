@@ -155,6 +155,9 @@ export const Mentors = () => {
       <Row>
         <Col>
           <h1>Mentors</h1>
+          <h1 id="mentors" className="font-weight-bold">
+            Mentors
+          </h1>
           <p className="mentor-subheader">
             {/* Click on a mentor's photo for more details */}
             Coming Soon!

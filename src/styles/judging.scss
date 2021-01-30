@@ -1,5 +1,5 @@
 .judging-who-are-you {
-  background: #1D8A4F;
+  background: #1d8a4f;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -20,7 +20,7 @@
 }
 
 .judging-find-person {
-  background: #1D8A4F;
+  background: #1d8a4f;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -52,7 +52,7 @@
   padding: 0 16px;
   background: #fff;
   border: 1px solid transparent;
-  box-shadow: 0 .0625rem .125rem rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0.0625rem 0.125rem rgba(0, 0, 0, 0.15);
   border-radius: 3px;
   outline: none;
   font-size: 14px;
@@ -64,7 +64,7 @@
 
 .judging-find-dropdown__select {
   background: #fff;
-  box-shadow: 0 .0625rem .125rem rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0.0625rem 0.125rem rgba(0, 0, 0, 0.15);
 }
 
 /**
@@ -103,7 +103,7 @@
 }
 
 .judging-find-dropdown__option.is-selected {
-  background: #2FCC8B;
+  background: #2fcc8b;
   color: #fff;
 }
 
