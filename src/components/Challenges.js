@@ -2,10 +2,10 @@ import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 
 const Challenges = () => (
-  <Container className="mt-5">
+  <Container id="challenges" className="mt-5">
     <Row>
       <Col>
-        <h1 id="challenges" className="font-weight-bold">
+        <h1 className="font-weight-bold">
           Tech Challenges
         </h1>
       </Col>

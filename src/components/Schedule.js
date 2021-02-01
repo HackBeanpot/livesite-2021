@@ -50,10 +50,10 @@ const Schedule = () => {
   }, []);
 
   return (
-    <Container className="schedule mt-5">
+    <Container id="schedule" className="schedule mt-5">
       <Row>
         <Col>
-          <h1 id="schedule" className="font-weight-bold">
+          <h1 className="font-weight-bold">
             Event Schedule
           </h1>
         </Col>
