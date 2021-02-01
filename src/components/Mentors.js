@@ -93,10 +93,10 @@ export const Mentors = () => {
     <Container id="mentors" className="mt-5 mentors">
       <Row>
         <Col>
-          <h1 className="font-weight-bold">
-            Mentors
-          </h1>
-          <p className="mentor-subheader">Click on a mentor's photo for more details</p>
+          <h1 className="font-weight-bold">Mentors</h1>
+          <p className="mentor-subheader">
+            Click on a mentor's photo for more details
+          </p>
         </Col>
       </Row>
       <Row>

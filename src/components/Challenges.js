@@ -5,9 +5,7 @@ const Challenges = () => (
   <Container id="challenges" className="mt-5">
     <Row>
       <Col>
-        <h1 className="font-weight-bold">
-          Tech Challenges
-        </h1>
+        <h1 className="font-weight-bold">Tech Challenges</h1>
       </Col>
     </Row>
   </Container>

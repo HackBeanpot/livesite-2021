@@ -79,14 +79,14 @@
 
     @media (max-width: $md) {
       margin-left: 8px;
-      margin-top: 8px;  
+      margin-top: 8px;
     }
 
     &-section {
       margin-bottom: 24px;
 
       @media (max-width: $md) {
-        margin-bottom: 8px; 
+        margin-bottom: 8px;
       }
     }
   }
@@ -96,8 +96,8 @@
     padding: 0;
 
     @media (max-width: $md) {
-      margin-bottom: 8px; 
-    } 
+      margin-bottom: 8px;
+    }
   }
 
   &__close {
