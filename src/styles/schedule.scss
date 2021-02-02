@@ -1,0 +1,189 @@
+@mixin textFlex {
+  display: flex;
+  flex-direction: column;
+  font-family: "Nunito Sans";
+  font-size: 20px;
+}
+
+.schedule {
+  &__card {
+    border-radius: 0;
+    margin-bottom: 0;
+  }
+
+  &__card-header {
+    background-color: #fff;
+    height: 90px;
+    padding: 0;
+
+    @media (max-width: $md) {
+      height: unset;
+    }
+  }
+
+  &__tab {
+    @media (max-width: $lg) {
+      display: inline-flex;
+      flex: 1;
+      // need !important to override default bootstrap padding on tabs
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__table {
+    background-color: #fff;
+    margin-top: -2px;
+  }
+
+  &__row {
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    height: 100%;
+    overflow: auto;
+  }
+
+  &__label {
+    padding: 0.2rem !important;
+  }
+
+  &__arrow {
+    display: flex;
+    align-items: center;
+    transform: rotate(-90deg);
+    transition: transform 0.25s;
+
+    &__down {
+      transform: rotate(0deg);
+      transition: transform 0.25s;
+    }
+
+    &__icon {
+      width: 30px;
+      @media (max-width: $lg) {
+        width: 20px;
+      }
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex: 2;
+  }
+
+  &__responsive {
+    align-items: center;
+    display: flex;
+    flex: 3;
+    flex-direction: row;
+    padding: 0 1rem;
+
+    @media (max-width: $md) {
+      align-items: unset;
+      flex-direction: column-reverse;
+      padding: 1rem;
+    }
+  }
+
+  &__category {
+    padding-right: 1.5rem;
+
+    @include textFlex;
+    @media (max-width: $md) {
+      padding-right: 0;
+      justify-content: space-between;
+      flex-direction: row;
+    }
+    &__time {
+      margin-bottom: 0;
+    }
+    &__type {
+      margin-bottom: 0;
+    }
+    // the longest a time can possibly be
+    min-width: 250px;
+  }
+
+  &__location {
+    flex: 2;
+    @include textFlex;
+    @media (max-width: $md) {
+      justify-content: space-between;
+    }
+    &__title {
+      font-weight: 600;
+      margin-bottom: 0;
+    }
+
+    &__zoom {
+      // kinda hacky, but I couldn't figure out how to properly ellipses and not exceed the width of the flex container
+      // tried using min-width: 0 but it didn't work
+      max-width: 20vw;
+      @media (max-width: $md) {
+        max-width: 60vw;
+      }
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: #000;
+      margin-bottom: 0;
+    }
+  }
+
+  &__audience {
+    flex: 2;
+    @include textFlex;
+    flex-direction: row;
+    align-items: center;
+
+    @mixin pill {
+      height: min-content;
+      border-radius: 40px;
+      padding: 0.5rem 1rem;
+      margin-bottom: 0;
+    }
+    &__type {
+      @include pill;
+      background-color: $mint;
+    }
+    &__company {
+      @include pill;
+      background-color: $light-purple;
+      margin-left: 1rem;
+    }
+  }
+
+  &__calendar {
+    align-items: center;
+    display: flex;
+    padding-right: 0.5rem;
+  }
+}
+
+.nav {
+  z-index: 1;
+  position: relative;
+  .nav-link {
+    background-color: $orange;
+    color: white;
+    border-bottom: none;
+    border-color: $orange;
+    border-width: 3px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    font-weight: 500;
+    margin-right: 3px;
+    padding: 0.5rem 5rem;
+  }
+  
+  .nav-link:hover {
+    border-color: $orange;
+  }
+
+  .nav-link.active {
+    border-color: $orange;
+    color: $orange;
+  }
+}

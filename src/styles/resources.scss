@@ -1,0 +1,13 @@
+.resources {
+  &__card-label {
+    color: $mustard-yellow;
+    margin-left: 5px;
+    margin-bottom: 25px;
+    cursor: pointer;
+  }
+
+  &__rounded-card {
+    border-radius: 18px;
+    cursor: pointer;
+  }
+}

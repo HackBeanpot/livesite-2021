@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const Logo = () => (
   <svg
@@ -8,7 +8,7 @@ const Logo = () => (
     viewBox="0 0 70.28 70.28"
   >
     <defs>
-      <style>{'.cls-1{fill:#1b365d;}.cls-2{fill:#a5dce8;}'}</style>
+      <style>{".cls-1{fill:#1b365d;}.cls-2{fill:#a5dce8;}"}</style>
     </defs>
     <title>Icon</title>
     <path

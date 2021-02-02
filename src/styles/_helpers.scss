@@ -3,12 +3,35 @@
 // ---------------------------------------------------------------------------
 
 .primary-cta {
+  color: white;
+  background-color: $orange;
+  min-width: 150px;
+
+  &:hover {
     color: white;
     background-color: $orange;
     min-width: 150px;
-  
+
     &:hover {
       color: white;
       background-color: $orange;
     }
   }
+}
+
+.card {
+  border-radius: 10px;
+  margin-bottom: 16px;
+  border-width: 0;
+
+  .card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+
+  .card-text {
+    font-size: 14px;
+    line-height: 16px;
+  }
+}
