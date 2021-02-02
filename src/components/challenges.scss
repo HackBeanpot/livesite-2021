@@ -1,0 +1,27 @@
+.carouselItem{
+  align-items: center;
+  justify-content: center;
+  background-color: #1B214E;
+  padding-bottom: 4vw;
+  padding-top: 4vw;
+}
+.carouselCaption{
+  color: white;
+  float: left;
+  width: 50vh;
+}
+.carouselHeader{
+  position: relative;
+  margin-bottom: 3vw;
+}
+.carouselItem h2{
+  font-size: 5vh;
+  width: 100%;
+  color: white;
+}
+.carouselImage {
+  //width: 11vw;
+  height: 50%;
+  margin-right: 1vw;
+}
+
