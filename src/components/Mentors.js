@@ -96,7 +96,9 @@ export const Mentors = () => {
           <h1 id="mentors" className="font-weight-bold">
             Mentors
           </h1>
-          <p className="mentor-subheader">Click on a mentor's photo for more details</p>
+          <p className="mentor-subheader">
+            Click on a mentor's photo for more details
+          </p>
         </Col>
       </Row>
       <Row>
