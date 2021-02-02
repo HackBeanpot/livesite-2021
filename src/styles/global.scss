@@ -4,4 +4,9 @@ body {
   font-family: $font-body;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  h1 {
+    color: $dark-green;
+    font-weight: 48px;
+  }
 }
