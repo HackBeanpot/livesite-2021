@@ -16,8 +16,8 @@
 .mentor-modal .modal-content {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   padding: 32px;
   border-radius: 24px;
   border: none;
@@ -75,7 +75,8 @@
   width: 24px;
 }
 
-.mentor-modal__close:before, .mentor-modal__close:after {
+.mentor-modal__close:before,
+.mentor-modal__close:after {
   position: absolute;
   left: 15px;
   content: " ";
@@ -86,11 +87,11 @@
 
 .mentor-modal__close:before {
   -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .mentor-modal__close:after {
   -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
+  transform: rotate(-45deg);
 }
 /*# sourceMappingURL=mentors.css.map */

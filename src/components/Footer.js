@@ -3,8 +3,9 @@ import React from "react";
 const Footer = () => (
   <div className="footer">
     <div className="newsletter">
-  <a href="https://hackbeanpot.us10.list-manage.com/subscribe/post?u=a98050d47fdae2481521f0474&amp;id=dccd8c8431">Sign up for our Newsletter</a>
-
+      <a href="https://hackbeanpot.us10.list-manage.com/subscribe/post?u=a98050d47fdae2481521f0474&amp;id=dccd8c8431">
+        Sign up for our Newsletter
+      </a>
     </div>
     <div className="footer__socials">
       <a
@@ -48,7 +49,7 @@ const Footer = () => (
     {/*</div>*/}
     <div className="footer__legal">
       <p>HackBeanpot, Inc. is a registered 501(c)(3) organization. </p>
-              <a href="https://hackbeanpot.com/code-of-conduct">Code of Conduct</a>
+      <a href="https://hackbeanpot.com/code-of-conduct">Code of Conduct</a>
     </div>
   </div>
 );

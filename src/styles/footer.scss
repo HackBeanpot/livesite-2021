@@ -21,12 +21,12 @@
     height: 220px;
   }
 }
-.footer__legal, .newsletter {
+.footer__legal,
+.newsletter {
   display: block;
   text-align: center;
   a {
     color: $orange;
-    
   }
   a:hover {
     font-weight: bold;
@@ -34,7 +34,7 @@
   }
 }
 .newsletter {
-  padding-bottom:1.3rem;
+  padding-bottom: 1.3rem;
 }
 @media (max-width: 812px) {
   .footer {
