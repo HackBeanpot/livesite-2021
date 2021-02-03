@@ -29,12 +29,10 @@ const Team = () => {
 
   return (
     <div>
-      <Container className="mt-5">
+      <Container id="team" className="mt-5">
         <Row>
           <Col lg="6">
-            <h1 id="team" className="font-weight-bold">
-              Our Team
-            </h1>
+            <h1 className="font-weight-bold">Our Team</h1>
           </Col>
         </Row>
         <Row>

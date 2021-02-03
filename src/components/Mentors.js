@@ -10,7 +10,7 @@ const MentorModal = ({ mentor, setShow }) => {
     company,
     imageURL,
     availability = "",
-    expertise,
+    expertise = [],
     slack,
   } = mentor;
   const availabilityList = availability.split(", ");
@@ -90,13 +90,13 @@ export const Mentors = () => {
   const { data, isLoading } = useAirtableAPI("appexkZgUcQ9vucI9", "mentors");
 
   return (
-    <Container className="mt-5 mentors">
+    <Container id="mentors" className="mt-5 mentors">
       <Row>
         <Col>
-          <h1 id="mentors" className="font-weight-bold">
-            Mentors
-          </h1>
-          <p className="mentor-subheader">Click on a mentor's photo for more details</p>
+          <h1 className="font-weight-bold">Mentors</h1>
+          <p className="mentor-subheader">
+            Click on a mentor's photo for more details
+          </p>
         </Col>
       </Row>
       <Row>
