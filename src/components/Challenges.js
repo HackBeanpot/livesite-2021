@@ -48,10 +48,10 @@ const Challenges = () => {
                   <h2>Most Inclusive Hack:</h2>
                 </div>
                 <div className="carouselCaption">
-                  <p>Last year was full of social change, and it doesn’t need to stop there! We challenge you to continue the trend into 2021 by creating a hack that uses tech to promote social good, accessibility, or impact on the world around you.
-                    - Did you know there is a spec for web accessibility?
-                    - Your code doesn’t need to be a user-facing application!  Checkout this plugin that helps developers write accessible code.
-                    - Want to build an app for social good, but need inspiration?  Checkout Build4BlackLives, built by some of our own members     from HackBeanpot Core!
+                  <p>Last year was full of social change, and it doesn’t need to stop there! We challenge you to continue the trend into 2021 by creating a hack that uses tech to promote social good, accessibility, or impact on the world around you. <br/>
+                    - Did you know there <a href="https://www.w3.org/TR/wai-aria-1.1/">is a spec for web accessibility?</a> <br/>
+                    - Your code doesn’t need to be a user-facing application!  Checkout <a href="https://github.com/dequelabs/axe-core-npm/tree/develop/packages/react">this plugin that helps developers write accessible code.</a> <br/>
+                        - Want to build an app for social good, but need inspiration?  Checkout <a href="https://buildforblacklives.com/">Build4BlackLive </a>, built by some of our own members from HackBeanpot Core!<br/>
                   </p>
                 </div>
               </Col>
