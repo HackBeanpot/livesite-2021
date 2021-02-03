@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
 import {Col, Container, Row, Carousel} from 'react-bootstrap';
-import './challenges.scss';
 import GreenPeas from "../assets/greenpeas";
+import OnionCorn from "../assets/OnionCorn";
+import CelebratoryBoi from "../assets/CelebratoryBoi";
+import BeanstalkBoi from "../assets/BeanstalkBoi";
 const Challenges = () => {
   return (
     <div>
@@ -13,12 +15,12 @@ const Challenges = () => {
           </Col>
         </Row>
       </Container>
-      <Carousel interval={null}>
+      <Carousel interval={null} touch={true}>
         <Carousel.Item>
           <div className="carouselItem">
             <Row>
-              <Col md={{span:3, offset: 3}} className="carouselImage">
-                <GreenPeas/>
+              <Col className="carouselImage">
+                <GreenPeas id="GreenPeas"/>
               </Col>
               <Col>
                 <div className="carouselHeader">
@@ -35,6 +37,68 @@ const Challenges = () => {
           </div>
         </Carousel.Item>
 
+        <Carousel.Item>
+          <div className="carouselItem">
+            <Row>
+              <Col className="carouselImage">
+                <OnionCorn id="OnionCorn"/>
+              </Col>
+              <Col>
+                <div className="carouselHeader">
+                  <h2>Most Inclusive Hack:</h2>
+                </div>
+                <div className="carouselCaption">
+                  <p>Last year was full of social change, and it doesn’t need to stop there! We challenge you to continue the trend into 2021 by creating a hack that uses tech to promote social good, accessibility, or impact on the world around you.
+                    - Did you know there is a spec for web accessibility?
+                    - Your code doesn’t need to be a user-facing application!  Checkout this plugin that helps developers write accessible code.
+                    - Want to build an app for social good, but need inspiration?  Checkout Build4BlackLives, built by some of our own members     from HackBeanpot Core!
+                  </p>
+                </div>
+              </Col>
+            </Row>
+          </div>
+        </Carousel.Item>
+
+        <Carousel.Item>
+          <div className="carouselItem">
+            <Row>
+              <Col className="carouselImage">
+                <CelebratoryBoi id="CelebratoryBoi"/>
+              </Col>
+              <Col>
+                <div className="carouselHeader">
+                  <h2>Hack for Joy:</h2>
+                </div>
+                <div className="carouselCaption">
+                  <p>Everyone has their own unique hobbies and interests, such as gaming, rock climbing, knitting, or fishing.
+                    Whether it’s a hobby you picked up during quarantine or a life-long passion, at HackBeanpot, we challenge you to build whatever your heart desires!
+                    Encouraging passion and creativity, we present to you, Hack for Joy!
+                  </p>
+                </div>
+              </Col>
+            </Row>
+          </div>
+        </Carousel.Item>
+
+        <Carousel.Item>
+          <div className="carouselItem">
+            <Row>
+              <Col className="carouselImage">
+                <BeanstalkBoi id="BeanstalkBoi"/>
+              </Col>
+              <Col>
+                <div className="carouselHeader">
+                  <h2>Mystery Prizes:</h2>
+                </div>
+                <div className="carouselCaption">
+                  <p>There are a few ~mysterious~ challenges that we'll reveal at the closing ceremony.
+                    Just be yourself, build a cool project, and you and your team might end up winning a themed prize at the end!
+                  </p>
+                </div>
+              </Col>
+            </Row>
+          </div>
+        </Carousel.Item>
       </Carousel>
     </div>
 

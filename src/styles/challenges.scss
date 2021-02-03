@@ -1,0 +1,76 @@
+.carouselItem{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1B214E;
+  padding-bottom: 4vw;
+  padding-top: 4vw;
+}
+.carouselCaption{
+  @media (max-width: $sm){
+    margin-left: 3vw;
+    width: 70vw;
+  }
+  @media (max-width: $md) and (min-width: $sm){
+    width: 45vw;
+    margin-left: 10vw;
+  }
+  color: white;
+  float: left;
+  width: 33vw;
+}
+.carouselHeader{
+  position: relative;
+  margin-bottom: 3vw;
+}
+.carouselItem h2{
+  @media (max-width: $sm){
+    font-size: 5vw;
+  }
+  @media (max-width: $md) and (min-width: $sm){
+    font-size: 4vw;
+    margin-left: 3vw;
+  }
+  font-size: 3vw;
+  width: 100%;
+  color: white;
+}
+.carouselItem p{
+  @media (max-width: $sm){
+    font-size: 3vw;
+    margin-bottom: 2rem;
+  }
+}
+.carouselImage {
+  @media (max-width: $md){
+    display:none;
+  }
+  display: flex;
+  margin-right: 1vw;
+  align-items: center;
+  justify-content: flex-end;
+}
+#GreenPeas{
+  height: 28vw;
+  width: 28vw;
+}
+
+#BeanstalkBoi{
+  height: 28vw;
+  width: 28vw;
+  position: relative;
+  @media (min-width: $xxl){
+    bottom: 104px;
+  }
+  bottom: 60px;
+}
+
+#OnionCorn{
+  height: 28vw;
+  width: 28vw;
+}
+
+#CelebratoryBoi{
+  height: 28vw;
+  width: 28vw;
+}
