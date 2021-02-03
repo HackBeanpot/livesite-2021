@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Col, Container, Row, Carousel} from 'react-bootstrap';
 import GreenPeas from "../assets/greenpeas";
 import OnionCorn from "../assets/OnionCorn";
