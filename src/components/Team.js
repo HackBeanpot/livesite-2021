@@ -46,19 +46,17 @@ const Team = () => {
           </Col>
           <Col className="ml-3">
             <h2 id="team" className="pt-5">
-              About Us
+              Meet the team behind HackBeanpot
             </h2>
             <p>
-              This is a blub about the core team and why we love hackbeanpot and
-              organizing the event! This is a blub about the core team and why
-              we love hackbeanpot and organizing the event!
-            </p>
-            <p>
-              This is a blub about how we love to connect with hackers during
-              the event and would love to answer any questions and talk to as
-              many people as possible throughout the event. We should encourage
-              them to reach out to us and not hesitate to contact us for any
-              reason during the duration of the event.
+              Hey, campers! We are so excited to bring you on this virtual camping adventure this 
+              year for HackBeanpot 2021. The HackBeanpot Core Team works behind the scenes all 
+              year long to make everything come together for this special event. We are a group 
+              of 20 driven students from universities in the Boston area who aim to make technical 
+              experience and knowledge accessible to anyone who's interested. Meet the different 
+              teams - Design, Social Media &amp; Outreach, Sponsorship, and Tech - that help make this 
+              event happen! Also, we’d love if you were able to answer our feedback form below to 
+              help us in improving this event for future hackers!
             </p>
           </Col>
         </Row>
