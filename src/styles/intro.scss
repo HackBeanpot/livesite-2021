@@ -14,19 +14,3 @@
     text-decoration: underline;
   }
 }
-
-.slack {
-  line-height: 1.2;
-
-  &__title {
-    color: $mustard-yellow;
-    font-weight: 600;
-    margin-bottom: 0;
-  }
-
-  &__link {
-    font-size: 30px;
-    text-decoration: underline;
-    word-wrap: break-word;
-  }
-}

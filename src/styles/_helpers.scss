@@ -4,13 +4,14 @@
 
 .primary-cta {
   color: white;
+  padding: 15px;
+  border-radius: 10px;
   background-color: $orange;
   min-width: 150px;
 
   &:hover {
     color: white;
     background-color: $orange;
-    min-width: 150px;
 
     &:hover {
       color: white;
