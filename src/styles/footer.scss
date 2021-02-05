@@ -1,0 +1,43 @@
+.footer {
+  padding: 2em 0;
+  &__socials {
+    text-align: center;
+    a {
+      padding: 0 0.7rem;
+      color: $dark-blue;
+    }
+
+    &__row {
+      flex-direction: row;
+    }
+
+    &__column {
+      text-align: center;
+    }
+  }
+  svg {
+    width: 220px;
+    height: 220px;
+  }
+}
+.footer__legal,
+.newsletter {
+  display: block;
+  text-align: center;
+  a {
+    color: $orange;
+  }
+  a:hover {
+    font-weight: bold;
+    text-decoration: none;
+  }
+}
+.newsletter {
+  padding-bottom: 1.3rem;
+}
+@media (max-width: 812px) {
+  .footer {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
