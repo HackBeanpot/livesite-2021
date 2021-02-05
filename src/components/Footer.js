@@ -46,7 +46,6 @@ const Footer = () => (
       </a>
     </div>
 
-    {/*</div>*/}
     <div className="footer__legal">
       <p>HackBeanpot, Inc. is a registered 501(c)(3) organization. </p>
       <a href="https://hackbeanpot.com/code-of-conduct">Code of Conduct</a>
