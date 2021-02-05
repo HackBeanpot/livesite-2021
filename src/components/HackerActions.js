@@ -25,7 +25,7 @@ const HackerActions = () => (
           love hackbeanpot and organizing the event!
         </p>
         <a
-          class="btn primary-cta"
+          className="btn primary-cta"
           role="button"
           href={"https://forms.gle/a7HFpsRLYkVw1U9c8"}
           target="_blank"

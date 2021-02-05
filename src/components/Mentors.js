@@ -48,7 +48,7 @@ const MentorModal = ({ mentor, setShow }) => {
             </div>
             <a
               href={slack}
-              class="btn primary-cta"
+              className="btn primary-cta"
               role="button"
               target="_blank"
               rel="noopener noreferrer"
