@@ -23,11 +23,10 @@ const RelevantCard = ({
           <Card.Title>{title}</Card.Title>
           <Card.Subtitle>
             {timeText(displayStartTime, displayEndTime)}
+            {isTimeBetween(displayStartTime, displayEndTime) && <span className="live-dot" title="Happening now"></span>}
           </Card.Subtitle>
           <Card.Text>{body}</Card.Text>
-          <a className="btn" href={buttonURL} role="button">
-            {buttonText}
-          </a>
+          {buttonText && <a className="btn" href={buttonURL} role="button">{buttonText}</a>}
         </Card.Body>
       </Card>
     </Col>
@@ -50,7 +49,10 @@ function isTimeBetween(start, end) {
   // used different date to capture screenshots
   // using now means all will be filtered out
   const currentTime = new Date();
-  return isWithinInterval(currentTime, {
+  // return false if either the start or end is undefined
+  const range_defined = start !== undefined && end !== undefined;
+  // check if the current time is within the given interval
+  return range_defined && isWithinInterval(currentTime, {
     start: parseISO(start),
     end: parseISO(end),
   });

@@ -105,7 +105,8 @@ const Schedule = () => {
                                 <div className="schedule__responsive">
                                   <div className="schedule__category">
                                     <p className="schedule__category__time">
-                                      {event.time}
+                                      { event.time }
+                                      { event.isLive && <span className="live-dot" title="Happening now"></span>}
                                     </p>
                                     <p
                                       className="schedule__category__type"

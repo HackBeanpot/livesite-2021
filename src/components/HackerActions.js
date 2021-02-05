@@ -27,7 +27,7 @@ const HackerActions = () => (
           fun time with a group of inspiring and friendly people!
         </p>
         <a
-          class="btn primary-cta"
+          className="btn primary-cta"
           role="button"
           href={"https://forms.gle/8FAHBhLtEnu7rR7fA"}
           target="_blank"

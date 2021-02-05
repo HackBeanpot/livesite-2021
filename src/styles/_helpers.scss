@@ -35,3 +35,12 @@
     line-height: 16px;
   }
 }
+
+.live-dot {
+  margin-left: 10px;
+  height: 15px;
+  width: 15px;
+  background-color: $bright-green;
+  border-radius: 50%;
+  display: inline-block;
+}
