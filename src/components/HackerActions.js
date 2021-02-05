@@ -29,7 +29,7 @@ const HackerActions = () => (
         <a
           class="btn primary-cta"
           role="button"
-          href={"https://forms.gle/a7HFpsRLYkVw1U9c8"}
+          href={"https://forms.gle/8FAHBhLtEnu7rR7fA"}
           target="_blank"
           rel="noreferrer"
         >
