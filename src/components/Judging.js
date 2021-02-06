@@ -1,8 +1,8 @@
 import React from "react";
 import { useState } from "react";
 import SelectSearch from "react-select-search";
-import Judges from "../data/judges.json";
-import Projects from "../data/projects.json";
+import Judges from "../data/judging/judges.json";
+import Projects from "../data/judging/projectData.json";
 
 const Judging = () => {
   const [currentPage, setCurrentPage] = useState("who-are-you");
@@ -32,8 +32,8 @@ const Judging = () => {
     } else {
       return Projects.map((p) => {
         return {
-          name: p["teamName"],
-          value: p["teamName"],
+          name: p["projectName"],
+          value: p["projectName"],
         };
       });
     }
