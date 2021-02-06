@@ -5,12 +5,18 @@ import Judges from "../data/judges.json";
 import Projects from "../data/projects.json";
 
 const Judging = () => {
-  const [currentPage, setCurrentPage] = useState("whoAreYou");
+  const [currentPage, setCurrentPage] = useState("who-are-you");
   const [personType, setPersonType] = useState("judge");
+  const [selectedPerson, setSelectedPerson] = useState("");
 
   const setPersonAndPage = (person) => {
     setCurrentPage("find-person");
     setPersonType(person);
+  };
+
+  const setSelectedAndPage = (e) => {
+    setSelectedPerson(e);
+    setCurrentPage("schedule");
   };
 
   const getOptions = () => {
@@ -33,7 +39,7 @@ const Judging = () => {
     }
   };
 
-  if (currentPage === "whoAreYou") {
+  if (currentPage === "who-are-you") {
     return (
       <div className="judging-who-are-you">
         <p className="who-are-you-title">Who are you?</p>
@@ -59,9 +65,22 @@ const Judging = () => {
         <SelectSearch
           className="judging-find-dropdown"
           options={getOptions()}
+          onChange={(e) => setSelectedAndPage(e)}
           search
           placeholder="Select your name"
         />
+      </div>
+    );
+  } else if (currentPage === "schedule") {
+    return (
+      <div className="judging-schedule">
+        <p className="schedule-title">{`${selectedPerson}'s Schedule`}</p>
+        <button
+          className="new-schedule-button"
+          onClick={() => setCurrentPage("who-are-you")}
+        >
+          Find Another Schedule
+        </button>
       </div>
     );
   }

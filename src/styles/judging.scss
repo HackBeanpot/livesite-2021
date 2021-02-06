@@ -3,6 +3,7 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+  height: 100vh;
 }
 
 .who-are-you-title {
@@ -24,6 +25,7 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+  height: 100vh;
 }
 
 .welcome-title {
@@ -116,4 +118,27 @@
 .judging-find-dropdown__option.is-selected:hover {
   background: #2eb378;
   color: #fff;
+}
+
+.judging-schedule {
+  padding: 40px 100px;
+  background: #e5e5e5;
+  height: 100vh;
+}
+
+.schedule-title {
+  font-weight: bold;
+  font-size: 36px;
+  color: $dark-blue;
+}
+
+.new-schedule-button {
+  background: $dark-blue;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
