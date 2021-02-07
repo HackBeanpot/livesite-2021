@@ -34,18 +34,24 @@ const WelcomeIntro = () => {
               </Col>
             </Row>
             <Row>
-              <Col md={{offset: 2}}>
+              <Col md={{span: 3.5, offset: 3}}>
               <img src={JellyBean} alt="Jelly Bean"/>
+              </Col>
+              <Col md={3}>
               <img src={CocoaBean} alt="Cocoa Bean"/>
               </Col>
               </Row>
               <Row>
-              <Col md={{offset: 1}}>
+              <Col md={{span: 3.5, offset: 1}}>
               <img src={GardenBean} alt="Garden Bean"/>
+              </Col>
+              <Col md={3.5}>              
               <img src={SoyBean} alt="Soy Bean"/>
+              </Col>
+              <Col md={3.5}>
               <img src={MagicBean} alt="Magic Bean"/>
               </Col>        
-              </Row>
+            </Row>
             </div>
         </Col>
         
