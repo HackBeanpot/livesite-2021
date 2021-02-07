@@ -1,52 +1,51 @@
 import React from "react";
 import { Col, Container, Row, Button } from "react-bootstrap";
-import Cabin1 from "../assets/Cabin1.svg";
-import Cabin2 from "../assets/Cabin2.svg";
-import Cabin3 from "../assets/Cabin3.svg";
-import Cabin4 from "../assets/Cabin4.svg";
+import CocoaBean from "../assets/CocoaBean.svg";
+import JellyBean from "../assets/JellyBean.svg";
+import GardenBean from "../assets/GardenBean.svg";
+import SoyBean from "../assets/SoyBean.svg";
+import MagicBean from "../assets/MagicBean.svg";
+import CabinCupLogo from "../assets/CabinCupLogo.svg";
+
+
 import '../styles/cabincup.scss';
 
 
 const WelcomeIntro = () => {
   return (
-    <Container fluid className="mt-5">
+    <Container>
       <Row>
-        <Col>
+        <Col md={6}>
           <div className="cabin-cup">
-            <Row className= "mt-5 pt4">
-              <Col lg="4">
-                <h2>Cabin Cup Standings</h2> 
-                <br />
+            <Row>
+              <Col md={{span: 7, offset: 1}}>
                 <div className="cabin-cup-intro">
-                  <p className= "cabin-intro">
+                <h2>Cabin Cup</h2> 
+                  <p>
                   Earn points for your cabin by bonding with you cabin mates 
                   and participating in cabin events! Use your points in the end 
                   to enter raffles for awesome prizes! 
                  </p>
-                  <a
-                  className="cabin-info"
-                  href={"https://hackbeanpot.com"}>
-                  learn more...
-                  </a>
-                  <br />
-                  <br />
-                  <Button className="score-sheet"> Official Score Sheet </Button>
                 </div>
-              </Col>  
-              <Col lg="4">
-                <img className="cabins" src={Cabin1} alt="cabin1 icon" />
-                <img className="cabins" src={Cabin3} alt="cabin3 icon" />
+                <br/>
+              </Col> 
+              <Col className= "cabin-logo" md={{span: 3, offset: 1}}>
+              <img src={CabinCupLogo} alt="Cabin cup logo"/>
               </Col>
-              <Col lg="3">
-                <img className="cabins" src={Cabin2} alt="cabin2 icon" />
-                <img className="cabins" src={Cabin4} alt="cabin4 icon" />
-              </Col>
-              
-              {/* <Col>
-             <img src={Cabin5} alt="cabin5 icon" />
-              </Col> */}
-              
             </Row>
+            <Row>
+              <Col md={{offset: 2}}>
+              <img src={JellyBean} alt="Jelly Bean"/>
+              <img src={CocoaBean} alt="Cocoa Bean"/>
+              </Col>
+              </Row>
+              <Row>
+              <Col md={{offset: 1}}>
+              <img src={GardenBean} alt="Garden Bean"/>
+              <img src={SoyBean} alt="Soy Bean"/>
+              <img src={MagicBean} alt="Magic Bean"/>
+              </Col>        
+              </Row>
             </div>
         </Col>
         

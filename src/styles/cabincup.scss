@@ -1,11 +1,8 @@
 
-.cabins{
-    padding-bottom: 10px;
-} 
+
 h2{
     color: white;
     font-weight: bold;
-    padding-left: 60px;
     padding-top: 20px;
 }
 
@@ -19,11 +16,13 @@ h5{
 
 .cabin-cup-intro {
 color: white;
-padding-left: 60px;
 }
 
 .cabin-cup{
     background-color: #1b214e;
-    border-radius: 0px;
-    border-radius: 20px;
+    border-radius: 15px;
+}
+
+.cabin-logo{
+    padding-top: 10px;
 }
