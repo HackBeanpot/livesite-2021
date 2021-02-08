@@ -151,25 +151,24 @@ export const Mentors = () => {
         </Col>
       </Row>
       <Row>
-        <h4>Filter: </h4>
-        <select id="mentors-position-filter" className="mentor-filter" onChange={handleChange}>
-          <option selected="selected" value="all">Positions (all)</option>
+        <select id="mentors-position-filter" className="mentor-filter custom-select" onChange={handleChange}>
+          <option selected value="all">Positions (all)</option>
           {
             positions.map(p => (
               <option value={p}>{p}</option>
             ))
           }
         </select>
-        <select id="mentors-expertise-filter" className="mentor-filter" onChange={handleChange}>
-          <option selected="selected" value="all">Expertise (all)</option>
+        <select id="mentors-expertise-filter" className="mentor-filter custom-select" onChange={handleChange}>
+          <option selected value="all">Expertise (all)</option>
           {
             expertises.map(e => (
               <option value={e}>{e}</option>
             ))
           }
         </select>
-        <select id="mentors-company-filter" className="mentor-filter" onChange={handleChange}>
-          <option selected="selected" value="all">Companies (all)</option>
+        <select id="mentors-company-filter" className="mentor-filter custom-select" onChange={handleChange}>
+          <option selected value="all">Companies (all)</option>
           {
             companies.map(c => (
               <option value={c}>{c}</option>

@@ -16,11 +16,6 @@
   }
 }
 
-.mentor-filter {
-  border-radius: 10%;
-  margin: 1em;
-}
-
 .mentor-modal {
   .modal-dialog {
     margin: auto;
@@ -137,4 +132,14 @@
   &__close:after {
     transform: rotate(-45deg);
   }
+}
+
+.mentor-filter {
+  border-radius: 10px;
+  border: none;
+  width: auto;
+  height: 60px;
+  margin: 1em;
+  background-color: $teal-blue;
+  color: white;
 }
