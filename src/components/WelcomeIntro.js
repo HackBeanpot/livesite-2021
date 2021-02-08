@@ -9,7 +9,7 @@ const WelcomeIntro = () => {
           <div className="cabin">Cabin Intro</div>
         </Col>
         <Col>
-          <h1 className="font-weight-bold">Welcome to HackBeanpot 2021!</h1>
+          <h2 className="font-weight-bold">Welcome to HackBeanpot 2021!</h2>
           <p className="introText">
             At HackBeanpot 2021, we aim to create a welcoming “campsite” by
             emphasizing our focus on exploration, creativity, and respect for
@@ -35,16 +35,24 @@ const WelcomeIntro = () => {
             <br />
             <br />
           </p>
-          <div className="slack">
-            <p className="slack__title">SLACK WORKSPACE</p>
+          <div>
             <a
-              className="slack__link"
+              className="btn primary-cta mr-3 mt-2"
               // TODO: Change this link to the actual slack link when it's available
-              href={"https://hackbeanpot.com"}
+              href="#coming-soon"
               target="_blank"
               rel="noreferrer"
             >
-              slackbeanpot2021.slack.com
+              Join our Slack
+            </a>
+            <a
+              className="btn primary-cta mt-2"
+              // TODO: Check that this is the correct link once gathertown is set up
+              href="https://gather.town/hackbeanpot2021"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Visit the Hacker Lounge
             </a>
           </div>
         </Col>

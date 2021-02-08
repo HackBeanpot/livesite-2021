@@ -20,12 +20,10 @@ const ResourceCard = ({ name, link, imageURL }) => (
 );
 
 const Resources = () => (
-  <Container className="mt-5">
+  <Container id="resources" className="mt-5">
     <Row>
       <Col>
-        <h1 id="resources" className="font-weight-bold">
-          Resources
-        </h1>
+        <h1 className="font-weight-bold">Resources</h1>
       </Col>
     </Row>
     <Row>

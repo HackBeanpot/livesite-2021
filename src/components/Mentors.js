@@ -10,7 +10,7 @@ const MentorModal = ({ mentor, setShow }) => {
     company,
     imageURL,
     availability = "",
-    expertise,
+    expertise = [],
     slack,
   } = mentor;
   const availabilityList = availability.split(", ");
@@ -48,7 +48,7 @@ const MentorModal = ({ mentor, setShow }) => {
             </div>
             <a
               href={slack}
-              class="btn primary-cta"
+              className="btn primary-cta"
               role="button"
               target="_blank"
               rel="noopener noreferrer"
@@ -141,13 +141,13 @@ export const Mentors = () => {
   // console.log(JSON.parse(JSON.stringify(data)))
 
   return (
-    <Container className="mt-5 mentors">
+    <Container id="mentors" className="mt-5 mentors">
       <Row>
         <Col>
-          <h1 id="mentors" className="font-weight-bold">
-            Mentors
-          </h1>
-          <p>Click on a mentor's photo for more details</p>
+          <h1 className="font-weight-bold">Mentors</h1>
+          <p className="mentor-subheader">
+            Click on a mentor's photo for more details
+          </p>
         </Col>
       </Row>
       <Row>

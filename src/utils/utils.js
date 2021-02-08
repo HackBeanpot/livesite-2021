@@ -18,6 +18,7 @@ export const eventsExtractor = (attributes) => {
     ? `${startTime}-${timeExtractor(attributes.endTime)}`
     : startTime;
   let event = {
+    description: attributes.description,
     time: time,
     type: attributes.type,
     theme: colorTheme(attributes.type),
@@ -25,6 +26,7 @@ export const eventsExtractor = (attributes) => {
     location: attributes.link,
     audience: attributes.audience || "",
     company: attributes.company || "",
+    isLive: isLive(attributes),
   };
 
   return event;
@@ -59,3 +61,12 @@ export const timeExtractor = (time) => {
 
   return `${((hours + 11) % 12) + 1}:${formattedMins} ${suffix}`;
 };
+
+export const isLive = (data) => {
+  const currentTime = new Date();
+  const startTime = new Date(data.startTime);
+  const endTime = data.endTime ?
+    new Date(data.endTime):
+    null
+  return (endTime !== null && endTime !== undefined) && currentTime <= endTime && currentTime >= startTime;
+}

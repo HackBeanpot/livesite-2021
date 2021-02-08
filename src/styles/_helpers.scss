@@ -4,13 +4,14 @@
 
 .primary-cta {
   color: white;
+  padding: 15px;
+  border-radius: 10px;
   background-color: $orange;
   min-width: 150px;
 
   &:hover {
     color: white;
     background-color: $orange;
-    min-width: 150px;
 
     &:hover {
       color: white;
@@ -34,4 +35,13 @@
     font-size: 14px;
     line-height: 16px;
   }
+}
+
+.live-dot {
+  margin-left: 10px;
+  height: 15px;
+  width: 15px;
+  background-color: $bright-green;
+  border-radius: 50%;
+  display: inline-block;
 }

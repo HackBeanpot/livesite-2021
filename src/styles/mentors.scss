@@ -1,9 +1,19 @@
+.mentor-subheader {
+  font-size: 20px;
+  font-weight: 400;
+  color: $mustard-yellow;
+}
+
 .mentor-card {
   cursor: pointer;
 }
 
 .mentor-modal.show {
   display: flex;
+
+  @media (max-width: $md) {
+    display: block;
+  }
 }
 
 .mentor-filter {
@@ -23,6 +33,12 @@
     border-radius: 24px;
     border: none;
     position: relative;
+
+    @media (max-width: $md) {
+      flex-direction: column;
+      padding: 32px 16px 16px;
+      width: 100%;
+    }
   }
 
   .mentor-img {
@@ -30,6 +46,10 @@
     height: auto;
     margin-bottom: 16px;
     border-radius: 16px;
+
+    @media (max-width: $md) {
+      width: 100%;
+    }
   }
 
   .mentor-name {
@@ -51,20 +71,38 @@
     font-weight: bold;
     text-transform: uppercase;
     margin: 8px 0 8px;
+
+    @media (max-width: $md) {
+      font-size: 16px;
+      margin: 0;
+    }
   }
 
   &__info {
     margin-left: 48px;
     min-width: 200px;
 
+    @media (max-width: $md) {
+      margin-left: 8px;
+      margin-top: 8px;
+    }
+
     &-section {
       margin-bottom: 24px;
+
+      @media (max-width: $md) {
+        margin-bottom: 8px;
+      }
     }
   }
 
   &__info ul {
     list-style-type: none;
     padding: 0;
+
+    @media (max-width: $md) {
+      margin-bottom: 8px;
+    }
   }
 
   &__close {
@@ -74,6 +112,12 @@
     cursor: pointer;
     height: 24px;
     width: 24px;
+
+    @media (max-width: $md) {
+      top: 8px;
+      height: 12px;
+      width: 12px;
+    }
   }
 
   &__close:before,
