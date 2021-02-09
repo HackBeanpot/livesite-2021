@@ -26,9 +26,6 @@ const AdditionalAttributes = ({ event }) => {
           {event.company}
         </p>
       </div>
-      <div className="schedule__calendar">
-        <img src={CalendarIcon} alt="calendar icon" />
-      </div>
     </div>
   );
 };
@@ -53,7 +50,10 @@ const Schedule = () => {
     <Container id="schedule" className="schedule mt-5">
       <Row>
         <Col>
-          <h1 className="font-weight-bold">Event Schedule</h1>
+          <h1 className="font-weight-bold">
+            Event Schedule
+            <i className="far fa-calendar-plus schedule__calendar"></i>
+          </h1>
         </Col>
       </Row>
       {isLoading || data.length === 0 ? (
@@ -141,8 +141,7 @@ const Schedule = () => {
                             </Accordion.Toggle>
                             <Accordion.Collapse eventKey={idx.toString()}>
                               <Card.Body>
-                                <strong>Description:&nbsp;</strong>
-                                {event.description}
+                                <p>{event.description}</p>
                                 {width < 1000 && (
                                   <AdditionalAttributes event={event} />
                                 )}
