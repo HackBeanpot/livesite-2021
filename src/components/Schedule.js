@@ -57,7 +57,7 @@ const Schedule = () => {
         <Col>
           <button type="button" className="btn secondary-cta schedule__export">
             <img src={CalendarIcon} className="schedule__calendar" alt="Calendar Icon" />
-            Export to Calendar
+            Subscribe to Calendar
           </button>
         </Col>
       </Row>
