@@ -178,7 +178,7 @@ export const Mentors = () => {
       </Row>
       <Row>
         {isLoading && <Spinner animation='border' variant='primary' /> /* TODO import custom styled spinner component*/} 
-        {!data.length && <div>Nothing to see here...</div> /* TODO handle empty array in case of API error (or if its actually empty for any reason)*/}
+        {!data.length && !isLoading && <div>Nothing to see here...</div> /* TODO handle empty array in case of API error (or if its actually empty for any reason)*/}
         {data.map((mentor) => (
             shouldShowMentor(mentor) // true
             &&
