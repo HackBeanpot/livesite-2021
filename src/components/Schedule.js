@@ -50,9 +50,7 @@ const Schedule = () => {
     <Container id="schedule" className="schedule mt-5">
       <Row>
         <Col>
-          <h1 className="font-weight-bold">
-            Event Schedule
-          </h1>
+          <h1>Event Schedule</h1>
         </Col>
         <Col>
           <button type="button" className="btn secondary-cta schedule__export">
@@ -121,12 +119,12 @@ const Schedule = () => {
                                     </p>
                                   </div>
                                   <div className="schedule__location">
-                                    <p
+                                    <h3
                                       className="schedule__location__title"
                                       title={event.title}
                                     >
                                       {event.title}
-                                    </p>
+                                    </h3>
                                     <a
                                       className="schedule__location__zoom"
                                       href={event.location}

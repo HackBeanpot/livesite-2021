@@ -20,7 +20,7 @@ const RelevantCard = ({
         className={`relevant ${type === "Event" ? "blue-card" : "orange-card"}`}
       >
         <Card.Body>
-          <Card.Title>{title}</Card.Title>
+          <Card.Title><h3>{title}</h3></Card.Title>
           <Card.Subtitle>
             {timeText(displayStartTime, displayEndTime)}
             {isTimeBetween(displayStartTime, displayEndTime) && <span className="live-dot" title="Happening now"></span>}
@@ -65,7 +65,7 @@ const RelevantRightNow = () => {
     <Container className="mt-5">
       <Row>
         <Col>
-          <h1 id="relevant" className="font-weight-bold">
+          <h1 id="relevant">
             Relevant Right Now
           </h1>
         </Col>

@@ -7,7 +7,19 @@ body {
 
   h1 {
     color: $dark-green;
-    font-weight: 48px;
+    font-size: 60px;
+    margin-bottom: 2rem;
+    font-weight: bold;
+  }
+
+  h2 {
+    font-size: 40px;
+    font-weight: bold;
+  }
+
+  h3 {
+    font-size: 20px;
+    font-weight: bold;
   }
 
   .mt-5.container {
