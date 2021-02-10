@@ -52,8 +52,13 @@ const Schedule = () => {
         <Col>
           <h1 className="font-weight-bold">
             Event Schedule
-            <i className="far fa-calendar-plus schedule__calendar"></i>
           </h1>
+        </Col>
+        <Col>
+          <button type="button" className="btn secondary-cta schedule__export">
+            <img src={CalendarIcon} className="schedule__calendar" alt="Calendar Icon" />
+            Export to Calendar
+          </button>
         </Col>
       </Row>
       {isLoading || data.length === 0 ? (

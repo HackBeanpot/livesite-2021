@@ -163,9 +163,15 @@
     }
   }
 
+  &__export {
+    float: right;
+    font-weight: 500;
+    font-size: 18px;
+  }
+
   &__calendar {
-    margin-left: 20px;
-    color: $green;
+    height: 35px;
+    margin-right: 10px;
   }
 }
 
@@ -183,6 +189,7 @@
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
     font-weight: 500;
+    font-size: 18px;
     margin-right: 3px;
     padding: 0.7rem 5rem;
   }

@@ -2,22 +2,25 @@
 // CTA Buttons
 // ---------------------------------------------------------------------------
 
-.primary-cta {
+@mixin button {
   color: white;
   padding: 15px;
   border-radius: 10px;
-  background-color: $orange;
   min-width: 150px;
 
   &:hover {
     color: white;
-    background-color: $orange;
-
-    &:hover {
-      color: white;
-      background-color: $orange;
-    }
   }
+}
+
+.primary-cta {
+  @include button;
+  background-color: $orange;
+}
+
+.secondary-cta {
+  @include button;
+  background-color: $teal-blue;
 }
 
 .card {
