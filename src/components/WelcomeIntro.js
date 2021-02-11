@@ -1,13 +1,61 @@
 import React from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Row} from "react-bootstrap";
+import CocoaBean from "../assets/CocoaBean.svg";
+import JellyBean from "../assets/JellyBean.svg";
+import GardenBean from "../assets/GardenBean.svg";
+import SoyBean from "../assets/SoyBean.svg";
+import MagicBean from "../assets/MagicBean.svg";
+import CabinCupLogo from "../assets/CabinCupLogo.svg";
+
+
+import '../styles/cabincup.scss';
+
 
 const WelcomeIntro = () => {
   return (
-    <Container className="mt-5">
+    <Container>
       <Row>
-        <Col>
-          <div className="cabin">Cabin Intro</div>
+        <Col md={6}>
+          <div className="cabin-cup">
+            <Row>
+              <Col md={{span: 7, offset: 1}}>
+                <div className="cabin-cup-intro">
+                <h2>Cabin Cup</h2> 
+                  <p>
+                  Earn points for your cabin by bonding with you cabin mates 
+                  and participating in cabin events! Use your points in the end 
+                  to enter raffles for awesome prizes! 
+                 </p>
+                </div>
+                <br/>
+              </Col> 
+              <Col className= "cabin-logo" md={{span: 3, offset: 1}}>
+              <img src={CabinCupLogo} alt="Cabin cup logo"/>
+              </Col>
+            </Row>
+            <Row>
+              <Col md={{span: 3.5, offset: 3}}>
+              <img src={JellyBean} alt="Jelly Bean"/>
+              </Col>
+              <Col md={3}>
+              <img src={CocoaBean} alt="Cocoa Bean"/>
+              </Col>
+            </Row>
+            <Row>
+              <Col md={{span: 3.5, offset: 1}}>
+              <img src={GardenBean} alt="Garden Bean"/>
+              </Col>
+              <Col md={3.5}>              
+              <img src={SoyBean} alt="Soy Bean"/>
+              </Col>
+              <Col md={3.5}>
+              <img src={MagicBean} alt="Magic Bean"/>
+              </Col>        
+            </Row>
+            
+            </div>
         </Col>
+        
         <Col>
           <h2 className="font-weight-bold">Welcome to HackBeanpot 2021!</h2>
           <p className="introText">
