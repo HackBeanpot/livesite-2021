@@ -5,9 +5,9 @@ import { ResourceItems } from "../data/resources";
 // Define the resource card object
 const ResourceCard = ({ name, link, image, imageALT }) => (
   <Col md="3">
-       <a href={link} target="_blank" rel="noreferrer">
+       <a href={link} target="_blank" rel="noreferrer" class="card-link">
       <Card className="resources__rounded-card">
-         <h2 className="resources__card-label"> {name} </h2>
+         <label className="resources__card-label"> {name} </label>
         <Card.Img
           variant="bottom"
           src={image}
