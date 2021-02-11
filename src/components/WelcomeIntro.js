@@ -7,11 +7,26 @@ import SoyBean from "../assets/SoyBean.svg";
 import MagicBean from "../assets/MagicBean.svg";
 import CabinCupLogo from "../assets/CabinCupLogo.svg";
 
+import useAirtableAPI from "../hooks/api-hook";
 
-import '../styles/cabincup.scss';
 
 
 const WelcomeIntro = () => {
+  const { data, isLoading } = useAirtableAPI("appLHUnzVRxpj7Nx1", "Raffle");
+  console.log(data);
+  var cabinPoints = {
+    "Jelly Beans": 0,
+    "Cocoa Beans": 0,
+    "Soy Beans": 0,
+    "Garden Beans": 0,
+    "Magic Beans": 0,
+  }
+
+  data.forEach(data => {
+    var cabin = data.fields["Cabins"];
+    cabinPoints[cabin] += 1;
+  })
+  console.log(cabinPoints);
   return (
     <Container>
       <Row>
@@ -35,20 +50,35 @@ const WelcomeIntro = () => {
             </Row>
             <Row>
               <Col md={{span: 3.5, offset: 3}}>
+              <p className= "beanPoints">
+              {cabinPoints["Jelly Beans"]}
+              </p>
               <img src={JellyBean} alt="Jelly Bean"/>
               </Col>
               <Col md={3}>
+              <p className= "beanPoints">
+              {cabinPoints["Cocoa Beans"]}
+              </p>
               <img src={CocoaBean} alt="Cocoa Bean"/>
               </Col>
             </Row>
             <Row>
               <Col md={{span: 3.5, offset: 1}}>
+              <p className= "beanPoints">
+              {cabinPoints["Garden Beans"]}
+              </p>
               <img src={GardenBean} alt="Garden Bean"/>
               </Col>
-              <Col md={3.5}>              
+              <Col md={3.5}>   
+              <p className= "beanPoints">
+              {cabinPoints["Soy Beans"]}
+              </p>           
               <img src={SoyBean} alt="Soy Bean"/>
               </Col>
               <Col md={3.5}>
+              <p className= "beanPoints">
+              {cabinPoints["Magic Beans"]}
+              </p>
               <img src={MagicBean} alt="Magic Bean"/>
               </Col>        
             </Row>
@@ -57,7 +87,7 @@ const WelcomeIntro = () => {
         </Col>
         
         <Col>
-          <h2 className="font-weight-bold">Welcome to HackBeanpot 2021!</h2>
+          <h1 className="font-weight-bold">Welcome to HackBeanpot 2021!</h1>
           <p className="introText">
             At HackBeanpot 2021, we aim to create a welcoming “campsite” by
             emphasizing our focus on exploration, creativity, and respect for
@@ -83,24 +113,16 @@ const WelcomeIntro = () => {
             <br />
             <br />
           </p>
-          <div>
+          <div className="slack">
+            <p className="slack__title">SLACK WORKSPACE</p>
             <a
-              className="btn primary-cta mr-3 mt-2"
+              className="slack__link"
               // TODO: Change this link to the actual slack link when it's available
-              href="#coming-soon"
+              href={"https://hackbeanpot.com"}
               target="_blank"
               rel="noreferrer"
             >
-              Join our Slack
-            </a>
-            <a
-              className="btn primary-cta mt-2"
-              // TODO: Check that this is the correct link once gathertown is set up
-              href="https://gather.town/hackbeanpot2021"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Visit the Hacker Lounge
+              slackbeanpot2021.slack.com
             </a>
           </div>
         </Col>
