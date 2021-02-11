@@ -3,18 +3,19 @@ import { Card, Col, Container, Row } from "react-bootstrap";
 import { ResourceItems } from "../data/resources";
 
 // Define the resource card object
-const ResourceCard = ({ name, link, imageURL }) => (
-  <Col md="4">
-    <a href={link} target="_blank" rel="noreferrer">
+const ResourceCard = ({ name, link, image, imageALT }) => (
+  <Col md="3">
+       <a href={link} target="_blank" rel="noreferrer">
       <Card className="resources__rounded-card">
+         <h2 className="resources__card-label"> {name} </h2>
         <Card.Img
-          variant="top"
-          src={imageURL}
-          alt="Resource card"
+          variant="bottom"
+          src={image}
+          alt={imageALT}
           className="resources__rounded-card"
         />
       </Card>
-      <label className="resources__card-label"> {name} </label>
+      
     </a>
   </Col>
 );
@@ -31,7 +32,7 @@ const Resources = () => (
         <ResourceCard
           name={resource.name}
           link={resource.link}
-          imageURL={resource.imageURL}
+          image={resource.image}
         />
       ))}
     </Row>
