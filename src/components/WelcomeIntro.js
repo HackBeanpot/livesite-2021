@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Container, Row, Button } from "react-bootstrap";
+import { Col, Container, Row} from "react-bootstrap";
 import CocoaBean from "../assets/CocoaBean.svg";
 import JellyBean from "../assets/JellyBean.svg";
 import GardenBean from "../assets/GardenBean.svg";
@@ -40,8 +40,8 @@ const WelcomeIntro = () => {
               <Col md={3}>
               <img src={CocoaBean} alt="Cocoa Bean"/>
               </Col>
-              </Row>
-              <Row>
+            </Row>
+            <Row>
               <Col md={{span: 3.5, offset: 1}}>
               <img src={GardenBean} alt="Garden Bean"/>
               </Col>
@@ -52,6 +52,7 @@ const WelcomeIntro = () => {
               <img src={MagicBean} alt="Magic Bean"/>
               </Col>        
             </Row>
+            
             </div>
         </Col>
         
