@@ -4,4 +4,14 @@ body {
   font-family: $font-body;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  h1 {
+    color: $dark-green;
+    font-weight: 48px;
+  }
+
+  .mt-5.container {
+    margin-top: 0 !important;
+    padding-top: 4rem;
+  }
 }
