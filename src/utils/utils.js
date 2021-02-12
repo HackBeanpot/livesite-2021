@@ -79,3 +79,27 @@ export const isLive = (data) => {
     currentTime >= startTime
   );
 };
+
+export const formatDays = (difference) => {
+  return difference > 0
+    ? String(Math.floor(difference / (1000 * 60 * 60 * 24)))
+    : "0";
+};
+
+export const formatHours = (difference) => {
+  return difference > 0
+    ? String(Math.floor((difference / (1000 * 60 * 60)) % 24)).padStart(2, "0")
+    : "00";
+};
+
+export const formatMinute = (difference) => {
+  return difference > 0
+    ? String(Math.floor((difference / 1000 / 60) % 60)).padStart(2, "0")
+    : "00";
+};
+
+export const formatSeconds = (difference) => {
+  return difference > 0
+    ? String(Math.floor((difference / 1000) % 60)).padStart(2, "0")
+    : "00";
+};
