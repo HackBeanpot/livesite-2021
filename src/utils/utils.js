@@ -65,14 +65,17 @@ export const timeExtractor = (time) => {
 
 export const hasEventEnded = (endTime, currentTime) => {
   const endTimeZone = new Date(endTime);
-  return endTimeZone && (currentTime > endTimeZone);
-}
+  return endTimeZone && currentTime > endTimeZone;
+};
 
 export const isLive = (data) => {
   const currentTime = new Date();
   const startTime = new Date(data.startTime);
-  const endTime = data.endTime ?
-    new Date(data.endTime):
-    null
-  return (endTime !== null && endTime !== undefined) && currentTime <= endTime && currentTime >= startTime;
-}
+  const endTime = data.endTime ? new Date(data.endTime) : null;
+  return (
+    endTime !== null &&
+    endTime !== undefined &&
+    currentTime <= endTime &&
+    currentTime >= startTime
+  );
+};

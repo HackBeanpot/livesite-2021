@@ -106,13 +106,22 @@ const Schedule = () => {
                                     alt="arrow icon"
                                   />
                                 </Button>
-                                <div className={!hasEventEnded(event.endTime, currentTime) 
-                                  ? "schedule__responsive" 
-                                  : "schedule__endEvent"}>
+                                <div
+                                  className={
+                                    !hasEventEnded(event.endTime, currentTime)
+                                      ? "schedule__responsive"
+                                      : "schedule__endEvent"
+                                  }
+                                >
                                   <div className="schedule__category">
                                     <p className="schedule__category__time">
-                                      { event.time }
-                                      { event.isLive && <span className="live-dot" title="Happening now"></span>}
+                                      {event.time}
+                                      {event.isLive && (
+                                        <span
+                                          className="live-dot"
+                                          title="Happening now"
+                                        ></span>
+                                      )}
                                     </p>
                                     <p
                                       className="schedule__category__type"
