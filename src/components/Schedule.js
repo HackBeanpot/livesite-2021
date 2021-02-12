@@ -13,7 +13,7 @@ import {
 import CalendarIcon from "../assets/calendar.png";
 import Arrow from "../assets/arrow.svg";
 import useAirtableAPI from "../hooks/api-hook";
-import { scheduleExtractor } from "../utils/utils";
+import { hasEventEnded, scheduleExtractor } from "../utils/utils";
 
 const AdditionalAttributes = ({ event }) => {
   return (
@@ -39,15 +39,20 @@ const Schedule = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [clickedIdx, setClickedIdx] = useState(-1);
   const [width, setWidth] = useState(window.innerWidth);
+  const [currentTime, setCurrentTime] = useState(new Date());
 
   useEffect(() => {
     const updateSize = () => {
       setWidth(window.innerWidth);
     };
+    const interval = setInterval(() => setCurrentTime(new Date()), 1000);
     window.addEventListener("resize", updateSize);
     updateSize();
-    return () => window.removeEventListener("resize", updateSize);
-  }, []);
+    return () => {
+      window.removeEventListener("resize", updateSize);
+      clearInterval(interval);
+    };
+  }, [currentTime]);
 
   return (
     <Container id="schedule" className="schedule mt-5">
@@ -101,8 +106,9 @@ const Schedule = () => {
                                     alt="arrow icon"
                                   />
                                 </Button>
-
-                                <div className="schedule__responsive">
+                                <div className={!hasEventEnded(event.endTime, currentTime) 
+                                  ? "schedule__responsive" 
+                                  : "schedule__endEvent"}>
                                   <div className="schedule__category">
                                     <p className="schedule__category__time">
                                       { event.time }

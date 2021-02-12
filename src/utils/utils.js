@@ -20,6 +20,7 @@ export const eventsExtractor = (attributes) => {
   let event = {
     description: attributes.description,
     time: time,
+    endTime: attributes.endTime || "",
     type: attributes.type,
     theme: colorTheme(attributes.type),
     title: attributes.title,
@@ -61,6 +62,11 @@ export const timeExtractor = (time) => {
 
   return `${((hours + 11) % 12) + 1}:${formattedMins} ${suffix}`;
 };
+
+export const hasEventEnded = (endTime, currentTime) => {
+  const endTimeZone = new Date(endTime);
+  return endTimeZone && (currentTime > endTimeZone);
+}
 
 export const isLive = (data) => {
   const currentTime = new Date();
