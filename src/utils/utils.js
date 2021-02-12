@@ -65,30 +65,35 @@ export const timeExtractor = (time) => {
 export const isLive = (data) => {
   const currentTime = new Date();
   const startTime = new Date(data.startTime);
-  const endTime = data.endTime ?
-    new Date(data.endTime):
-    null
-  return (endTime !== null && endTime !== undefined) && currentTime <= endTime && currentTime >= startTime;
-}
+  const endTime = data.endTime ? new Date(data.endTime) : null;
+  return (
+    endTime !== null &&
+    endTime !== undefined &&
+    currentTime <= endTime &&
+    currentTime >= startTime
+  );
+};
 
 export const formatDays = (difference) => {
-  return difference > 0 ? String(Math.floor(difference / (1000 * 60 * 60 * 24))) : "0";
-}
+  return difference > 0
+    ? String(Math.floor(difference / (1000 * 60 * 60 * 24)))
+    : "0";
+};
 
 export const formatHours = (difference) => {
-  return difference > 0 ? String(Math.floor((difference / (1000 * 60 * 60)) % 24)).padStart(
-      2,
-      "0"
-    ) : "00";
-}
+  return difference > 0
+    ? String(Math.floor((difference / (1000 * 60 * 60)) % 24)).padStart(2, "0")
+    : "00";
+};
 
 export const formatMinute = (difference) => {
-  return difference > 0 ? String(Math.floor((difference / 1000 / 60) % 60)).padStart(
-      2,
-      "0"
-    ) : "00";
-}
+  return difference > 0
+    ? String(Math.floor((difference / 1000 / 60) % 60)).padStart(2, "0")
+    : "00";
+};
 
 export const formatSeconds = (difference) => {
-  return difference > 0 ? String(Math.floor((difference / 1000) % 60)).padStart(2, "0") : "00";
-}
+  return difference > 0
+    ? String(Math.floor((difference / 1000) % 60)).padStart(2, "0")
+    : "00";
+};

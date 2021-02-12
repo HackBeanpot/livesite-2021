@@ -1,20 +1,25 @@
 import React, { useEffect, useState } from "react";
-import { formatDays, formatHours, formatMinute, formatSeconds } from "../utils/utils";
+import {
+  formatDays,
+  formatHours,
+  formatMinute,
+  formatSeconds,
+} from "../utils/utils";
 
 const calculateTimeLeft = (difference) => {
   let timeLeft = {};
   let year = new Date().getFullYear();
   const endTime = new Date(year, 1, 21, 9, 30, 0, 0); // Feb 21, 9:30am
   const startTime = new Date(year, 1, 19, 18, 0, 0, 0); // Feb 19, 6:00pm
-  difference['startDifference'] = +startTime - +new Date();
-  difference['endDifference'] = +endTime - +new Date();
+  difference["startDifference"] = +startTime - +new Date();
+  difference["endDifference"] = +endTime - +new Date();
 
   let diff, days, hours, minutes, seconds;
   if (difference.startDifference > 0) {
     diff = difference.startDifference;
   } else if (difference.endDifference > 0) {
     diff = difference.endDifference;
-  } 
+  }
 
   days = formatDays(diff);
   hours = formatHours(diff);
@@ -26,7 +31,7 @@ const calculateTimeLeft = (difference) => {
     hours: hours,
     minutes: minutes,
     seconds: seconds,
-  }
+  };
 
   return timeLeft;
 };
@@ -35,7 +40,10 @@ const useCounter = (difference) => {
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(difference));
 
   useEffect(() => {
-    const interval = setInterval(() => setTimeLeft(calculateTimeLeft(difference)), 1000);
+    const interval = setInterval(
+      () => setTimeLeft(calculateTimeLeft(difference)),
+      1000
+    );
     return () => clearInterval(interval);
   }, [difference]);
 
@@ -46,13 +54,14 @@ export default function Countdown() {
   let difference = {};
   const timeleft = useCounter(difference);
 
-
   return (
     <div className="countdown">
       <div className="countdown__text-wrapper">
-        {difference.startDifference > 0 
-        ?  <div className="countdown__text">Hacking time will begin in:</div>
-        : <div className="countdown__text">Hacking remaining: </div>}
+        {difference.startDifference > 0 ? (
+          <div className="countdown__text">Hacking time will begin in:</div>
+        ) : (
+          <div className="countdown__text">Hacking remaining: </div>
+        )}
         <div id="clock" className="font-weight-bold countdown__timer">
           {timeleft.days}:{timeleft.hours}:{timeleft.minutes}:{timeleft.seconds}
         </div>
