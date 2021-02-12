@@ -10,7 +10,7 @@ const MentorModal = ({ mentor, setShow }) => {
     company,
     imageURL,
     availability = "",
-    expertise,
+    expertise = [],
     slack,
   } = mentor;
   const availabilityList = availability.split(", ");
@@ -48,7 +48,7 @@ const MentorModal = ({ mentor, setShow }) => {
             </div>
             <a
               href={slack}
-              class="btn primary-cta"
+              className="btn primary-cta"
               role="button"
               target="_blank"
               rel="noopener noreferrer"
@@ -86,32 +86,103 @@ const MentorCard = ({ mentor }) => {
   );
 };
 
+// sets kick out duplicates
+const getMentorAttrs = (data, attr) => [...new Set(
+  // get attribute from each mentor
+  data.map(mentor => attr(mentor))
+  // flatten 2d array to 1d array
+  .flat()
+  // filter out falsey values
+  .filter(x => !!x)
+  // cherry on top
+  .sort()
+)]
+
+
 export const Mentors = () => {
   const { data, isLoading } = useAirtableAPI("appexkZgUcQ9vucI9", "mentors");
 
+  const expertises = getMentorAttrs(data, mentor => mentor.fields.expertise)
+  const positions = getMentorAttrs(data, mentor => mentor.fields.position)
+  const companies = getMentorAttrs(data, mentor => mentor.fields.company)
+
+  const [filterAttrs, setFilterAttrs] = useState([]);
+
+  // I abbreviate as: (e)xpertises, (p)ositions, (c)ompanies
+  // which mentors should we keep?
+  const shouldShowMentor = (mentor) => {
+    // make sure they are truthy fields
+    const mentorEs = mentor.fields.expertise || []
+    const mentorP = mentor.fields.position ? [mentor.fields.position] : []
+    const mentorC = mentor.fields.company ? [mentor.fields.company] : []
+    const allAttrs = [...new Set([...mentorEs, ...mentorP, ...mentorC])]
+
+    // all filter requirements must be satisfied
+    const andMap = filterAttrs.filter(attr => attr !== 'all');
+
+    return andMap.every(mentorAttr => allAttrs.includes(mentorAttr));
+  }
+
+  const handleChange = e => {
+    const allOptions = Array.from(e.target.options, option => option.value)
+    const selectedOptions = Array.from(e.target.selectedOptions, option => option.value)
+
+    // set difference
+    const unselectedOptions = allOptions.filter(x => !selectedOptions.includes(x))
+
+    // union with selected options and then subtract unselected ones
+    let newFilterAttrs = [...new Set([...filterAttrs, ...selectedOptions])]
+      .filter(x => !unselectedOptions.includes(x))
+    
+    setFilterAttrs(newFilterAttrs)
+  }
+
+  // Uncomment to view data for debugging purposes
+  // console.log(JSON.parse(JSON.stringify(data)))
+
   return (
-    <Container className="mt-5 mentors">
+    <Container id="mentors" className="mt-5 mentors">
       <Row>
         <Col>
-          <h1 id="mentors" className="font-weight-bold">
-            Mentors
-          </h1>
-          <p className="mentor-subheader">Click on a mentor's photo for more details</p>
+          <h1 className="font-weight-bold">Mentors</h1>
+          <p className="mentor-subheader">
+            Click on a mentor's photo for more details
+          </p>
         </Col>
       </Row>
       <Row>
-        {
-          isLoading && (
-            <Spinner animation="border" variant="primary" />
-          ) /* TODO import custom styled spinner component*/
-        }
-        {
-          !data.length && (
-            <div>Nothing to see here...</div>
-          ) /* TODO handle empty array in case of API error (or if its actually empty for any reason)*/
-        }
+        <select id="mentors-position-filter" className="mentor-filter custom-select" onChange={handleChange}>
+          <option selected value="all">Positions (all)</option>
+          {
+            positions.map(p => (
+              <option value={p}>{p}</option>
+            ))
+          }
+        </select>
+        <select id="mentors-expertise-filter" className="mentor-filter custom-select" onChange={handleChange}>
+          <option selected value="all">Expertise (all)</option>
+          {
+            expertises.map(e => (
+              <option value={e}>{e}</option>
+            ))
+          }
+        </select>
+        <select id="mentors-company-filter" className="mentor-filter custom-select" onChange={handleChange}>
+          <option selected value="all">Companies (all)</option>
+          {
+            companies.map(c => (
+              <option value={c}>{c}</option>
+            ))
+          }
+        </select>
+      </Row>
+      <Row>
+        {isLoading && <Spinner animation='border' variant='primary' /> /* TODO import custom styled spinner component*/} 
+        {!data.length && !isLoading && <div>Nothing to see here...</div> /* TODO handle empty array in case of API error (or if its actually empty for any reason)*/}
         {data.map((mentor) => (
-          <MentorCard mentor={mentor.fields} key={mentor.fields.name} />
+            shouldShowMentor(mentor) // true
+            &&
+            (<MentorCard mentor={mentor.fields} key={mentor.fields.name} />)
         ))}
       </Row>
     </Container>

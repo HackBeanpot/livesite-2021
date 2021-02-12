@@ -10,8 +10,14 @@ const calculateTimeLeft = () => {
   if (difference > 0) {
     timeLeft = {
       days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-      hours: String(Math.floor((difference / (1000 * 60 * 60)) % 24)).padStart(2, "0"),
-      minutes: String(Math.floor((difference / 1000 / 60) % 60)).padStart(2, "0"),
+      hours: String(Math.floor((difference / (1000 * 60 * 60)) % 24)).padStart(
+        2,
+        "0"
+      ),
+      minutes: String(Math.floor((difference / 1000 / 60) % 60)).padStart(
+        2,
+        "0"
+      ),
       seconds: String(Math.floor((difference / 1000) % 60)).padStart(2, "0"),
     };
   }

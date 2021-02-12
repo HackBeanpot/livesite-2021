@@ -9,4 +9,9 @@ body {
     color: $dark-green;
     font-weight: 48px;
   }
+
+  .mt-5.container {
+    margin-top: 0 !important;
+    padding-top: 4rem;
+  }
 }

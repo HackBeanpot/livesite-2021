@@ -50,12 +50,10 @@ const Schedule = () => {
   }, []);
 
   return (
-    <Container className="schedule mt-5">
+    <Container id="schedule" className="schedule mt-5">
       <Row>
         <Col>
-          <h1 id="schedule" className="font-weight-bold">
-            Event Schedule
-          </h1>
+          <h1 className="font-weight-bold">Event Schedule</h1>
         </Col>
       </Row>
       {isLoading || data.length === 0 ? (
@@ -75,41 +73,40 @@ const Schedule = () => {
                       {extractedData[element].map((event, idx) => {
                         return (
                           <Card className="schedule__card">
-                            <Card.Header className="schedule__card-header">
+                            <Accordion.Toggle
+                              className="schedule__card-header"
+                              as={Card.Header}
+                              eventKey={idx.toString()}
+                              onClick={() => {
+                                setClickedIdx(idx);
+                                setIsOpen(idx === clickedIdx ? !isOpen : true);
+                              }}
+                            >
                               <div key={idx} className="schedule__row">
                                 <div
                                   className="schedule__label"
                                   style={{ backgroundColor: event.theme }}
                                 />
-                                <Accordion.Toggle
-                                  as={Button}
+                                <Button
                                   variant="link"
-                                  eventKey={idx.toString()}
-                                  onClick={() => {
-                                    setClickedIdx(idx);
-                                    setIsOpen(
-                                      idx === clickedIdx ? !isOpen : true
-                                    );
-                                  }}
+                                  className={
+                                    idx === clickedIdx && isOpen
+                                      ? "schedule__arrow__down"
+                                      : "schedule__arrow"
+                                  }
                                 >
-                                  <div
-                                    className={
-                                      idx === clickedIdx && isOpen
-                                        ? "schedule__arrow__down"
-                                        : "schedule__arrow"
-                                    }
-                                  >
-                                    <img
-                                      className="schedule__arrow__icon"
-                                      src={Arrow}
-                                      alt="arrow icon"
-                                    />
-                                  </div>
-                                </Accordion.Toggle>
+                                  <img
+                                    className="schedule__arrow__icon"
+                                    src={Arrow}
+                                    alt="arrow icon"
+                                  />
+                                </Button>
+
                                 <div className="schedule__responsive">
                                   <div className="schedule__category">
                                     <p className="schedule__category__time">
-                                      {event.time}
+                                      { event.time }
+                                      { event.isLive && <span className="live-dot" title="Happening now"></span>}
                                     </p>
                                     <p
                                       className="schedule__category__type"
@@ -141,7 +138,7 @@ const Schedule = () => {
                                   <AdditionalAttributes event={event} />
                                 )}
                               </div>
-                            </Card.Header>
+                            </Accordion.Toggle>
                             <Accordion.Collapse eventKey={idx.toString()}>
                               <Card.Body>
                                 <strong>Description:&nbsp;</strong>

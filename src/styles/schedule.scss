@@ -42,7 +42,10 @@
     border-bottom: 1px solid #ccc;
     display: flex;
     height: 100%;
-    overflow: auto;
+
+    @media (max-width: $md) {
+      overflow: auto;
+    }
   }
 
   &__label {
@@ -50,8 +53,10 @@
   }
 
   &__arrow {
-    display: flex;
     align-items: center;
+    background-color: transparent;
+    border: None;
+    display: flex;
     transform: rotate(-90deg);
     transition: transform 0.25s;
 
@@ -158,7 +163,7 @@
   &__calendar {
     align-items: center;
     display: flex;
-    padding-right: 0.5rem;
+    padding-right: 20px;
   }
 }
 
@@ -177,7 +182,7 @@
     margin-right: 3px;
     padding: 0.5rem 5rem;
   }
-  
+
   .nav-link:hover {
     border-color: $orange;
   }

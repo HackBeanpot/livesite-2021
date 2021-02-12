@@ -7,10 +7,10 @@ import BeanstalkBoi from "../assets/BeanstalkBoi";
 const Challenges = () => {
   return (
     <div>
-      <Container className="mt-5" >
+      <Container id="challenges" className="mt-5">
         <Row>
           <Col>
-            <h1 id="challenges" className="font-weight-bold">Tech Challenges</h1>
+            <h1 className="font-weight-bold">Tech Challenges</h1>
 
           </Col>
         </Row>
