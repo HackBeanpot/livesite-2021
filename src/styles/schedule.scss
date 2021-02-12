@@ -92,6 +92,25 @@
     }
   }
 
+  &__endEvent {
+    align-items: center;
+    display: flex;
+    flex: 3;
+    flex-direction: row;
+    padding: 0 1rem;
+
+    a,
+    p {
+      opacity: 0.5;
+    }
+
+    @media (max-width: $md) {
+      align-items: unset;
+      flex-direction: column-reverse;
+      padding: 1rem;
+    }
+  }
+
   &__category {
     padding-right: 1.5rem;
 
