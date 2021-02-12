@@ -55,7 +55,7 @@ const Schedule = () => {
     return () => {
       clearInterval(interval);
     }
-  }, [currentTime]);
+  }, []);
 
   return (
     <Container id="schedule" className="schedule mt-5">
