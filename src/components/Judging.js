@@ -3,6 +3,20 @@ import { useState } from "react";
 import SelectSearch from "react-select-search";
 import Judges from "../data/judging/judges.json";
 import Projects from "../data/judging/projectData.json";
+import JudgeSchedules from "../data/judging/results.json";
+
+const TIME_SLOTS = [
+  "10:30",
+  "10:40",
+  "10:50",
+  "11:00",
+  "11:10",
+  "11:20",
+  "11:30",
+  "11:40",
+  "11:50",
+  "12:00",
+];
 
 const Judging = () => {
   const [currentPage, setCurrentPage] = useState("who-are-you");
@@ -27,7 +41,6 @@ const Judging = () => {
           value: j,
         };
       });
-      console.log(res);
       return res;
     } else {
       return Projects.map((p) => {
@@ -81,9 +94,43 @@ const Judging = () => {
         >
           Find Another Schedule
         </button>
+        <JudgingTable selectedPerson={selectedPerson} />
       </div>
     );
   }
+};
+
+const JudgingTable = ({ selectedPerson }) => {
+  const rows = [];
+
+  const header = [];
+  header.push(<div id="time-header">Time</div>);
+  header.push(<div id={`judge-${selectedPerson}`}>{selectedPerson}</div>);
+
+  const numProjects = JudgeSchedules[selectedPerson].length;
+  for (let row = 0; row < numProjects; row++) {
+    const cells = [];
+
+    cells.push(<div className="time-col">{TIME_SLOTS[row]}</div>);
+
+    const projectName = JudgeSchedules[selectedPerson][row]["projectName"];
+    cells.push(<div key={`cell${row}`}>{projectName}</div>);
+
+    rows.push(
+      <div key={row} className={`table-row-${row}`}>
+        {cells}
+      </div>
+    );
+  }
+
+  return (
+    <div className="schedule-container">
+      <div className="schedule-table">
+        <div className="schedule-header">{header}</div>
+        <div className="schedule-body">{rows}</div>
+      </div>
+    </div>
+  );
 };
 
 export default Judging;

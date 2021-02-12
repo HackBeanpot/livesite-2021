@@ -7,7 +7,7 @@ with open('./judges.json') as j:
 NUM_JUDGES = len(JUDGES)
 
 # Number of projects each judge can view
-TIME_FOR_ONE_PROJECT = 15
+TIME_FOR_ONE_PROJECT = 10
 TOTAL_TIME = 90
 NUM_PROJECTS_PER_JUDGE = int(TOTAL_TIME / TIME_FOR_ONE_PROJECT)
 
@@ -52,6 +52,15 @@ def distribute_projects(projects):
     return assignments
 
 
+def add_break(assignments):
+    for judge, projects in assignments.items():
+        projects.insert(5, {
+            'projectName': 'Break Time'
+        })
+
+    return assignments
+
+
 # Send assignments_dict to json file for front-end
 def dump_json(assignments_dict):
     with open('./results.json', 'w') as fp:
@@ -61,4 +70,5 @@ def dump_json(assignments_dict):
 projectObj = parse_project()
 # print(projectObj)
 judge_assignments = distribute_projects(projectObj)
-dump_json(judge_assignments)
+with_break = add_break(judge_assignments)
+dump_json(with_break)

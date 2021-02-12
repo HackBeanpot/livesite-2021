@@ -1,98 +1,37 @@
 {
   "judge1": [
     {
-      "projectName": "GoodGreen",
-      "submissionLink": "https://hackbeanpot-2020.devpost.com/submissions/140706-goodgreen",
-      "tryItOutLink": "https://github.com/denk0403/Good-Green-iOS",
-      "videoDemoLink": ""
-    },
-    {
-      "projectName": "pl-playground - Team 16",
-      "submissionLink": "https://hackbeanpot-2020.devpost.com/submissions/140703-pl-playground-team-16",
-      "tryItOutLink": "https://github.com/pl-playground/programming-language-playground",
-      "videoDemoLink": ""
-    },
-    {
-      "projectName": "spotty",
-      "submissionLink": "https://hackbeanpot-2020.devpost.com/submissions/140618-spotty",
-      "tryItOutLink": "",
-      "videoDemoLink": ""
-    },
-    {
       "projectName": "HB-Submission",
       "submissionLink": "https://hackbeanpot-2020.devpost.com/submissions/140341-hb-submission",
       "tryItOutLink": "https://github.com/ZibingZhang/HB-Submission",
       "videoDemoLink": ""
     },
     {
-      "projectName": "Guitar Ear Trainer",
-      "submissionLink": "https://hackbeanpot-2020.devpost.com/submissions/140629-guitar-ear-trainer",
-      "tryItOutLink": "http://guitar-game.s3-website-us-east-1.amazonaws.com/, https://github.com/Nineluj/GuitarGame",
+      "projectName": "Planning Planned Parenthood",
+      "submissionLink": "https://hackbeanpot-2020.devpost.com/submissions/140592-planning-planned-parenthood",
+      "tryItOutLink": "https://github.com/anikarabenhorst/HackBeanpotCatAnika",
       "videoDemoLink": ""
     },
     {
-      "projectName": "ListNEU - Table 10",
-      "submissionLink": "https://hackbeanpot-2020.devpost.com/submissions/140694-listneu-table-10",
-      "tryItOutLink": "",
-      "videoDemoLink": ""
-    }
-  ],
-  "judge2": [
-    {
-      "projectName": "Bento",
-      "submissionLink": "https://hackbeanpot-2020.devpost.com/submissions/140555-bento",
-      "tryItOutLink": "https://github.com/kiminlee2000225/bento",
-      "videoDemoLink": "https://youtu.be/wUnngAqSp7g"
-    },
-    {
-      "projectName": "GoodGreen",
-      "submissionLink": "https://hackbeanpot-2020.devpost.com/submissions/140706-goodgreen",
-      "tryItOutLink": "https://github.com/denk0403/Good-Green-iOS",
+      "projectName": "RecycleVision ",
+      "submissionLink": "https://hackbeanpot-2020.devpost.com/submissions/140698-recyclevision",
+      "tryItOutLink": "https://recycle-vision.netlify.com/, https://github.com/jansim/recycle-vision/",
       "videoDemoLink": ""
     },
     {
-      "projectName": "TrashTalk (Table 8)",
-      "submissionLink": "https://hackbeanpot-2020.devpost.com/submissions/140700-trashtalk-table-8",
-      "tryItOutLink": "https://github.com/abhinavagrawal1995/hackbeanpot20",
+      "projectName": "Checkout (TABLE 5)",
+      "submissionLink": "https://hackbeanpot-2020.devpost.com/submissions/140710-checkout-table-5",
+      "tryItOutLink": "https://github.com/Solvence/Beanpot2020",
       "videoDemoLink": ""
     },
     {
-      "projectName": "FreeBee (23)",
-      "submissionLink": "https://hackbeanpot-2020.devpost.com/submissions/140389-freebee-23",
-      "tryItOutLink": "https://github.com/jinyoungbang/Freebee",
+      "projectName": "Khosury",
+      "submissionLink": "https://hackbeanpot-2020.devpost.com/submissions/140530-khosury",
+      "tryItOutLink": "https://github.com/RyanRio/Khosury",
       "videoDemoLink": ""
     },
     {
-      "projectName": "spotty",
-      "submissionLink": "https://hackbeanpot-2020.devpost.com/submissions/140618-spotty",
-      "tryItOutLink": "",
-      "videoDemoLink": ""
-    },
-    {
-      "projectName": "HB-Submission",
-      "submissionLink": "https://hackbeanpot-2020.devpost.com/submissions/140341-hb-submission",
-      "tryItOutLink": "https://github.com/ZibingZhang/HB-Submission",
-      "videoDemoLink": ""
-    }
-  ],
-  "judge3": [
-    {
-      "projectName": "garbage.ai",
-      "submissionLink": "https://hackbeanpot-2020.devpost.com/submissions/140714-garbage-ai",
-      "tryItOutLink": "https://github.com/liam923/GarbageAI",
-      "videoDemoLink": ""
-    },
-    {
-      "projectName": "ListNEU - Table 10",
-      "submissionLink": "https://hackbeanpot-2020.devpost.com/submissions/140694-listneu-table-10",
-      "tryItOutLink": "",
-      "videoDemoLink": ""
-    },
-    {
-      "projectName": "ARmote",
-      "submissionLink": "https://hackbeanpot-2020.devpost.com/submissions/140699-armote",
-      "tryItOutLink": "",
-      "videoDemoLink": ""
+      "projectName": "Break Time"
     },
     {
       "projectName": "AAAAAAAAustralia",
@@ -101,23 +40,153 @@
       "videoDemoLink": ""
     },
     {
+      "projectName": "Swipe to Vote  (No.17)",
+      "submissionLink": "https://hackbeanpot-2020.devpost.com/submissions/140697-swipe-to-vote-no-17",
+      "tryItOutLink": "https://github.com/ateevnahar/hack-the-vote",
+      "videoDemoLink": ""
+    },
+    {
+      "projectName": "shamehub",
+      "submissionLink": "https://hackbeanpot-2020.devpost.com/submissions/140394-shamehub",
+      "tryItOutLink": "https://github.com/rachelvolpert/shamehub, https://shamehub.herokuapp.com/",
+      "videoDemoLink": ""
+    },
+    {
+      "projectName": "Mappening",
+      "submissionLink": "https://hackbeanpot-2020.devpost.com/submissions/140643-mappening",
+      "tryItOutLink": "https://github.com/eogra7/mappening, https://map.evanogra.com/home",
+      "videoDemoLink": ""
+    }
+  ],
+  "judge2": [
+    {
+      "projectName": "StudyHusky",
+      "submissionLink": "https://hackbeanpot-2020.devpost.com/submissions/140704-studyhusky",
+      "tryItOutLink": "https://github.com/saahilkumar/beanpot-final",
+      "videoDemoLink": "https://youtu.be/oFnFu2Ef0hw"
+    },
+    {
       "projectName": "I'm Huuuungry",
       "submissionLink": "https://hackbeanpot-2020.devpost.com/submissions/140662-i-m-huuuungry",
       "tryItOutLink": "https://github.com/chilipot/im-huuuungry, https://drive.google.com/file/d/13qb5HlHN2VyhFhEzjGPbWDIV1iKE_-Vr/view?usp=sharing",
       "videoDemoLink": "https://www.youtube.com/watch?v=L7SEN2HVT5I&feature=youtu.be"
     },
     {
-      "projectName": "RecycleVision ",
-      "submissionLink": "https://hackbeanpot-2020.devpost.com/submissions/140698-recyclevision",
-      "tryItOutLink": "https://recycle-vision.netlify.com/, https://github.com/jansim/recycle-vision/",
+      "projectName": "Planning Planned Parenthood",
+      "submissionLink": "https://hackbeanpot-2020.devpost.com/submissions/140592-planning-planned-parenthood",
+      "tryItOutLink": "https://github.com/anikarabenhorst/HackBeanpotCatAnika",
+      "videoDemoLink": ""
+    },
+    {
+      "projectName": "spotty",
+      "submissionLink": "https://hackbeanpot-2020.devpost.com/submissions/140618-spotty",
+      "tryItOutLink": "",
+      "videoDemoLink": ""
+    },
+    {
+      "projectName": "farmy",
+      "submissionLink": "https://hackbeanpot-2020.devpost.com/submissions/140644-farmy",
+      "tryItOutLink": "",
+      "videoDemoLink": ""
+    },
+    {
+      "projectName": "Break Time"
+    },
+    {
+      "projectName": "Bento",
+      "submissionLink": "https://hackbeanpot-2020.devpost.com/submissions/140555-bento",
+      "tryItOutLink": "https://github.com/kiminlee2000225/bento",
+      "videoDemoLink": "https://youtu.be/wUnngAqSp7g"
+    },
+    {
+      "projectName": "garbage.ai",
+      "submissionLink": "https://hackbeanpot-2020.devpost.com/submissions/140714-garbage-ai",
+      "tryItOutLink": "https://github.com/liam923/GarbageAI",
+      "videoDemoLink": ""
+    },
+    {
+      "projectName": "Swipe to Vote  (No.17)",
+      "submissionLink": "https://hackbeanpot-2020.devpost.com/submissions/140697-swipe-to-vote-no-17",
+      "tryItOutLink": "https://github.com/ateevnahar/hack-the-vote",
+      "videoDemoLink": ""
+    },
+    {
+      "projectName": "pl-playground - Team 16",
+      "submissionLink": "https://hackbeanpot-2020.devpost.com/submissions/140703-pl-playground-team-16",
+      "tryItOutLink": "https://github.com/pl-playground/programming-language-playground",
+      "videoDemoLink": ""
+    }
+  ],
+  "judge3": [
+    {
+      "projectName": "Bento",
+      "submissionLink": "https://hackbeanpot-2020.devpost.com/submissions/140555-bento",
+      "tryItOutLink": "https://github.com/kiminlee2000225/bento",
+      "videoDemoLink": "https://youtu.be/wUnngAqSp7g"
+    },
+    {
+      "projectName": "gather",
+      "submissionLink": "https://hackbeanpot-2020.devpost.com/submissions/140705-gather",
+      "tryItOutLink": "https://github.com/johannaloepke/gather",
+      "videoDemoLink": "https://youtu.be/p7HJpwPHMPo"
+    },
+    {
+      "projectName": "Swipe to Vote  (No.17)",
+      "submissionLink": "https://hackbeanpot-2020.devpost.com/submissions/140697-swipe-to-vote-no-17",
+      "tryItOutLink": "https://github.com/ateevnahar/hack-the-vote",
+      "videoDemoLink": ""
+    },
+    {
+      "projectName": "Mappening",
+      "submissionLink": "https://hackbeanpot-2020.devpost.com/submissions/140643-mappening",
+      "tryItOutLink": "https://github.com/eogra7/mappening, https://map.evanogra.com/home",
+      "videoDemoLink": ""
+    },
+    {
+      "projectName": "spotty",
+      "submissionLink": "https://hackbeanpot-2020.devpost.com/submissions/140618-spotty",
+      "tryItOutLink": "",
+      "videoDemoLink": ""
+    },
+    {
+      "projectName": "Break Time"
+    },
+    {
+      "projectName": "Checkout (TABLE 5)",
+      "submissionLink": "https://hackbeanpot-2020.devpost.com/submissions/140710-checkout-table-5",
+      "tryItOutLink": "https://github.com/Solvence/Beanpot2020",
+      "videoDemoLink": ""
+    },
+    {
+      "projectName": "Diagnoser",
+      "submissionLink": "https://hackbeanpot-2020.devpost.com/submissions/140305-diagnoser",
+      "tryItOutLink": "",
+      "videoDemoLink": ""
+    },
+    {
+      "projectName": "HB-Submission",
+      "submissionLink": "https://hackbeanpot-2020.devpost.com/submissions/140341-hb-submission",
+      "tryItOutLink": "https://github.com/ZibingZhang/HB-Submission",
+      "videoDemoLink": ""
+    },
+    {
+      "projectName": "FreeBee (23)",
+      "submissionLink": "https://hackbeanpot-2020.devpost.com/submissions/140389-freebee-23",
+      "tryItOutLink": "https://github.com/jinyoungbang/Freebee",
       "videoDemoLink": ""
     }
   ],
   "judge4": [
     {
-      "projectName": "Checkout (TABLE 5)",
-      "submissionLink": "https://hackbeanpot-2020.devpost.com/submissions/140710-checkout-table-5",
-      "tryItOutLink": "https://github.com/Solvence/Beanpot2020",
+      "projectName": "FreeBee (23)",
+      "submissionLink": "https://hackbeanpot-2020.devpost.com/submissions/140389-freebee-23",
+      "tryItOutLink": "https://github.com/jinyoungbang/Freebee",
+      "videoDemoLink": ""
+    },
+    {
+      "projectName": "ListNEU - Table 10",
+      "submissionLink": "https://hackbeanpot-2020.devpost.com/submissions/140694-listneu-table-10",
+      "tryItOutLink": "",
       "videoDemoLink": ""
     },
     {
@@ -127,26 +196,41 @@
       "videoDemoLink": "https://www.youtube.com/watch?v=d6kwByB-Z9U&feature=youtu.be"
     },
     {
-      "projectName": "Guitar Ear Trainer",
-      "submissionLink": "https://hackbeanpot-2020.devpost.com/submissions/140629-guitar-ear-trainer",
-      "tryItOutLink": "http://guitar-game.s3-website-us-east-1.amazonaws.com/, https://github.com/Nineluj/GuitarGame",
+      "projectName": "GoodGreen",
+      "submissionLink": "https://hackbeanpot-2020.devpost.com/submissions/140706-goodgreen",
+      "tryItOutLink": "https://github.com/denk0403/Good-Green-iOS",
       "videoDemoLink": ""
     },
     {
-      "projectName": "ACTonClimateChange",
-      "submissionLink": "https://hackbeanpot-2020.devpost.com/submissions/140583-actonclimatechange",
-      "tryItOutLink": "https://actonclimatechange.com/, https://github.com/zacharyjarnagin/actonclimatechange",
+      "projectName": "Diagnoser",
+      "submissionLink": "https://hackbeanpot-2020.devpost.com/submissions/140305-diagnoser",
+      "tryItOutLink": "",
       "videoDemoLink": ""
     },
     {
-      "projectName": "Recycle Rewards",
-      "submissionLink": "https://hackbeanpot-2020.devpost.com/submissions/140620-recycle-rewards",
-      "tryItOutLink": "https://github.com/davidfu8/RecycleRewards",
+      "projectName": "Break Time"
+    },
+    {
+      "projectName": "Mappening",
+      "submissionLink": "https://hackbeanpot-2020.devpost.com/submissions/140643-mappening",
+      "tryItOutLink": "https://github.com/eogra7/mappening, https://map.evanogra.com/home",
       "videoDemoLink": ""
     },
     {
-      "projectName": "farmy",
-      "submissionLink": "https://hackbeanpot-2020.devpost.com/submissions/140644-farmy",
+      "projectName": "Sprout Relationships",
+      "submissionLink": "https://hackbeanpot-2020.devpost.com/submissions/140696-sprout-relationships",
+      "tryItOutLink": "https://github.com/ciarrapeters/sprout",
+      "videoDemoLink": ""
+    },
+    {
+      "projectName": "pl-playground - Team 16",
+      "submissionLink": "https://hackbeanpot-2020.devpost.com/submissions/140703-pl-playground-team-16",
+      "tryItOutLink": "https://github.com/pl-playground/programming-language-playground",
+      "videoDemoLink": ""
+    },
+    {
+      "projectName": "ARmote",
+      "submissionLink": "https://hackbeanpot-2020.devpost.com/submissions/140699-armote",
       "tryItOutLink": "",
       "videoDemoLink": ""
     }
