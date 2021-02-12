@@ -63,7 +63,7 @@ const Challenges = () => {
           <div className="carousel__item">
             <Row>
               <Col className="carousel__image">
-                <CelebratoryBoi/>
+                <CelebratoryBoi className="pt-5"/>
               </Col>
               <Col>
                 <div className="carousel__header">

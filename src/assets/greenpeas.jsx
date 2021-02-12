@@ -3,7 +3,7 @@ import * as React from "react"
 function GreenPeas(props) {
   return (
     <svg
-      viewBox="0 0 549 582"
+      viewBox="-50 -30 700 582"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       {...props}

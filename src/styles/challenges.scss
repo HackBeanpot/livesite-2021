@@ -6,6 +6,10 @@
     background-color: #1B214E;
     padding-bottom: 4vw;
 
+    @media (min-width: $xxl) {
+      min-height: 30rem;
+    }
+
     h2{
       @media (max-width: $sm){
         font-size: 5vw;
@@ -57,7 +61,7 @@
     margin-right: 1vw;
     align-items: center;
     justify-content: flex-end;
-    height: auto;
-    width: 28vw;
+    width: 23vw;
+    height: auto;    
   }
 }
