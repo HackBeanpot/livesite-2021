@@ -45,13 +45,16 @@ const Schedule = () => {
     const updateSize = () => {
       setWidth(window.innerWidth);
     };
-    const interval = setInterval(() => setCurrentTime(new Date()), 1000);
     window.addEventListener("resize", updateSize);
     updateSize();
+    return () => window.removeEventListener("resize", updateSize);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => setCurrentTime(new Date()), 1000);
     return () => {
-      window.removeEventListener("resize", updateSize);
       clearInterval(interval);
-    };
+    }
   }, [currentTime]);
 
   return (
