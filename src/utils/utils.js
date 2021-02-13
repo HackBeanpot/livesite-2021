@@ -1,3 +1,5 @@
+import { format, isWithinInterval, parseISO } from "date-fns";
+
 export const scheduleExtractor = (data) => {
   let sortedData = data.sort(
     (a, b) => new Date(a.fields.startTime) - new Date(b.fields.startTime)
@@ -105,3 +107,33 @@ export const formatSeconds = (difference) => {
     ? String(Math.floor((difference / 1000) % 60)).padStart(2, "0")
     : "00";
 };
+
+export function timeText(start, end) {
+  let startString = "";
+  // 'h:mm' example 5:30
+  if (start != null) {
+    startString = `${format(parseISO(start), "h:mm")}`;
+  }
+  // 'h:mma O' example 7:30PM GMT-5
+  let endString = `${format(parseISO(end), "h:mma O")}`;
+  return start == null
+    ? `Complete by ${endString}`
+    : `${startString} - ${endString}`;
+}
+
+export function isTimeBetween(start, end) {
+  // used different date to capture screenshots
+  // using now means all will be filtered out
+  const currentTime = new Date();
+  // return false if either the start or end is undefined
+  const range_defined = start !== undefined && end !== undefined;
+  // check if the current time is within the given interval
+
+  return (
+    range_defined &&
+    isWithinInterval(currentTime, {
+      start: parseISO(start),
+      end: parseISO(end),
+    })
+  );
+}

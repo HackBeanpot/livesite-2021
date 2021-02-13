@@ -1,7 +1,8 @@
 import React from "react";
-import { format, isWithinInterval, parseISO } from "date-fns";
 import { Card, Col, Container, Row, Spinner } from "react-bootstrap";
 import useAirtableAPI from "../hooks/api-hook";
+import useShowTime from "../hooks/useShowTime";
+import { timeText } from "../utils/utils";
 
 const RelevantCard = ({
   title,
@@ -13,61 +14,40 @@ const RelevantCard = ({
   displayEndTime,
   activeStartTime,
   activeEndTime,
-}) =>
-  isTimeBetween(activeStartTime, activeEndTime) && (
-    <Col xs="12" md="6" lg="4">
-      <Card
-        className={`relevant ${type === "Event" ? "blue-card" : "orange-card"}`}
-      >
-        <Card.Body>
-          <Card.Title>
-            <h3>{title}</h3>
-          </Card.Title>
-          <Card.Subtitle>
-            {timeText(displayStartTime, displayEndTime)}
-            {isTimeBetween(displayStartTime, displayEndTime) && (
-              <span className="live-dot" title="Happening now"></span>
-            )}
-          </Card.Subtitle>
-          <Card.Text>{body}</Card.Text>
-          {buttonText && (
-            <a className="btn" href={buttonURL} role="button">
-              {buttonText}
-            </a>
-          )}
-        </Card.Body>
-      </Card>
-    </Col>
-  );
+}) => {
+  const isHappeningSoon = useShowTime(activeStartTime, activeEndTime);
+  const isHappeningNow = useShowTime(displayStartTime, displayEndTime);
 
-function timeText(start, end) {
-  let startString = "";
-  // 'h:mm' example 5:30
-  if (start != null) {
-    startString = `${format(parseISO(start), "h:mm")}`;
-  }
-  // 'h:mma O' example 7:30PM GMT-5
-  let endString = `${format(parseISO(end), "h:mma")}`;
-  return start == null
-    ? `Complete by ${endString}`
-    : `${startString} - ${endString}`;
-}
-
-function isTimeBetween(start, end) {
-  // used different date to capture screenshots
-  // using now means all will be filtered out
-  const currentTime = new Date();
-  // return false if either the start or end is undefined
-  const range_defined = start !== undefined && end !== undefined;
-  // check if the current time is within the given interval
   return (
-    range_defined &&
-    isWithinInterval(currentTime, {
-      start: parseISO(start),
-      end: parseISO(end),
-    })
+    isHappeningSoon && (
+      <Col xs="12" md="6" lg="4">
+        <Card
+          className={`relevant ${
+            type === "Event" ? "blue-card" : "orange-card"
+          }`}
+        >
+          <Card.Body>
+            <Card.Title>
+              <h3>{title}</h3>
+            </Card.Title>
+            <Card.Subtitle>
+              {timeText(displayStartTime, displayEndTime)}
+              {isHappeningNow && (
+                <span className="live-dot" title="Happening now"></span>
+              )}
+            </Card.Subtitle>
+            <Card.Text>{body}</Card.Text>
+            {buttonText && (
+              <a className="btn" href={buttonURL} role="button">
+                {buttonText}
+              </a>
+            )}
+          </Card.Body>
+        </Card>
+      </Col>
+    )
   );
-}
+};
 
 const RelevantRightNow = () => {
   const { data, isLoading } = useAirtableAPI("appzSS15B2eBo5igq", "relevant");
