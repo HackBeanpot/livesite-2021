@@ -57,18 +57,43 @@ def add_break(assignments):
         projects.insert(5, {
             'projectName': 'Break Time'
         })
-
     return assignments
 
 
+def create_project_schedules(assignments_dict):
+    project_schedules = {}
+    for project in projectObj:
+        project_schedules[project['projectName']] = get_project_schedule(project['projectName'], assignments_dict)
+
+    return project_schedules
+
+
+def get_project_schedule(project_name, assignments):
+    schedule = []
+
+    for i in range(NUM_PROJECTS_PER_JUDGE+1):
+        foundProj = False
+        for judge, projects in assignments.items():
+            if projects[i]['projectName'] == project_name:
+                schedule.append(judge)
+                foundProj = True
+
+        if not foundProj:
+            schedule.append('Break')
+
+    return schedule
+
+
 # Send assignments_dict to json file for front-end
-def dump_json(assignments_dict):
-    with open('./results.json', 'w') as fp:
+def dump_json(assignments_dict, file_path):
+    with open(file_path, 'w') as fp:
         json.dump(assignments_dict, fp, indent=2)
 
 
 projectObj = parse_project()
-# print(projectObj)
 judge_assignments = distribute_projects(projectObj)
 with_break = add_break(judge_assignments)
-dump_json(with_break)
+dump_json(with_break, './results.json')
+
+# create perProject schedules
+dump_json(create_project_schedules(judge_assignments), './projectResults.json')
