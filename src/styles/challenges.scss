@@ -3,18 +3,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #1B214E;
+    background-color: #1b214e;
     padding-bottom: 4vw;
 
     @media (min-width: $xxl) {
       min-height: 40rem;
     }
 
-    h2{
-      @media (max-width: $sm){
+    h2 {
+      @media (max-width: $sm) {
         font-size: 5vw;
       }
-      @media (max-width: $md) and (min-width: $sm){
+      @media (max-width: $md) and (min-width: $sm) {
         font-size: 4vw;
         margin-left: 3vw;
       }
@@ -23,15 +23,15 @@
       color: white;
     }
 
-    p{
-      @media (max-width: $sm){
+    p {
+      @media (max-width: $sm) {
         font-size: 3vw;
         margin-bottom: 2rem;
       }
     }
 
     a {
-      color: #6499C6; 
+      color: #6499c6;
     }
   }
 
@@ -40,12 +40,12 @@
     float: left;
     width: 33vw;
 
-    @media (max-width: $sm){
+    @media (max-width: $sm) {
       margin-left: 3vw;
       width: 70vw;
     }
 
-    @media (max-width: $md) and (min-width: $sm){
+    @media (max-width: $md) and (min-width: $sm) {
       width: 45vw;
       margin-left: 10vw;
     }
@@ -58,14 +58,14 @@
   }
 
   &__image {
-    @media (max-width: $md){
-      display:none;
+    @media (max-width: $md) {
+      display: none;
     }
     display: flex;
     margin-right: 1vw;
     align-items: center;
     justify-content: flex-end;
     width: 23vw;
-    height: auto;    
+    height: auto;
   }
 }
