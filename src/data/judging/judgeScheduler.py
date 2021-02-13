@@ -9,7 +9,7 @@ NUM_JUDGES = len(JUDGES)
 # Number of projects each judge can view
 TIME_FOR_ONE_PROJECT = 10
 TOTAL_TIME = 90
-NUM_PROJECTS_PER_JUDGE = int(TOTAL_TIME / TIME_FOR_ONE_PROJECT)
+NUM_PROJECTS_PER_JUDGE = int(TOTAL_TIME / TIME_FOR_ONE_PROJECT) - 1
 
 
 # Load projects from json
@@ -54,7 +54,7 @@ def distribute_projects(projects):
 
 def add_break(assignments):
     for judge, projects in assignments.items():
-        projects.insert(5, {
+        projects.insert(4, {
             'projectName': 'Break Time'
         })
     return assignments
