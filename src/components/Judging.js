@@ -1,9 +1,13 @@
 import React from "react";
 import { useState } from "react";
 import SelectSearch from "react-select-search";
+
+import NonLiveDemoIndex from "../assets/non-live-index.svg";
+
 import Judges from "../data/judging/judges.json";
 import Projects from "../data/judging/projectData.json";
 import JudgeSchedules from "../data/judging/results.json";
+import ProjectSchedules from "../data/judging/projectResults.json";
 
 const TIME_SLOTS = [
   "10:30",
@@ -15,7 +19,6 @@ const TIME_SLOTS = [
   "11:30",
   "11:40",
   "11:50",
-  "12:00",
 ];
 
 const Judging = () => {
@@ -95,19 +98,50 @@ const Judging = () => {
           >
             Find Another Schedule
           </button>
-          <JudgingTable selectedPerson={selectedPerson} />
+          <div className="non-live-index">
+            <img
+              className="non-live-index-img"
+              src={NonLiveDemoIndex}
+              alt={"non-live index"}
+            />
+            Team is in another timezone, inspect their video link
+          </div>
+          <JudgingTable
+            selectedPerson={selectedPerson}
+            personType={personType}
+          />
         </div>
       );
     } else {
-      return <div>Project Schedule</div>;
+      return (
+        <div className="project-schedule">
+          <p className="schedule-title">{`${selectedPerson}'s Schedule`}</p>
+          <button
+            className="new-schedule-button"
+            onClick={() => setCurrentPage("who-are-you")}
+          >
+            Find Another Schedule
+          </button>
+          <JudgingTable
+            selectedPerson={selectedPerson}
+            personType={personType}
+          />
+        </div>
+      );
     }
   }
 };
 
-const JudgingTable = ({ selectedPerson }) => {
+const JudgingTable = ({ selectedPerson, personType }) => {
   const rows = [];
 
-  const numProjects = JudgeSchedules[selectedPerson].length;
+  let numProjects = 0;
+  if (personType === "judge") {
+    numProjects = JudgeSchedules[selectedPerson].length;
+  } else {
+    numProjects = ProjectSchedules[selectedPerson].length;
+  }
+
   for (let row = 0; row < numProjects; row++) {
     const cells = [];
 
@@ -117,9 +151,39 @@ const JudgingTable = ({ selectedPerson }) => {
       <div className={`a-row time-col ${oddOrEven}`}>{TIME_SLOTS[row]}</div>
     );
 
-    const projectName = JudgeSchedules[selectedPerson][row]["projectName"];
+    let projectName = "";
+    if (personType === "judge") {
+      projectName = JudgeSchedules[selectedPerson][row]["projectName"];
+    } else {
+      projectName = ProjectSchedules[selectedPerson][row];
+    }
 
-    cells.push(<div className={`a-row cell${row}`}>{projectName}</div>);
+    if (personType === "judge") {
+      cells.push(
+        <div
+          className={`a-row proj-col ${oddOrEven} cell${row}${
+            JudgeSchedules[selectedPerson][row]["liveDemo"] ||
+            projectName === "Break Time"
+              ? " "
+              : " non-live"
+          }`}
+        >
+          <a
+            className="proj-link"
+            href={JudgeSchedules[selectedPerson][row]["videoDemoLink"]}
+          >
+            {" "}
+            {projectName}{" "}
+          </a>
+        </div>
+      );
+    } else {
+      cells.push(
+        <div className={`a-row proj-col ${oddOrEven} cell${row}`}>
+          {ProjectSchedules[selectedPerson][row]}
+        </div>
+      );
+    }
 
     rows.push(<div className={`table-row table-row-${row}`}>{cells}</div>);
   }
