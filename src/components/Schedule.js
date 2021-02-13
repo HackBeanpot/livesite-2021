@@ -26,9 +26,6 @@ const AdditionalAttributes = ({ event }) => {
           {event.company}
         </p>
       </div>
-      <div className="schedule__calendar">
-        <img src={CalendarIcon} alt="calendar icon" />
-      </div>
     </div>
   );
 };
@@ -61,7 +58,13 @@ const Schedule = () => {
     <Container id="schedule" className="schedule mt-5">
       <Row>
         <Col>
-          <h1 className="font-weight-bold">Event Schedule</h1>
+          <h1>Event Schedule</h1>
+        </Col>
+        <Col>
+          <button type="button" className="btn secondary-cta schedule__export">
+            <img src={CalendarIcon} className="schedule__calendar" alt="Calendar Icon" />
+            Subscribe to Calendar
+          </button>
         </Col>
       </Row>
       {isLoading || data.length === 0 ? (
@@ -134,12 +137,12 @@ const Schedule = () => {
                                     </p>
                                   </div>
                                   <div className="schedule__location">
-                                    <p
+                                    <h3
                                       className="schedule__location__title"
                                       title={event.title}
                                     >
                                       {event.title}
-                                    </p>
+                                    </h3>
                                     <a
                                       className="schedule__location__zoom"
                                       href={event.location}
@@ -159,8 +162,7 @@ const Schedule = () => {
                             </Accordion.Toggle>
                             <Accordion.Collapse eventKey={idx.toString()}>
                               <Card.Body>
-                                <strong>Description:&nbsp;</strong>
-                                {event.description}
+                                <p>{event.description}</p>
                                 {width < 1000 && (
                                   <AdditionalAttributes event={event} />
                                 )}

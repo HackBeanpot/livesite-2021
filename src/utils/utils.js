@@ -38,9 +38,11 @@ export const colorTheme = (type) => {
     case "Everyone!":
       return "#e56138";
     case "Activity":
-      return "#36bc7c";
+      return "#52c2c2";
     case "Workshop":
-      return "#598ebf";
+      return "#102037";
+    case "Tech Talk":
+      return "#1d8a4f"
     default:
       return "#000";
   }
