@@ -67,6 +67,13 @@ const Schedule = () => {
           </button>
         </Col>
       </Row>
+      <Row>
+        <Col>
+          <h3 className="schedule__warning">
+            Please be sure to attend all events labeled "Everyone!"
+          </h3>
+        </Col>
+      </Row>
       {isLoading || data.length === 0 ? (
         <Spinner animation="border" variant="primary" />
       ) : (
