@@ -142,3 +142,23 @@
     cursor: pointer;
   }
 }
+
+.schedule-container {
+  margin-top: 40px;
+}
+
+.table-row {
+  display: flex;
+}
+
+.a-row {
+  padding: 15px 60px;
+}
+
+.even {
+  background-color: $light-purple;
+}
+
+.odd {
+  background-color: $light-yellow;
+}

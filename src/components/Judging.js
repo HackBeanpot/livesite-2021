@@ -85,48 +85,48 @@ const Judging = () => {
       </div>
     );
   } else if (currentPage === "schedule") {
-    return (
-      <div className="judging-schedule">
-        <p className="schedule-title">{`${selectedPerson}'s Schedule`}</p>
-        <button
-          className="new-schedule-button"
-          onClick={() => setCurrentPage("who-are-you")}
-        >
-          Find Another Schedule
-        </button>
-        <JudgingTable selectedPerson={selectedPerson} />
-      </div>
-    );
+    if (personType === "judge") {
+      return (
+        <div className="judging-schedule">
+          <p className="schedule-title">{`${selectedPerson}'s Schedule`}</p>
+          <button
+            className="new-schedule-button"
+            onClick={() => setCurrentPage("who-are-you")}
+          >
+            Find Another Schedule
+          </button>
+          <JudgingTable selectedPerson={selectedPerson} />
+        </div>
+      );
+    } else {
+      return <div>Project Schedule</div>;
+    }
   }
 };
 
 const JudgingTable = ({ selectedPerson }) => {
   const rows = [];
 
-  const header = [];
-  header.push(<div id="time-header">Time</div>);
-  header.push(<div id={`judge-${selectedPerson}`}>{selectedPerson}</div>);
-
   const numProjects = JudgeSchedules[selectedPerson].length;
   for (let row = 0; row < numProjects; row++) {
     const cells = [];
 
-    cells.push(<div className="time-col">{TIME_SLOTS[row]}</div>);
+    const oddOrEven = row % 2 === 0 ? "even" : "odd";
+
+    cells.push(
+      <div className={`a-row time-col ${oddOrEven}`}>{TIME_SLOTS[row]}</div>
+    );
 
     const projectName = JudgeSchedules[selectedPerson][row]["projectName"];
-    cells.push(<div key={`cell${row}`}>{projectName}</div>);
 
-    rows.push(
-      <div key={row} className={`table-row-${row}`}>
-        {cells}
-      </div>
-    );
+    cells.push(<div className={`a-row cell${row}`}>{projectName}</div>);
+
+    rows.push(<div className={`table-row table-row-${row}`}>{cells}</div>);
   }
 
   return (
     <div className="schedule-container">
       <div className="schedule-table">
-        <div className="schedule-header">{header}</div>
         <div className="schedule-body">{rows}</div>
       </div>
     </div>
