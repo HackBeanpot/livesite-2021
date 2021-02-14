@@ -11,7 +11,6 @@ import useAirtableAPI from "../hooks/api-hook";
 
 const WelcomeIntro = () => {
   const { data } = useAirtableAPI("appLHUnzVRxpj7Nx1", "Raffle");
-  console.log(data);
   var cabinPoints = {
     "Jelly Beans": 0,
     "Cocoa Beans": 0,
@@ -27,7 +26,7 @@ const WelcomeIntro = () => {
   return (
     <Container>
       <Row>
-        <Col md={6}>
+        <Col lg={6}>
           <div className="cabin-cup">
             <Row>
               <Col md={{ span: 7, offset: 1 }}>
@@ -46,7 +45,7 @@ const WelcomeIntro = () => {
               </Col>
             </Row>
             <Row>
-              <Col md={{ span: 3.5, offset: 3 }}>
+              <Col md={{ span: 3, offset: 3 }}>
                 <p className="bean-points">{cabinPoints["Jelly Beans"]}pts </p>
                 <img src={JellyBean} alt="Jelly Bean" />
               </Col>
@@ -56,15 +55,15 @@ const WelcomeIntro = () => {
               </Col>
             </Row>
             <Row>
-              <Col md={{ span: 3.5, offset: 1 }}>
+              <Col md={{ span: 3, offset: 1 }}>
                 <p className="bean-points">{cabinPoints["Garden Beans"]}pts</p>
                 <img src={GardenBean} alt="Garden Bean" />
               </Col>
-              <Col md={3.5}>
+              <Col md={3}>
                 <p className="bean-points">{cabinPoints["Soy Beans"]}pts</p>
                 <img src={SoyBean} alt="Soy Bean" />
               </Col>
-              <Col md={3.5}>
+              <Col md={3}>
                 <p className="bean-points">{cabinPoints["Magic Beans"]}pts</p>
                 <img src={MagicBean} alt="Magic Bean" />
               </Col>
@@ -72,7 +71,7 @@ const WelcomeIntro = () => {
           </div>
         </Col>
 
-        <Col>
+        <Col className="pt-5">
           <h2>Welcome to HackBeanpot 2021!</h2>
           <p className="introText">
             At HackBeanpot 2021, we aim to create a welcoming “campsite” by
