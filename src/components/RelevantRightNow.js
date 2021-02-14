@@ -1,5 +1,5 @@
 import React from "react";
-import { format, isWithinInterval, parseISO } from "date-fns";
+import { format, isBefore, isWithinInterval, parseISO } from "date-fns";
 import { Card, Col, Container, Row, Spinner } from "react-bootstrap";
 import useAirtableAPI from "../hooks/api-hook";
 import useShowTime from "../hooks/useShowTime";
@@ -92,7 +92,7 @@ const RelevantRightNow = () => {
       </Row>
       <div className="scrolling-wrapper row flex-row flex-nowrap pb-4 pt-2">
         {isLoading && <Spinner animation="border" variant="primary" />}
-        {data.map((rel) => (
+        {data.filter(keepGoodLogBad).map((rel) => (
           <RelevantCard
             {...rel.fields}
             key={rel.fields.title + rel.fields.activeStartTime.toString()}
@@ -101,6 +101,27 @@ const RelevantRightNow = () => {
       </div>
     </Container>
   );
+};
+
+// true if good, false if bad (and log reason)
+const keepGoodLogBad = (rel) => {
+  const f = rel.fields;
+  if (!("title" in rel.fields)) {
+    console.warn("record does not have a title, ignoring:", rel.id);
+    return false;
+  } else if (isInvalidInterval(f.activeStartTime, f.activeEndTime)) {
+    console.warn("record has bad activeTime interval, ignoring:", f.title);
+    return false;
+  } else if (isInvalidInterval(f.displayStartTime, f.displayEndTime)) {
+    console.warn("record has bad displayTime interval, ignoring:", f.title);
+    return false;
+  }
+  return true;
+};
+
+// invalid if both defined, and the end is before the start
+const isInvalidInterval = (start, end) => {
+  return start && end && isBefore(parseISO(end), parseISO(start));
 };
 
 export default RelevantRightNow;
