@@ -107,13 +107,13 @@ const RelevantRightNow = () => {
 const keepGoodLogBad = (rel) => {
   const f = rel.fields;
   if (!("title" in rel.fields)) {
-    console.error("record does not have a title!", rel.id);
+    console.warn("record does not have a title, ignoring:", rel.id);
     return false;
   } else if (isInvalidInterval(f.activeStartTime, f.activeEndTime)) {
-    console.error("record has bad activeTime interval!", f.title);
+    console.warn("record has bad activeTime interval, ignoring:", f.title);
     return false;
   } else if (isInvalidInterval(f.displayStartTime, f.displayEndTime)) {
-    console.error("record has bad displayTime interval!", f.title);
+    console.warn("record has bad displayTime interval, ignoring:", f.title);
     return false;
   }
   return true;
