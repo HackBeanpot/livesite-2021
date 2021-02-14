@@ -11,8 +11,8 @@ import useAirtableAPI from "../hooks/api-hook";
 
 const WelcomeIntro = () => {
   const { data } = useAirtableAPI("appLHUnzVRxpj7Nx1", "Raffle");
-  console.log(data);
-  var cabinPoints = {
+
+  const cabinPoints = {
     "Jelly Beans": 0,
     "Cocoa Beans": 0,
     "Soy Beans": 0,
@@ -20,10 +20,11 @@ const WelcomeIntro = () => {
     "Magic Beans": 0,
   };
 
-  data.forEach((data) => {
-    var cabin = data.fields["Cabins"];
+  for (const cabinPoint of data) {
+    const cabin = cabinPoint.fields["Cabins"];
     cabinPoints[cabin] += 1;
-  });
+  }
+
   return (
     <Container>
       <Row>
@@ -126,4 +127,3 @@ const WelcomeIntro = () => {
 };
 
 export default WelcomeIntro;
-
