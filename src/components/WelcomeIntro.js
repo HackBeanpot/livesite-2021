@@ -43,8 +43,7 @@ const WelcomeIntro = () => {
                 <img src={CabinCupLogo} alt="Cabin cup logo" />
               </Col>
             </Row>
-            <Row>
-              <Col></Col>
+            <Row className="justify-content-center">
               <Col xs="auto" className="cabin-wrapper">
                   <p className="bean-points">{cabinPoints["Jelly Beans"]}pts </p>
                   <img src={JellyBean} alt="Jelly Bean" className="cabin-image"/>
@@ -53,10 +52,8 @@ const WelcomeIntro = () => {
                   <p className="bean-points">{cabinPoints["Cocoa Beans"]}pts</p>
                   <img src={CocoaBean} alt="Cocoa Bean" className="cabin-image"/>
               </Col>
-              <Col></Col>
             </Row>
-            <Row>
-              <Col md="1"></Col>
+            <Row className="justify-content-center">
               <Col xs="auto" className="cabin-wrapper">
                   <p className="bean-points">{cabinPoints["Garden Beans"]}pts</p>
                   <img src={GardenBean} alt="Garden Bean" className="cabin-image"/>
