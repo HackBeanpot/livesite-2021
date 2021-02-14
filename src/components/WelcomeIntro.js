@@ -26,8 +26,7 @@ const WelcomeIntro = () => {
   return (
     <Container>
       <Row>
-        <Col lg={6}>
-          <div className="cabin-cup">
+        <Col lg={6} className="cabin-cup">
             <Row>
               <Col md={{ span: 7, offset: 1 }}>
                 <div className="cabin-cup-intro">
@@ -48,11 +47,11 @@ const WelcomeIntro = () => {
               <Col></Col>
               <Col xs="auto" className="cabin-wrapper">
                   <p className="bean-points">{cabinPoints["Jelly Beans"]}pts </p>
-                  <img src={JellyBean} alt="Jelly Bean" />
+                  <img src={JellyBean} alt="Jelly Bean" className="cabin-image"/>
               </Col>
               <Col xs="auto" className="cabin-wrapper">
                   <p className="bean-points">{cabinPoints["Cocoa Beans"]}pts</p>
-                  <img src={CocoaBean} alt="Cocoa Bean" />
+                  <img src={CocoaBean} alt="Cocoa Bean" className="cabin-image"/>
               </Col>
               <Col></Col>
             </Row>
@@ -60,18 +59,17 @@ const WelcomeIntro = () => {
               <Col md="1"></Col>
               <Col xs="auto" className="cabin-wrapper">
                   <p className="bean-points">{cabinPoints["Garden Beans"]}pts</p>
-                  <img src={GardenBean} alt="Garden Bean" />
+                  <img src={GardenBean} alt="Garden Bean" className="cabin-image"/>
               </Col>
               <Col xs="auto" className="cabin-wrapper">
                   <p className="bean-points">{cabinPoints["Soy Beans"]}pts</p>
-                  <img src={SoyBean} alt="Soy Bean" />
+                  <img src={SoyBean} alt="Soy Bean" className="cabin-image"/>
               </Col>
               <Col xs="auto" className="cabin-wrapper">
                   <p className="bean-points">{cabinPoints["Magic Beans"]}pts</p>
-                  <img src={MagicBean} alt="Magic Bean" />
+                  <img src={MagicBean} alt="Magic Bean" className="cabin-image"/>
               </Col>
             </Row>
-          </div>
         </Col>
 
         <Col className="pt-5">
