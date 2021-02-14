@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Container, Row} from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import CocoaBean from "../assets/CocoaBean.svg";
 import JellyBean from "../assets/JellyBean.svg";
 import GardenBean from "../assets/GardenBean.svg";
@@ -8,8 +8,6 @@ import MagicBean from "../assets/MagicBean.svg";
 import CabinCupLogo from "../assets/CabinCupLogo.svg";
 
 import useAirtableAPI from "../hooks/api-hook";
-
-
 
 const WelcomeIntro = () => {
   const { data, isLoading } = useAirtableAPI("appLHUnzVRxpj7Nx1", "Raffle");
@@ -20,12 +18,12 @@ const WelcomeIntro = () => {
     "Soy Beans": 0,
     "Garden Beans": 0,
     "Magic Beans": 0,
-  }
+  };
 
-  data.forEach(data => {
+  data.forEach((data) => {
     var cabin = data.fields["Cabins"];
     cabinPoints[cabin] += 1;
-  })
+  });
   console.log(cabinPoints);
   return (
     <Container>
@@ -33,59 +31,48 @@ const WelcomeIntro = () => {
         <Col md={6}>
           <div className="cabin-cup">
             <Row>
-              <Col md={{span: 7, offset: 1}}>
+              <Col md={{ span: 7, offset: 1 }}>
                 <div className="cabin-cup-intro">
-                <h2>Cabin Cup</h2> 
+                  <h2>Cabin Cup</h2>
                   <p>
-                  Earn points for your cabin by bonding with you cabin mates 
-                  and participating in cabin events! Use your points in the end 
-                  to enter raffles for awesome prizes! 
-                 </p>
+                    Earn points for your cabin by bonding with you cabin mates
+                    and participating in cabin events! Use your points in the
+                    end to enter raffles for awesome prizes!
+                  </p>
                 </div>
-                <br/>
-              </Col> 
-              <Col className= "cabin-logo" md={{span: 3, offset: 1}}>
-              <img src={CabinCupLogo} alt="Cabin cup logo"/>
+                <br />
+              </Col>
+              <Col className="cabin-logo" md={{ span: 3, offset: 1 }}>
+                <img src={CabinCupLogo} alt="Cabin cup logo" />
               </Col>
             </Row>
             <Row>
-              <Col md={{span: 3.5, offset: 3}}>
-              <p className= "beanPoints">
-              {cabinPoints["Jelly Beans"]}
-              </p>
-              <img src={JellyBean} alt="Jelly Bean"/>
+              <Col md={{ span: 3.5, offset: 3 }}>
+                <p className="bean-points">{cabinPoints["Jelly Beans"]}pts </p>
+                <img src={JellyBean} alt="Jelly Bean" />
               </Col>
               <Col md={3}>
-              <p className= "beanPoints">
-              {cabinPoints["Cocoa Beans"]}
-              </p>
-              <img src={CocoaBean} alt="Cocoa Bean"/>
+                <p className="bean-points">{cabinPoints["Cocoa Beans"]}pts</p>
+                <img src={CocoaBean} alt="Cocoa Bean" />
               </Col>
             </Row>
             <Row>
-              <Col md={{span: 3.5, offset: 1}}>
-              <p className= "beanPoints">
-              {cabinPoints["Garden Beans"]}
-              </p>
-              <img src={GardenBean} alt="Garden Bean"/>
-              </Col>
-              <Col md={3.5}>   
-              <p className= "beanPoints">
-              {cabinPoints["Soy Beans"]}
-              </p>           
-              <img src={SoyBean} alt="Soy Bean"/>
+              <Col md={{ span: 3.5, offset: 1 }}>
+                <p className="bean-points">{cabinPoints["Garden Beans"]}pts</p>
+                <img src={GardenBean} alt="Garden Bean" />
               </Col>
               <Col md={3.5}>
-              <p className= "beanPoints">
-              {cabinPoints["Magic Beans"]}
-              </p>
-              <img src={MagicBean} alt="Magic Bean"/>
-              </Col>        
+                <p className="bean-points">{cabinPoints["Soy Beans"]}pts</p>
+                <img src={SoyBean} alt="Soy Bean" />
+              </Col>
+              <Col md={3.5}>
+                <p className="bean-points">{cabinPoints["Magic Beans"]}pts</p>
+                <img src={MagicBean} alt="Magic Bean" />
+              </Col>
             </Row>
-            
-            </div>
+          </div>
         </Col>
-        
+
         <Col>
           <h1 className="font-weight-bold">Welcome to HackBeanpot 2021!</h1>
           <p className="introText">

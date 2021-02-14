@@ -49,14 +49,16 @@ const Team = () => {
               Meet the team behind HackBeanpot
             </h2>
             <p>
-              Hey, campers! We are so excited to bring you on this virtual camping adventure this 
-              year for HackBeanpot 2021. The HackBeanpot Core Team works behind the scenes all 
-              year long to make everything come together for this special event. We are a group 
-              of 20 driven students from universities in the Boston area who aim to make technical 
-              experience and knowledge accessible to anyone who's interested. Meet the different 
-              teams - Design, Social Media &amp; Outreach, Sponsorship, and Tech - that help make this 
-              event happen! Also, we’d love if you were able to answer our feedback form below to 
-              help us in improving this event for future hackers!
+              Hey, campers! We are so excited to bring you on this virtual
+              camping adventure this year for HackBeanpot 2021. The HackBeanpot
+              Core Team works behind the scenes all year long to make everything
+              come together for this special event. We are a group of 20 driven
+              students from universities in the Boston area who aim to make
+              technical experience and knowledge accessible to anyone who's
+              interested. Meet the different teams - Design, Social Media &amp;
+              Outreach, Sponsorship, and Tech - that help make this event
+              happen! Also, we’d love if you were able to answer our feedback
+              form below to help us in improving this event for future hackers!
             </p>
           </Col>
         </Row>

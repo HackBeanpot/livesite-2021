@@ -1,32 +1,32 @@
-.cabin-cup{
-    background-color: #1b214e;
-    border-radius: 15px;
+.cabin-cup {
+  background-color: #1b214e;
+  border-radius: 15px;
 
-    h2 {
-        color: white;
-        font-weight: bold;
-        padding-top: 20px;
-    }
-    
-    h5 {
-        color: white;
-    }
-
-    .cabin-cup-intro {
-        color: white;
-        }
-}
-
-.cabin-logo{
-    padding-top: 10px;
-}
-
-.beanPoints {
-    position: absolute;
+  h2 {
     color: white;
-    background-color: $orange;
-    margin-left: 8px;
-    margin-top: 8px;
-    padding: 5px 12px;
-    border-radius: 30px;
+    font-weight: bold;
+    padding-top: 20px;
+  }
+
+  h5 {
+    color: white;
+  }
+
+.cabin-cup-intro {
+    color: white;
+  }
+}
+
+.cabin-logo {
+  padding-top: 10px;
+}
+
+.bean-points {
+  position: absolute;
+  color: white;
+  background-color: $orange;
+  margin-left: -10px;
+  margin-top: -10px;
+  padding: 14px 12px;
+  border-radius: 30px;
 }

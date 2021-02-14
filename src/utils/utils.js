@@ -65,8 +65,11 @@ export const timeExtractor = (time) => {
 export const isLive = (data) => {
   const currentTime = new Date();
   const startTime = new Date(data.startTime);
-  const endTime = data.endTime ?
-    new Date(data.endTime):
-    null
-  return (endTime !== null && endTime !== undefined) && currentTime <= endTime && currentTime >= startTime;
-}
+  const endTime = data.endTime ? new Date(data.endTime) : null;
+  return (
+    endTime !== null &&
+    endTime !== undefined &&
+    currentTime <= endTime &&
+    currentTime >= startTime
+  );
+};
