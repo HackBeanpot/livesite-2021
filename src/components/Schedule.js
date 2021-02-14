@@ -51,7 +51,7 @@ const Schedule = () => {
     const interval = setInterval(() => setCurrentTime(new Date()), 1000);
     return () => {
       clearInterval(interval);
-    }
+    };
   }, []);
 
   return (
@@ -62,9 +62,20 @@ const Schedule = () => {
         </Col>
         <Col>
           <button type="button" className="btn secondary-cta schedule__export">
-            <img src={CalendarIcon} className="schedule__calendar" alt="Calendar Icon" />
+            <img
+              src={CalendarIcon}
+              className="schedule__calendar"
+              alt="Calendar Icon"
+            />
             Subscribe to Calendar
           </button>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <h3 className="schedule__warning">
+            Please be sure to attend all events labeled "Everyone!"
+          </h3>
         </Col>
       </Row>
       {isLoading || data.length === 0 ? (
