@@ -1,4 +1,4 @@
-import * as React from "react"
+import * as React from "react";
 
 function SvgComponent(props) {
   return (
@@ -263,7 +263,7 @@ function SvgComponent(props) {
         strokeWidth={2}
       />
     </svg>
-  )
+  );
 }
 
-export default SvgComponent
+export default SvgComponent;

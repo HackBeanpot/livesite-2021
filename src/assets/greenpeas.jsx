@@ -1,4 +1,4 @@
-import * as React from "react"
+import * as React from "react";
 
 function GreenPeas(props) {
   return (
@@ -210,7 +210,7 @@ function GreenPeas(props) {
         strokeLinecap="round"
       />
     </svg>
-  )
+  );
 }
 
-export default GreenPeas
+export default GreenPeas;
