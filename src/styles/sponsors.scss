@@ -1,0 +1,30 @@
+.sponsors {
+  //@include top-padding;
+  //@include bottom-padding;
+
+  &__title {
+    //@include h2-text;
+  }
+
+  &__subtitle {
+    text-align: center;
+    //@include top-margin;
+  }
+
+  &__logo-wrapper {
+    justify-content: center;
+    display: flex;
+    max-height: 12vw;
+    margin-top: 15px;
+    
+    @media (max-width: $md) {
+      max-height: 150px;
+    }
+  }
+
+  &__logo {
+    object-fit: contain;
+    height: 100%;
+  }
+
+}
