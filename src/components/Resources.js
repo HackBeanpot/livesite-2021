@@ -29,6 +29,7 @@ const Resources = () => (
     <Row>
       {ResourceItems.map((resource) => (
         <ResourceCard
+          key={resource.name}
           name={resource.name}
           link={resource.link}
           imageURL={resource.imageURL}

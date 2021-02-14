@@ -82,7 +82,7 @@ const RelevantRightNow = () => {
       <div className="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2">
         {isLoading && <Spinner animation="border" variant="primary" />}
         {data.map((rel) => (
-          <RelevantCard {...rel.fields} />
+          <RelevantCard {...rel.fields} key={rel.fields.title} />
         ))}
       </div>
     </Container>
