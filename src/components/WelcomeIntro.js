@@ -45,27 +45,30 @@ const WelcomeIntro = () => {
               </Col>
             </Row>
             <Row>
-              <Col md={{ span: 3, offset: 3 }}>
-                <p className="bean-points">{cabinPoints["Jelly Beans"]}pts </p>
-                <img src={JellyBean} alt="Jelly Bean" />
+              <Col></Col>
+              <Col xs="auto" className="cabin-wrapper">
+                  <p className="bean-points">{cabinPoints["Jelly Beans"]}pts </p>
+                  <img src={JellyBean} alt="Jelly Bean" />
               </Col>
-              <Col md={3}>
-                <p className="bean-points">{cabinPoints["Cocoa Beans"]}pts</p>
-                <img src={CocoaBean} alt="Cocoa Bean" />
+              <Col xs="auto" className="cabin-wrapper">
+                  <p className="bean-points">{cabinPoints["Cocoa Beans"]}pts</p>
+                  <img src={CocoaBean} alt="Cocoa Bean" />
               </Col>
+              <Col></Col>
             </Row>
             <Row>
-              <Col md={{ span: 3, offset: 1 }}>
-                <p className="bean-points">{cabinPoints["Garden Beans"]}pts</p>
-                <img src={GardenBean} alt="Garden Bean" />
+              <Col md="1"></Col>
+              <Col xs="auto" className="cabin-wrapper">
+                  <p className="bean-points">{cabinPoints["Garden Beans"]}pts</p>
+                  <img src={GardenBean} alt="Garden Bean" />
               </Col>
-              <Col md={3}>
-                <p className="bean-points">{cabinPoints["Soy Beans"]}pts</p>
-                <img src={SoyBean} alt="Soy Bean" />
+              <Col xs="auto" className="cabin-wrapper">
+                  <p className="bean-points">{cabinPoints["Soy Beans"]}pts</p>
+                  <img src={SoyBean} alt="Soy Bean" />
               </Col>
-              <Col md={3}>
-                <p className="bean-points">{cabinPoints["Magic Beans"]}pts</p>
-                <img src={MagicBean} alt="Magic Bean" />
+              <Col xs="auto" className="cabin-wrapper">
+                  <p className="bean-points">{cabinPoints["Magic Beans"]}pts</p>
+                  <img src={MagicBean} alt="Magic Bean" />
               </Col>
             </Row>
           </div>
