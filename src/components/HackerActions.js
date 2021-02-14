@@ -12,10 +12,14 @@ const HackerActions = () => (
           Form below so we can continue to make HackBeanpot a great experience
           for all attendees.
         </p>
-        <a href="/">
-          <button type="button" className="btn primary-cta">
-            Send Feedback
-          </button>
+        <a
+          className="btn primary-cta"
+          role="button"
+          href={"https://forms.gle/fYx5sh22NwXaZSZWA"}
+          target="_blank"
+          rel="noreferrer"
+        >
+          Send Feedback
         </a>
       </Col>
       <Col md="6" className="mb-5">
