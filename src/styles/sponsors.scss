@@ -1,0 +1,18 @@
+.sponsors {
+  &__logo-wrapper {
+    justify-content: center;
+    display: flex;
+    max-height: 12vw;
+    margin-top: 15px;
+
+    @media (max-width: $md) {
+      max-height: 150px;
+    }
+  }
+
+  &__logo {
+    object-fit: contain;
+    height: auto;
+    width: 100%;
+  }
+}

@@ -5,6 +5,7 @@ import Mentors from "./components/Mentors";
 import Navbar from "./components/MainNavbar";
 import Resources from "./components/Resources";
 import Schedule from "./components/Schedule";
+import Sponsors from "./components/Sponsors";
 import Team from "./components/Team";
 import Countdown from "./components/Countdown";
 import RelevantRightNow from "./components/RelevantRightNow";
@@ -22,6 +23,7 @@ function App() {
       <Mentors />
       <Resources />
       <Team />
+      <Sponsors />
       <HackerActions />
       <Footer />
     </div>

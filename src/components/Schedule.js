@@ -87,6 +87,7 @@ const Schedule = () => {
               {Object.keys(extractedData).map((element, idx) => {
                 return (
                   <Tab
+                    key={element}
                     eventKey={idx}
                     title={element}
                     tabClassName="schedule__tab"
@@ -94,7 +95,10 @@ const Schedule = () => {
                     <Accordion>
                       {extractedData[element].map((event, idx) => {
                         return (
-                          <Card className="schedule__card">
+                          <Card
+                            className="schedule__card"
+                            key={event.title + event.time}
+                          >
                             <Accordion.Toggle
                               className="schedule__card-header"
                               as={Card.Header}

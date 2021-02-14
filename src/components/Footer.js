@@ -13,28 +13,28 @@ const Footer = () => (
         target="_blank"
         rel="noopener noreferrer"
       >
-        <i class="fab fa-facebook  fa-2x footer-social-icon footer-text"></i>
+        <i className="fab fa-facebook  fa-2x footer-social-icon footer-text"></i>
       </a>
       <a
         href="https://www.instagram.com/hackbeanpot/"
         target="_blank"
         rel="noopener noreferrer"
       >
-        <i class="fab fa-instagram fa-2x footer-social-icon footer-text"></i>
+        <i className="fab fa-instagram fa-2x footer-social-icon footer-text"></i>
       </a>
       <a
         href="https://www.linkedin.com/company/9315150/"
         target="_blank"
         rel="noopener noreferrer"
       >
-        <i class="fab fa-linkedin fa-2x footer-social-icon footer-text"></i>
+        <i className="fab fa-linkedin fa-2x footer-social-icon footer-text"></i>
       </a>
       <a
         href="https://hackbeanpot.medium.com/"
         target="_blank"
         rel="noopener noreferrer"
       >
-        <i class="fab fa-medium-m  fa-2x footer-social-icon footer-text"></i>
+        <i className="fab fa-medium-m  fa-2x footer-social-icon footer-text"></i>
       </a>
 
       <a
@@ -42,7 +42,7 @@ const Footer = () => (
         target="_blank"
         rel="noopener noreferrer"
       >
-        <i class="fab fa-twitter  fa-2x footer-social-icon footer-text"></i>
+        <i className="fab fa-twitter  fa-2x footer-social-icon footer-text"></i>
       </a>
     </div>
 
