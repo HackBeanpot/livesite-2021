@@ -10,7 +10,7 @@ import CabinCupLogo from "../assets/CabinCupLogo.svg";
 import useAirtableAPI from "../hooks/api-hook";
 
 const WelcomeIntro = () => {
-  const { data, isLoading } = useAirtableAPI("appLHUnzVRxpj7Nx1", "Raffle");
+  const { data } = useAirtableAPI("appLHUnzVRxpj7Nx1", "Raffle");
   console.log(data);
   var cabinPoints = {
     "Jelly Beans": 0,
