@@ -92,7 +92,7 @@ const RelevantRightNow = () => {
       </Row>
       <div className="scrolling-wrapper row flex-row flex-nowrap pb-4 pt-2">
         {isLoading && <Spinner animation="border" variant="primary" />}
-        {data.map((rel) => (
+        {data.filter(keepGoodLogBad).map((rel) => (
           <RelevantCard
             {...rel.fields}
             key={rel.fields.title + rel.fields.activeStartTime.toString()}
@@ -101,6 +101,23 @@ const RelevantRightNow = () => {
       </div>
     </Container>
   );
+};
+
+const requiredProps = [
+  "title",
+  "activeStartTime",
+  "activeEndTime",
+  "displayStartTime",
+  "displayEndTime",
+];
+const keepGoodLogBad = (rel) => {
+  // bad record if it doesn't have some Required properties
+  const missing = requiredProps.filter((prop) => !(prop in rel.fields));
+  if (missing.length > 0) {
+    console.error("bad airtable Relevant records!", rel);
+    return false;
+  }
+  return true;
 };
 
 export default RelevantRightNow;
