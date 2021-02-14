@@ -67,7 +67,7 @@ const MentorCard = ({ mentor }) => {
   const { name, position, company, imageURL } = mentor;
 
   return (
-    <Col className="col-md-3 col-sm-4" key={name}>
+    <Col xl="2" lg="3" md="4" sm="6" key={name}>
       <Card className="mentor-card" onClick={() => setShow(true)}>
         <Card.Img
           variant="top"
@@ -75,7 +75,7 @@ const MentorCard = ({ mentor }) => {
           alt={`Mentor profile photo: ${name}`}
         />
         <Card.Body>
-          <Card.Title>{name}</Card.Title>
+          <Card.Title><h3>{name}</h3></Card.Title>
           <Card.Text>
             {position}, {company}
           </Card.Text>
@@ -152,7 +152,7 @@ export const Mentors = () => {
     <Container id="mentors" className="mt-5 mentors">
       <Row>
         <Col>
-          <h1 className="font-weight-bold">Mentors</h1>
+          <h1>Mentors</h1>
           <p className="mentor-subheader">
             Click on a mentor's photo for more details
           </p>

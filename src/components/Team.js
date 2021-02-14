@@ -5,7 +5,7 @@ import useAirtableAPI from "../hooks/api-hook";
 
 // Define the team member card object
 const MemberCard = ({ team, name, position, school, year, imageURL }) => (
-  <Col md="3">
+  <Col xl="2" lg="3" md="4" sm="6">
     <Card>
       <Card.Img
         variant="top"
@@ -13,7 +13,7 @@ const MemberCard = ({ team, name, position, school, year, imageURL }) => (
         alt="Member profile photo"
       />
       <Card.Body>
-        <Card.Title>{name}</Card.Title>
+        <Card.Title><h3>{name}</h3></Card.Title>
         <Card.Text>
           {year} Year, {school} <br />
           {position}
@@ -32,7 +32,7 @@ const Team = () => {
       <Container id="team" className="mt-5">
         <Row>
           <Col lg="6">
-            <h1 className="font-weight-bold">Our Team</h1>
+            <h1>Our Team</h1>
           </Col>
         </Row>
         <Row>
@@ -45,7 +45,7 @@ const Team = () => {
             />
           </Col>
           <Col className="ml-3">
-            <h2 id="team" className="pt-5">
+            <h2 id="team">
               Meet the team behind HackBeanpot
             </h2>
             <p>
@@ -115,6 +115,7 @@ const Team = () => {
         </Row>
         <Container>
           <Row className="py-3">
+            <Col lg="1"></Col>
             {
               isLoading && (
                 <Spinner animation="border" variant="primary" />

@@ -13,7 +13,7 @@ import {
 import CalendarIcon from "../assets/calendar.png";
 import Arrow from "../assets/arrow.svg";
 import useAirtableAPI from "../hooks/api-hook";
-import { scheduleExtractor } from "../utils/utils";
+import { hasEventEnded, scheduleExtractor } from "../utils/utils";
 
 const AdditionalAttributes = ({ event }) => {
   return (
@@ -26,9 +26,6 @@ const AdditionalAttributes = ({ event }) => {
           {event.company}
         </p>
       </div>
-      <div className="schedule__calendar">
-        <img src={CalendarIcon} alt="calendar icon" />
-      </div>
     </div>
   );
 };
@@ -39,6 +36,7 @@ const Schedule = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [clickedIdx, setClickedIdx] = useState(-1);
   const [width, setWidth] = useState(window.innerWidth);
+  const [currentTime, setCurrentTime] = useState(new Date());
 
   useEffect(() => {
     const updateSize = () => {
@@ -49,11 +47,35 @@ const Schedule = () => {
     return () => window.removeEventListener("resize", updateSize);
   }, []);
 
+  useEffect(() => {
+    const interval = setInterval(() => setCurrentTime(new Date()), 1000);
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+
   return (
     <Container id="schedule" className="schedule mt-5">
       <Row>
         <Col>
-          <h1 className="font-weight-bold">Event Schedule</h1>
+          <h1>Event Schedule</h1>
+        </Col>
+        <Col>
+          <button type="button" className="btn secondary-cta schedule__export">
+            <img
+              src={CalendarIcon}
+              className="schedule__calendar"
+              alt="Calendar Icon"
+            />
+            Subscribe to Calendar
+          </button>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <h3 className="schedule__warning">
+            Please be sure to attend all events labeled "Everyone!"
+          </h3>
         </Col>
       </Row>
       {isLoading || data.length === 0 ? (
@@ -101,8 +123,13 @@ const Schedule = () => {
                                     alt="arrow icon"
                                   />
                                 </Button>
-
-                                <div className="schedule__responsive">
+                                <div
+                                  className={
+                                    !hasEventEnded(event.endTime, currentTime)
+                                      ? "schedule__responsive"
+                                      : "schedule__endEvent"
+                                  }
+                                >
                                   <div className="schedule__category">
                                     <p className="schedule__category__time">
                                       {event.time}
@@ -121,12 +148,12 @@ const Schedule = () => {
                                     </p>
                                   </div>
                                   <div className="schedule__location">
-                                    <p
+                                    <h3
                                       className="schedule__location__title"
                                       title={event.title}
                                     >
                                       {event.title}
-                                    </p>
+                                    </h3>
                                     <a
                                       className="schedule__location__zoom"
                                       href={event.location}
@@ -146,8 +173,7 @@ const Schedule = () => {
                             </Accordion.Toggle>
                             <Accordion.Collapse eventKey={idx.toString()}>
                               <Card.Body>
-                                <strong>Description:&nbsp;</strong>
-                                {event.description}
+                                <p>{event.description}</p>
                                 {width < 1000 && (
                                   <AdditionalAttributes event={event} />
                                 )}

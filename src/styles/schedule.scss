@@ -39,7 +39,8 @@
   }
 
   &__row {
-    border-bottom: 1px solid #ccc;
+    border-top: none;
+    border-bottom: 2px solid $dark-blue;
     display: flex;
     height: 100%;
 
@@ -48,8 +49,12 @@
     }
   }
 
+  &__warning {
+    margin-bottom: 2rem;
+  }
+
   &__label {
-    padding: 0.2rem !important;
+    padding: 5px !important;
   }
 
   &__arrow {
@@ -84,6 +89,25 @@
     flex: 3;
     flex-direction: row;
     padding: 0 1rem;
+
+    @media (max-width: $md) {
+      align-items: unset;
+      flex-direction: column-reverse;
+      padding: 1rem;
+    }
+  }
+
+  &__endEvent {
+    align-items: center;
+    display: flex;
+    flex: 3;
+    flex-direction: row;
+    padding: 0 1rem;
+
+    a,
+    p, h3 {
+      opacity: 0.5;
+    }
 
     @media (max-width: $md) {
       align-items: unset;
@@ -146,41 +170,49 @@
     @mixin pill {
       height: min-content;
       border-radius: 40px;
-      padding: 0.5rem 1rem;
+      padding: 0.4rem 1rem;
       margin-bottom: 0;
     }
     &__type {
       @include pill;
-      background-color: $mint;
+      background-color: $green;
+      color: white;
+      margin-right: 1rem;
     }
     &__company {
       @include pill;
-      background-color: $light-purple;
-      margin-left: 1rem;
+      background-color: $teal-blue;
+      color: white;
     }
   }
 
+  &__export {
+    float: right;
+  }
+
   &__calendar {
-    align-items: center;
-    display: flex;
-    padding-right: 20px;
+    height: 35px;
+    margin-right: 10px;
   }
 }
 
 .nav {
   z-index: 1;
   position: relative;
+  margin-left: 10px;
+
   .nav-link {
     background-color: $orange;
     color: white;
     border-bottom: none;
     border-color: $orange;
     border-width: 3px;
-    border-top-right-radius: 5px;
-    border-top-left-radius: 5px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
     font-weight: 500;
+    font-size: 18px;
     margin-right: 3px;
-    padding: 0.5rem 5rem;
+    padding: 0.7rem 5rem;
   }
 
   .nav-link:hover {
@@ -188,7 +220,7 @@
   }
 
   .nav-link.active {
-    border-color: $orange;
+    border-color: white;
     color: $orange;
   }
 }

@@ -3,6 +3,9 @@
   color: black;
 
   &__button {
+    @include button;
+
+    color: black;
     margin-left: 10px;
     margin-bottom: 10px;
   }

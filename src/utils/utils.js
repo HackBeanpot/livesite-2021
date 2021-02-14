@@ -20,6 +20,7 @@ export const eventsExtractor = (attributes) => {
   let event = {
     description: attributes.description,
     time: time,
+    endTime: attributes.endTime || "",
     type: attributes.type,
     theme: colorTheme(attributes.type),
     title: attributes.title,
@@ -37,9 +38,11 @@ export const colorTheme = (type) => {
     case "Everyone!":
       return "#e56138";
     case "Activity":
-      return "#36bc7c";
+      return "#52c2c2";
     case "Workshop":
-      return "#598ebf";
+      return "#102037";
+    case "Tech Talk":
+      return "#1d8a4f"
     default:
       return "#000";
   }
@@ -62,6 +65,11 @@ export const timeExtractor = (time) => {
   return `${((hours + 11) % 12) + 1}:${formattedMins} ${suffix}`;
 };
 
+export const hasEventEnded = (endTime, currentTime) => {
+  const endTimeZone = new Date(endTime);
+  return endTimeZone && currentTime > endTimeZone;
+};
+
 export const isLive = (data) => {
   const currentTime = new Date();
   const startTime = new Date(data.startTime);
@@ -72,4 +80,28 @@ export const isLive = (data) => {
     currentTime <= endTime &&
     currentTime >= startTime
   );
+};
+
+export const formatDays = (difference) => {
+  return difference > 0
+    ? String(Math.floor(difference / (1000 * 60 * 60 * 24)))
+    : "0";
+};
+
+export const formatHours = (difference) => {
+  return difference > 0
+    ? String(Math.floor((difference / (1000 * 60 * 60)) % 24)).padStart(2, "0")
+    : "00";
+};
+
+export const formatMinute = (difference) => {
+  return difference > 0
+    ? String(Math.floor((difference / 1000 / 60) % 60)).padStart(2, "0")
+    : "00";
+};
+
+export const formatSeconds = (difference) => {
+  return difference > 0
+    ? String(Math.floor((difference / 1000) % 60)).padStart(2, "0")
+    : "00";
 };

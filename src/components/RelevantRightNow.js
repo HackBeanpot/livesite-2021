@@ -20,7 +20,7 @@ const RelevantCard = ({
         className={`relevant ${type === "Event" ? "blue-card" : "orange-card"}`}
       >
         <Card.Body>
-          <Card.Title>{title}</Card.Title>
+          <Card.Title><h3>{title}</h3></Card.Title>
           <Card.Subtitle>
             {timeText(displayStartTime, displayEndTime)}
             {isTimeBetween(displayStartTime, displayEndTime) && (
@@ -45,7 +45,7 @@ function timeText(start, end) {
     startString = `${format(parseISO(start), "h:mm")}`;
   }
   // 'h:mma O' example 7:30PM GMT-5
-  let endString = `${format(parseISO(end), "h:mma O")}`;
+  let endString = `${format(parseISO(end), "h:mma")}`;
   return start == null
     ? `Complete by ${endString}`
     : `${startString} - ${endString}`;
@@ -74,7 +74,7 @@ const RelevantRightNow = () => {
     <Container className="mt-5">
       <Row>
         <Col>
-          <h1 id="relevant" className="font-weight-bold">
+          <h1 id="relevant">
             Relevant Right Now
           </h1>
         </Col>
