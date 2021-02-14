@@ -13,7 +13,9 @@ const MemberCard = ({ team, name, position, school, year, imageURL }) => (
         alt="Member profile photo"
       />
       <Card.Body>
-        <Card.Title><h3>{name}</h3></Card.Title>
+        <Card.Title>
+          <h3>{name}</h3>
+        </Card.Title>
         <Card.Text>
           {year} Year, {school} <br />
           {position}
@@ -45,9 +47,7 @@ const Team = () => {
             />
           </Col>
           <Col className="ml-3">
-            <h2 id="team">
-              Meet the team behind HackBeanpot
-            </h2>
+            <h2 id="team">Meet the team behind HackBeanpot</h2>
             <p>
               Hey, campers! We are so excited to bring you on this virtual
               camping adventure this year for HackBeanpot 2021. The HackBeanpot

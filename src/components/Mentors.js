@@ -75,7 +75,9 @@ const MentorCard = ({ mentor }) => {
           alt={`Mentor profile photo: ${name}`}
         />
         <Card.Body>
-          <Card.Title><h3>{name}</h3></Card.Title>
+          <Card.Title>
+            <h3>{name}</h3>
+          </Card.Title>
           <Card.Text>
             {position}, {company}
           </Card.Text>

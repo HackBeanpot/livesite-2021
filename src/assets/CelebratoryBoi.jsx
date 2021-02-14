@@ -1,4 +1,4 @@
-import * as React from "react"
+import * as React from "react";
 
 function SvgComponent(props) {
   return (
@@ -229,7 +229,7 @@ function SvgComponent(props) {
         fill="#F5F7F7"
       />
     </svg>
-  )
+  );
 }
 
-export default SvgComponent
+export default SvgComponent;

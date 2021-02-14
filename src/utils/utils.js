@@ -42,7 +42,7 @@ export const colorTheme = (type) => {
     case "Workshop":
       return "#102037";
     case "Tech Talk":
-      return "#1d8a4f"
+      return "#1d8a4f";
     default:
       return "#000";
   }
