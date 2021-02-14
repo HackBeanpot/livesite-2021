@@ -1,6 +1,6 @@
 .cabin-cup {
   background-color: #1b214e;
-  padding: 0px 30px;
+  padding: 30px;
 
   @media (min-width: $sm) {
     border-radius: 15px;
@@ -9,7 +9,6 @@
   h2 {
     color: white;
     font-weight: bold;
-    padding-top: 20px;
   }
 
   h5 {
