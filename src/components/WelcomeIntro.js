@@ -7,9 +7,24 @@ import SoyBean from "../assets/SoyBean.svg";
 import MagicBean from "../assets/MagicBean.svg";
 import CabinCupLogo from "../assets/CabinCupLogo.svg";
 
-import "../styles/cabincup.scss";
+import useAirtableAPI from "../hooks/api-hook";
 
 const WelcomeIntro = () => {
+  const { data } = useAirtableAPI("appLHUnzVRxpj7Nx1", "Raffle");
+
+  const cabinPoints = {
+    "Jelly Beans": 0,
+    "Cocoa Beans": 0,
+    "Soy Beans": 0,
+    "Garden Beans": 0,
+    "Magic Beans": 0,
+  };
+
+  for (const cabinPoint of data) {
+    const cabin = cabinPoint.fields["Cabins"];
+    cabinPoints[cabin] += 1;
+  }
+
   return (
     <Container>
       <Row>
@@ -33,20 +48,25 @@ const WelcomeIntro = () => {
             </Row>
             <Row>
               <Col md={{ span: 3.5, offset: 3 }}>
+                <p className="bean-points">{cabinPoints["Jelly Beans"]}pts </p>
                 <img src={JellyBean} alt="Jelly Bean" />
               </Col>
               <Col md={3}>
+                <p className="bean-points">{cabinPoints["Cocoa Beans"]}pts</p>
                 <img src={CocoaBean} alt="Cocoa Bean" />
               </Col>
             </Row>
             <Row>
               <Col md={{ span: 3.5, offset: 1 }}>
+                <p className="bean-points">{cabinPoints["Garden Beans"]}pts</p>
                 <img src={GardenBean} alt="Garden Bean" />
               </Col>
               <Col md={3.5}>
+                <p className="bean-points">{cabinPoints["Soy Beans"]}pts</p>
                 <img src={SoyBean} alt="Soy Bean" />
               </Col>
               <Col md={3.5}>
+                <p className="bean-points">{cabinPoints["Magic Beans"]}pts</p>
                 <img src={MagicBean} alt="Magic Bean" />
               </Col>
             </Row>
