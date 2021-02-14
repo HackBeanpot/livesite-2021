@@ -54,8 +54,6 @@ const Schedule = () => {
     };
   }, []);
 
-  console.log(extractedData);
-
   return (
     <Container id="schedule" className="schedule mt-5">
       <Row>
