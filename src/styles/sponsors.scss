@@ -1,16 +1,4 @@
 .sponsors {
-  //@include top-padding;
-  //@include bottom-padding;
-
-  &__title {
-    //@include h2-text;
-  }
-
-  &__subtitle {
-    text-align: center;
-    //@include top-margin;
-  }
-
   &__logo-wrapper {
     justify-content: center;
     display: flex;
@@ -24,7 +12,8 @@
 
   &__logo {
     object-fit: contain;
-    height: 100%;
+    height: auto;
+    width: 100%;
   }
 
 }

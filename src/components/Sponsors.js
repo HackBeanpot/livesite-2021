@@ -2,8 +2,10 @@ import React from "react";
 
 const Sponsors = () => (
   <section id="sponsors" className="sponsors">
-    <div className="container">
-      <h2 className="sponsors__title">2021 Sponsors</h2>
+    <div className="container py-5">
+
+      <h1>2021 Sponsors</h1>
+
       {/* Drift */}
       <div className="row">
         <div className="col-md-4"></div>
@@ -79,7 +81,8 @@ const Sponsors = () => (
       </div>
       
       {/* In-Kind Sponsors */}
-      <h2 className="sponsors__subtitle">In-Kind Sponsors</h2>
+      <h2 className="text-center pt-5">In-Kind Sponsors</h2>
+
       <div className="row">
         <div className="col-md-1"></div>
         <a
