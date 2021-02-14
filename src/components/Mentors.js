@@ -33,7 +33,7 @@ const MentorModal = ({ mentor, setShow }) => {
               <p className="mentor-modal__heading">Shifts</p>
               <ul>
                 {availabilityList.map((time) => (
-                  <li>{time}</li>
+                  <li key={time}>{time}</li>
                 ))}
               </ul>
               {/* TODO use some date-time library to deal with shifts and filtering */}
@@ -42,7 +42,7 @@ const MentorModal = ({ mentor, setShow }) => {
               <p className="mentor-modal__heading">Expertise</p>
               <ul>
                 {expertise.map((skill) => (
-                  <li>{skill}</li>
+                  <li key={skill}>{skill}</li>
                 ))}
               </ul>
             </div>
@@ -162,39 +162,42 @@ export const Mentors = () => {
       </Row>
       <Row>
         <select
+          defaultValue="all"
           id="mentors-position-filter"
           className="mentor-filter custom-select"
           onChange={handleChange}
         >
-          <option selected value="all">
-            Positions (all)
-          </option>
+          <option value="all">Positions (all)</option>
           {positions.map((p) => (
-            <option value={p}>{p}</option>
+            <option key={p} value={p}>
+              {p}
+            </option>
           ))}
         </select>
         <select
+          defaultValue="all"
           id="mentors-expertise-filter"
           className="mentor-filter custom-select"
           onChange={handleChange}
         >
-          <option selected value="all">
-            Expertise (all)
-          </option>
+          <option value="all">Expertise (all)</option>
           {expertises.map((e) => (
-            <option value={e}>{e}</option>
+            <option key={e} value={e}>
+              {e}
+            </option>
           ))}
         </select>
         <select
+          defaultValue="all"
           id="mentors-company-filter"
           className="mentor-filter custom-select"
           onChange={handleChange}
         >
-          <option selected value="all">
-            Companies (all)
-          </option>
+          <option value="all">Companies (all)</option>
           {companies.map((c) => (
-            <option value={c}>{c}</option>
+            <option key={c} value={c}>
+              {c}
+            </option>
           ))}
         </select>
       </Row>

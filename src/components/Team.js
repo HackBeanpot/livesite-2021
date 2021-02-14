@@ -128,7 +128,9 @@ const Team = () => {
             }
             {data.map(
               (member) =>
-                member.fields.team === team && <MemberCard {...member.fields} />
+                member.fields.team === team && (
+                  <MemberCard key={member.fields.name} {...member.fields} />
+                )
             )}
           </Row>
         </Container>
