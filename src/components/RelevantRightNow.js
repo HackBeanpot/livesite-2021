@@ -39,7 +39,7 @@ function timeText(start, end) {
     startString = `${format(parseISO(start), "h:mm")}`;
   }
   // 'h:mma O' example 7:30PM GMT-5
-  let endString = `${format(parseISO(end), "h:mma O")}`;
+  let endString = `${format(parseISO(end), "h:mma")}`;
   return start == null
     ? `Complete by ${endString}`
     : `${startString} - ${endString}`;
