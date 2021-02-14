@@ -2,6 +2,7 @@ import React from "react";
 import { format, isWithinInterval, parseISO } from "date-fns";
 import { Card, Col, Container, Row, Spinner } from "react-bootstrap";
 import useAirtableAPI from "../hooks/api-hook";
+import useShowTime from "../hooks/useShowTime";
 
 const RelevantCard = ({
   title,
@@ -13,32 +14,42 @@ const RelevantCard = ({
   displayEndTime,
   activeStartTime,
   activeEndTime,
-}) =>
-  isTimeBetween(activeStartTime, activeEndTime) && (
-    <Col xs="12" md="6" lg="4">
-      <Card
-        className={`relevant ${type === "Event" ? "blue-card" : "orange-card"}`}
-      >
-        <Card.Body>
-          <Card.Title>
-            <h3>{title}</h3>
-          </Card.Title>
-          <Card.Subtitle>
-            {timeText(displayStartTime, displayEndTime)}
-            {isTimeBetween(displayStartTime, displayEndTime) && (
-              <span className="live-dot" title="Happening now"></span>
+}) => {
+  // the card should be displayed around (a little before and during) when the event is...
+  const isCardVisible = useShowTime(activeStartTime, activeEndTime);
+  // however, _during_ the card event, add an extra "happening now" annotation
+  const isHappeningNow = useShowTime(displayStartTime, displayEndTime);
+
+  return (
+    isCardVisible && (
+      <Col xs="12" md="6" lg="4">
+        <Card
+          className={`relevant ${
+            type === "Event" ? "blue-card" : "orange-card"
+          }`}
+        >
+          <Card.Body>
+            <Card.Title>
+              <h3>{title}</h3>
+            </Card.Title>
+            <Card.Subtitle>
+              {timeText(displayStartTime, displayEndTime)}
+              {isHappeningNow && (
+                <span className="live-dot" title="Happening now"></span>
+              )}
+            </Card.Subtitle>
+            <Card.Text>{body}</Card.Text>
+            {buttonText && (
+              <a className="btn" href={buttonURL} role="button">
+                {buttonText}
+              </a>
             )}
-          </Card.Subtitle>
-          <Card.Text>{body}</Card.Text>
-          {buttonText && (
-            <a className="btn" href={buttonURL} role="button">
-              {buttonText}
-            </a>
-          )}
-        </Card.Body>
-      </Card>
-    </Col>
+          </Card.Body>
+        </Card>
+      </Col>
+    )
   );
+};
 
 function timeText(start, end) {
   let startString = "";
@@ -53,7 +64,7 @@ function timeText(start, end) {
     : `${startString} - ${endString}`;
 }
 
-function isTimeBetween(start, end) {
+export function isTimeBetween(start, end) {
   // used different date to capture screenshots
   // using now means all will be filtered out
   const currentTime = new Date();
