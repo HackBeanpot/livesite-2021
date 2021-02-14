@@ -35,9 +35,9 @@ export const eventsExtractor = (attributes) => {
 
 export const colorTheme = (type) => {
   switch (type) {
-    case "Everyone!":
+    case "Everyone":
       return "#e56138";
-    case "Activity":
+    case "Social/Fun Activity":
       return "#52c2c2";
     case "Workshop":
       return "#102037";
