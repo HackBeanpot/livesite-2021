@@ -67,7 +67,7 @@ const WelcomeIntro = () => {
             </Row>
         </Col>
 
-        <Col className="pt-5">
+        <Col className="pt-5 pl-4">
           <h2>Welcome to HackBeanpot 2021!</h2>
           <p className="introText">
             At HackBeanpot 2021, we aim to create a welcoming “campsite” by
