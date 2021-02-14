@@ -1,24 +1,31 @@
 .cabin-cup {
   background-color: #1b214e;
-  border-radius: 15px;
+  padding: 30px;
+  color: white;
 
-  h2 {
-    color: white;
-    font-weight: bold;
-    padding-top: 20px;
+  @media (min-width: $sm) {
+    border-radius: 15px;
   }
 
-  h5 {
-    color: white;
+  &__logo {
+    padding-top: 10px;
+  
+    @media (max-width: $sm) {
+      display: none;
+    }
   }
 
-  .cabin-cup-intro {
-    color: white;
+  &__points {
+    position: absolute;
+    background-color: $orange;
+    padding: 14px 12px;
+    border-radius: 30px;
   }
-}
 
-.cabin-logo {
-  padding-top: 10px;
+  &__bean {
+    margin-left: 10px;
+    margin-top: 10px;
+  }
 }
 
 .bean-points {

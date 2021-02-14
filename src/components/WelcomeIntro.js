@@ -28,52 +28,48 @@ const WelcomeIntro = () => {
   return (
     <Container>
       <Row>
-        <Col md={6}>
-          <div className="cabin-cup">
+        <Col lg={6} className="cabin-cup">
             <Row>
               <Col md={{ span: 7, offset: 1 }}>
-                <div className="cabin-cup-intro">
                   <h2>Cabin Cup</h2>
                   <p>
                     Earn points for your cabin by bonding with you cabin mates
                     and participating in cabin events! Use your points in the
                     end to enter raffles for awesome prizes!
                   </p>
-                </div>
                 <br />
               </Col>
-              <Col className="cabin-logo" md={{ span: 3, offset: 1 }}>
+              <Col className="cabin-cup__logo" md={{ span: 3, offset: 1 }}>
                 <img src={CabinCupLogo} alt="Cabin cup logo" />
               </Col>
             </Row>
-            <Row>
-              <Col md={{ span: 3.5, offset: 3 }}>
-                <p className="bean-points">{cabinPoints["Jelly Beans"]}pts </p>
-                <img src={JellyBean} alt="Jelly Bean" />
+            <Row className="justify-content-center">
+              <Col xs="auto" className="px-0">
+                  <p className="cabin-cup__points">{cabinPoints["Jelly Beans"]}pts </p>
+                  <img src={JellyBean} alt="Jelly Bean" className="cabin-cup__bean"/>
               </Col>
-              <Col md={3}>
-                <p className="bean-points">{cabinPoints["Cocoa Beans"]}pts</p>
-                <img src={CocoaBean} alt="Cocoa Bean" />
-              </Col>
-            </Row>
-            <Row>
-              <Col md={{ span: 3.5, offset: 1 }}>
-                <p className="bean-points">{cabinPoints["Garden Beans"]}pts</p>
-                <img src={GardenBean} alt="Garden Bean" />
-              </Col>
-              <Col md={3.5}>
-                <p className="bean-points">{cabinPoints["Soy Beans"]}pts</p>
-                <img src={SoyBean} alt="Soy Bean" />
-              </Col>
-              <Col md={3.5}>
-                <p className="bean-points">{cabinPoints["Magic Beans"]}pts</p>
-                <img src={MagicBean} alt="Magic Bean" />
+              <Col xs="auto" className="px-0">
+                  <p className="cabin-cup__points">{cabinPoints["Cocoa Beans"]}pts</p>
+                  <img src={CocoaBean} alt="Cocoa Bean" className="cabin-cup__bean"/>
               </Col>
             </Row>
-          </div>
+            <Row className="justify-content-center">
+              <Col xs="auto" className="px-0">
+                  <p className="cabin-cup__points">{cabinPoints["Garden Beans"]}pts</p>
+                  <img src={GardenBean} alt="Garden Bean" className="cabin-cup__bean"/>
+              </Col>
+              <Col xs="auto" className="px-0">
+                  <p className="cabin-cup__points">{cabinPoints["Soy Beans"]}pts</p>
+                  <img src={SoyBean} alt="Soy Bean" className="cabin-cup__bean"/>
+              </Col>
+              <Col xs="auto" className="px-0">
+                  <p className="cabin-cup__points">{cabinPoints["Magic Beans"]}pts</p>
+                  <img src={MagicBean} alt="Magic Bean" className="cabin-cup__bean"/>
+              </Col>
+            </Row>
         </Col>
 
-        <Col>
+        <Col className="mt-5 pl-5">
           <h2>Welcome to HackBeanpot 2021!</h2>
           <p className="introText">
             At HackBeanpot 2021, we aim to create a welcoming “campsite” by
