@@ -1,5 +1,5 @@
 import React from "react";
-import { format, isWithinInterval, parseISO } from "date-fns";
+import { format, isBefore, isWithinInterval, parseISO } from "date-fns";
 import { Card, Col, Container, Row, Spinner } from "react-bootstrap";
 import useAirtableAPI from "../hooks/api-hook";
 import useShowTime from "../hooks/useShowTime";
@@ -103,21 +103,25 @@ const RelevantRightNow = () => {
   );
 };
 
-const requiredProps = [
-  "title",
-  "activeStartTime",
-  "activeEndTime",
-  "displayStartTime",
-  "displayEndTime",
-];
+// true if good, false if bad (and log reason)
 const keepGoodLogBad = (rel) => {
-  // bad record if it doesn't have some Required properties
-  const missing = requiredProps.filter((prop) => !(prop in rel.fields));
-  if (missing.length > 0) {
-    console.error("bad airtable Relevant records!", rel);
+  const f = rel.fields;
+  if (!("title" in rel.fields)) {
+    console.error("record does not have a title!", rel.id);
+    return false;
+  } else if (isInvalidInterval(f.activeStartTime, f.activeEndTime)) {
+    console.error("record has bad activeTime interval!", f.title);
+    return false;
+  } else if (isInvalidInterval(f.displayStartTime, f.displayEndTime)) {
+    console.error("record has bad displayTime interval!", f.title);
     return false;
   }
   return true;
+};
+
+// invalid if both defined, and the end is before the start
+const isInvalidInterval = (start, end) => {
+  return start && end && isBefore(parseISO(end), parseISO(start));
 };
 
 export default RelevantRightNow;
