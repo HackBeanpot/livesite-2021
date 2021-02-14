@@ -11,11 +11,11 @@ const MainNavbar = () => {
       expand="lg"
       sticky="top"
     >
-      {/* <Navbar.Brand href="#home"> */}
-      <div className="navbar-logo">
-        <Logo />
-      </div>
-      {/* </Navbar.Brand> */}
+      <Navbar.Brand href="/">
+        <div className="navbar-logo">
+          <Logo />
+        </div>
+      </Navbar.Brand>
 
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
