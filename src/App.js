@@ -11,24 +11,32 @@ import Countdown from "./components/Countdown";
 import RelevantRightNow from "./components/RelevantRightNow";
 import WelcomeIntro from "./components/WelcomeIntro";
 import Judging from "./components/Judging";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div>
-      <Navbar />
-      <Judging />
-      <RelevantRightNow />
-      <Countdown />
-      <WelcomeIntro />
-      <Schedule />
-      <Challenges />
-      <Mentors />
-      <Resources />
-      <Team />
-      <Sponsors />
-      <HackerActions />
-      <Footer />
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/">
+          <div>
+            <Navbar />
+            <RelevantRightNow />
+            <Countdown />
+            <WelcomeIntro />
+            <Schedule />
+            <Challenges />
+            <Mentors />
+            <Resources />
+            <Team />
+            <HackerActions />
+            <Footer />
+          </div>
+        </Route>
+        <Route path="/judging">
+          <Judging />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
