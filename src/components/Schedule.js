@@ -61,14 +61,19 @@ const Schedule = () => {
           <h1>Event Schedule</h1>
         </Col>
         <Col>
-          <button type="button" className="btn secondary-cta schedule__export">
-            <img
-              src={CalendarIcon}
-              className="schedule__calendar"
-              alt="Calendar Icon"
-            />
-            Subscribe to Calendar
-          </button>
+          <a href="https://calendar.google.com/calendar/ical/c_n3lvtno6l4rebktvvqus3vpb2c%40group.calendar.google.com/public/basic.ics">
+            <button
+              type="button"
+              className="btn secondary-cta schedule__export"
+            >
+              <img
+                src={CalendarIcon}
+                className="schedule__calendar"
+                alt="Calendar Icon"
+              />
+              Subscribe to Calendar
+            </button>
+          </a>
         </Col>
       </Row>
       <Row>
