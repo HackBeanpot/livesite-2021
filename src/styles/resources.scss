@@ -4,10 +4,35 @@
     margin-left: 5px;
     margin-bottom: 25px;
     cursor: pointer;
+    padding: 25px 0 0 25px;
+    font-weight: bold;
+    font-size: 30px;
+    color: white;
+    line-height: 33px;
   }
+
 
   &__rounded-card {
     border-radius: 18px;
     cursor: pointer;
+    min-height: 100%;
+    margin-bottom: 15px;
+    
+    .card {
+      margin-left: 10px;
+      margin-bottom: 10px;
+    }
+  img {
+width: 200px;
+margin: auto;
+    }
+
   }
+  
+
+
 }
+ 
+
+
+
