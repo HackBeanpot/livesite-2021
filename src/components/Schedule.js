@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import {
   Accordion,
   Button,
@@ -9,20 +9,20 @@ import {
   Tabs,
   Tab,
   Spinner,
-} from "react-bootstrap";
-import CalendarIcon from "../assets/calendar.png";
-import Arrow from "../assets/arrow.svg";
-import useAirtableAPI from "../hooks/api-hook";
-import { hasEventEnded, scheduleExtractor } from "../utils/utils";
+} from 'react-bootstrap';
+import CalendarIcon from '../assets/calendar.png';
+import Arrow from '../assets/arrow.svg';
+import useAirtableAPI from '../hooks/api-hook';
+import { hasEventEnded, scheduleExtractor } from '../utils/utils';
 
 const AdditionalAttributes = ({ event }) => {
   return (
-    <div className="schedule__info">
-      <div className="schedule__audience">
-        <p className={event.audience ? "schedule__audience__type" : ""}>
+    <div className='schedule__info'>
+      <div className='schedule__audience'>
+        <p className={event.audience ? 'schedule__audience__type' : ''}>
           {event.audience}
         </p>
-        <p className={event.company ? "schedule__audience__company" : ""}>
+        <p className={event.company ? 'schedule__audience__company' : ''}>
           {event.company}
         </p>
       </div>
@@ -31,7 +31,7 @@ const AdditionalAttributes = ({ event }) => {
 };
 
 const Schedule = () => {
-  const { data, isLoading } = useAirtableAPI("appUlVfygDJ873QXd", "schedule");
+  const { data, isLoading } = useAirtableAPI('appUlVfygDJ873QXd', 'schedule');
   const extractedData = scheduleExtractor(data);
   const [isOpen, setIsOpen] = useState(false);
   const [clickedIdx, setClickedIdx] = useState(-1);
@@ -42,9 +42,9 @@ const Schedule = () => {
     const updateSize = () => {
       setWidth(window.innerWidth);
     };
-    window.addEventListener("resize", updateSize);
+    window.addEventListener('resize', updateSize);
     updateSize();
-    return () => window.removeEventListener("resize", updateSize);
+    return () => window.removeEventListener('resize', updateSize);
   }, []);
 
   useEffect(() => {
@@ -55,31 +55,36 @@ const Schedule = () => {
   }, []);
 
   return (
-    <Container id="schedule" className="schedule mt-5">
+    <Container id='schedule' className='schedule mt-5'>
       <Row>
         <Col>
           <h1>Event Schedule</h1>
         </Col>
         <Col>
-          <button type="button" className="btn secondary-cta schedule__export">
-            <img
-              src={CalendarIcon}
-              className="schedule__calendar"
-              alt="Calendar Icon"
-            />
-            Subscribe to Calendar
-          </button>
+          <a href='https://calendar.google.com/calendar/ical/c_n3lvtno6l4rebktvvqus3vpb2c%40group.calendar.google.com/public/basic.ics'>
+            <button
+              type='button'
+              className='btn secondary-cta schedule__export'
+            >
+              <img
+                src={CalendarIcon}
+                className='schedule__calendar'
+                alt='Calendar Icon'
+              />
+              Subscribe to Calendar
+            </button>
+          </a>
         </Col>
       </Row>
       <Row>
         <Col>
-          <h3 className="schedule__warning">
+          <h3 className='schedule__warning'>
             Please be sure to attend all events labeled "Everyone!"
           </h3>
         </Col>
       </Row>
       {isLoading || data.length === 0 ? (
-        <Spinner animation="border" variant="primary" />
+        <Spinner animation='border' variant='primary' />
       ) : (
         <Row>
           <Col>
@@ -90,17 +95,17 @@ const Schedule = () => {
                     key={element}
                     eventKey={idx}
                     title={element}
-                    tabClassName="schedule__tab"
+                    tabClassName='schedule__tab'
                   >
                     <Accordion>
                       {extractedData[element].map((event, idx) => {
                         return (
                           <Card
-                            className="schedule__card"
+                            className='schedule__card'
                             key={event.title + event.time}
                           >
                             <Accordion.Toggle
-                              className="schedule__card-header"
+                              className='schedule__card-header'
                               as={Card.Header}
                               eventKey={idx.toString()}
                               onClick={() => {
@@ -108,63 +113,63 @@ const Schedule = () => {
                                 setIsOpen(idx === clickedIdx ? !isOpen : true);
                               }}
                             >
-                              <div key={idx} className="schedule__row">
+                              <div key={idx} className='schedule__row'>
                                 <div
-                                  className="schedule__label"
+                                  className='schedule__label'
                                   style={{ backgroundColor: event.theme }}
                                 />
                                 <Button
-                                  variant="link"
+                                  variant='link'
                                   className={
                                     idx === clickedIdx && isOpen
-                                      ? "schedule__arrow__down"
-                                      : "schedule__arrow"
+                                      ? 'schedule__arrow__down'
+                                      : 'schedule__arrow'
                                   }
                                 >
                                   <img
-                                    className="schedule__arrow__icon"
+                                    className='schedule__arrow__icon'
                                     src={Arrow}
-                                    alt="arrow icon"
+                                    alt='arrow icon'
                                   />
                                 </Button>
                                 <div
                                   className={
                                     !hasEventEnded(event.endTime, currentTime)
-                                      ? "schedule__responsive"
-                                      : "schedule__endEvent"
+                                      ? 'schedule__responsive'
+                                      : 'schedule__endEvent'
                                   }
                                 >
-                                  <div className="schedule__category">
-                                    <p className="schedule__category__time">
+                                  <div className='schedule__category'>
+                                    <p className='schedule__category__time'>
                                       {event.time}
                                       {event.isLive && (
                                         <span
-                                          className="live-dot"
-                                          title="Happening now"
+                                          className='live-dot'
+                                          title='Happening now'
                                         ></span>
                                       )}
                                     </p>
                                     <p
-                                      className="schedule__category__type"
+                                      className='schedule__category__type'
                                       style={{ color: event.theme }}
                                     >
                                       {event.type}
                                     </p>
                                   </div>
-                                  <div className="schedule__location">
+                                  <div className='schedule__location'>
                                     <h3
-                                      className="schedule__location__title"
+                                      className='schedule__location__title'
                                       title={event.title}
                                     >
                                       {event.title}
                                     </h3>
                                     <a
-                                      className="schedule__location__zoom"
+                                      className='schedule__location__zoom'
                                       href={event.location}
                                       title={event.location}
                                       // make the link open in a new tab
-                                      target="_blank"
-                                      rel="noopener noreferrer"
+                                      target='_blank'
+                                      rel='noopener noreferrer'
                                     >
                                       {event.location}
                                     </a>
