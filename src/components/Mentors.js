@@ -156,11 +156,12 @@ export const Mentors = () => {
         <Col>
           <h1>Mentors</h1>
           <p className="mentor-subheader">
-            Click on a mentor's photo for more details
+            {/* Click on a mentor's photo for more details */}
+            Coming Soon!
           </p>
         </Col>
       </Row>
-      <Row>
+      <Row style={{display: "none"}}> {/* TODO: remove this style to show the mentors */}
         <select
           defaultValue="all"
           id="mentors-position-filter"
@@ -201,7 +202,7 @@ export const Mentors = () => {
           ))}
         </select>
       </Row>
-      <Row>
+      <Row style={{display: "none"}}> {/* TODO: remove this style to show the mentors */}
         {
           isLoading && (
             <Spinner animation="border" variant="primary" />
