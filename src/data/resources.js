@@ -27,7 +27,7 @@ const ResourceItems = [
       "https://drive.google.com/drive/folders/1cNJYZmTg-F6ChghBsodyEyXOqwEBbqgf?usp=sharing",
     image: TheSummit,
     imageALT: "Mountain peak icon for Project submission information",
-    color: "#A4DBE8", 
+    color: "#235086", 
   },
 ];
 
