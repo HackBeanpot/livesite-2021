@@ -10,6 +10,7 @@ const ResourceItems = [
     image: CampGear,
     imageALT:
       "Camping gear icon for beginner resources and workshop recordings",
+    color: "#386A3F", 
   },
   {
     name: "Cabin Scrapbook",
@@ -18,6 +19,7 @@ const ResourceItems = [
     image: CabinScrapbook,
     imageALT:
       "Scrapbook, blue crayon, and camping scene photos icon for hacker activities resources",
+      color: "#F89F84", 
   },
   {
     name: "The Summit",
@@ -25,6 +27,7 @@ const ResourceItems = [
       "https://drive.google.com/drive/folders/1cNJYZmTg-F6ChghBsodyEyXOqwEBbqgf?usp=sharing",
     image: TheSummit,
     imageALT: "Mountain peak icon for Project submission information",
+    color: "#386A3F", 
   },
 ];
 
