@@ -10,7 +10,7 @@ const calculateTimeLeft = (difference) => {
   let timeLeft = {};
   let year = new Date().getFullYear();
   const endTime = new Date(year, 1, 21, 9, 30, 0, 0); // Feb 21, 9:30am
-  const startTime = new Date(year, 1, 19, 18, 0, 0, 0); // Feb 19, 6:00pm
+  const startTime = new Date(year, 1, 19, 20, 30, 0, 0); // Feb 19, 8:30pm
   difference["startDifference"] = +startTime - +new Date();
   difference["endDifference"] = +endTime - +new Date();
 

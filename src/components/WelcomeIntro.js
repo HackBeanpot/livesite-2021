@@ -123,12 +123,11 @@ const WelcomeIntro = () => {
           <div>
             <a
               className="btn primary-cta mr-3 mt-2"
-              // TODO: Change this link to the actual slack link when it's available
-              href="#coming-soon"
+              href="https://slackbeanpot2021.slack.com"
               target="_blank"
               rel="noreferrer"
             >
-              Join our Slack
+              Visit our Slack
             </a>
             <a
               className="btn primary-cta mt-2"
