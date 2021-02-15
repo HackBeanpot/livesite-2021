@@ -6,13 +6,13 @@ import { ResourceItems } from "../data/resources";
 const ResourceCard = ({ name, link, image, imageALT, color })  => (
   <Col md="3">
        <a href={link} target="_blank" rel="noreferrer" class="card-link">
-       <Card className="resources__rounded-card" style={{backgroundColor: {color}}}>
+       <Card className="resources__rounded-card"  style={{ backgroundColor: color }} >
          <label className="resources__card-label"> {name} </label>
         <Card.Img
           variant="bottom"
           src={image}
           alt={imageALT}
-          backgroundColor= {console.log("color:" + color)}
+          background-Color={color}
           className="resources__rounded-card"
         />
       </Card>
@@ -35,6 +35,8 @@ const Resources = () => (
           name={resource.name}
           link={resource.link}
           image={resource.image}
+          imageAlt={resource.imageALT}
+          color={resource.color}
         />
       ))}
     </Row>
