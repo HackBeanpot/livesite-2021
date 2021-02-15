@@ -79,7 +79,7 @@ const Schedule = () => {
       <Row>
         <Col>
           <h3 className="schedule__warning">
-            Please be sure to attend all events labeled "Everyone!"
+            Please be sure to attend all events labeled "Everyone"
           </h3>
         </Col>
       </Row>
