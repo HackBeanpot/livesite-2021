@@ -21,7 +21,7 @@ const Challenges = () => {
               <Col className="carousel__image">
                 <GreenPeas />
               </Col>
-              <Col>
+              <Col className="carousel__item">
                 <div className="carousel__header">
                   <h2>Camp HackBeanpot Spirit Award:</h2>
                 </div>
@@ -47,7 +47,7 @@ const Challenges = () => {
               <Col className="carousel__image">
                 <OnionCorn />
               </Col>
-              <Col>
+              <Col className="carousel__item">
                 <div className="carousel__header">
                   <h2>Most Inclusive Hack:</h2>
                 </div>
@@ -86,7 +86,7 @@ const Challenges = () => {
               <Col className="carousel__image">
                 <CelebratoryBoi className="pt-5" />
               </Col>
-              <Col>
+              <Col className="carousel__item">
                 <div className="carousel__header">
                   <h2>Hack for Joy:</h2>
                 </div>
@@ -111,7 +111,7 @@ const Challenges = () => {
               <Col className="carousel__image">
                 <BeanstalkBoi />
               </Col>
-              <Col>
+              <Col className="carousel__item">
                 <div className="carousel__header">
                   <h2>Mystery Prizes:</h2>
                 </div>
