@@ -40,7 +40,7 @@ export const colorTheme = (type) => {
     case "Social/Fun Activity":
       return "#52c2c2";
     case "Workshop":
-      return "#102037";
+      return "#1D8A4F";
     case "Tech Talk":
       return "#1d8a4f";
     default:
