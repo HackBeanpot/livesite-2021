@@ -139,7 +139,7 @@ const JudgingTable = ({ selectedPerson, personType }) => {
 export default Judging;
 
 const Layout = ({ title, children, isSchedule }) => {
-  const variant = isSchedule ? "--schedule" : "";
+  const variant = isSchedule ? "--schedule" : "--normal";
   return (
     <div className={"judging__layout" + variant}>
       <p className={"judging__title" + variant}>{title}</p>

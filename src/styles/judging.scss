@@ -1,23 +1,32 @@
 .judging {
   &__layout {
-    background: #1d8a4f;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    height: 100vh;
-    padding: 10rem;
+    &--normal {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      padding: 10rem;
+      background: #1d8a4f;
+      align-items: center;
+    }
 
     &--schedule {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
       padding: 40px 100px;
       background: white;
     }
   }
 
   &__title {
-    font-weight: 900;
-    font-size: 64px;
+    &--normal {
+      font-weight: 900;
+      font-size: 64px;
+    }
 
     &--schedule {
+      font-weight: 900;
+      font-size: 64px;
       font-weight: bold;
       font-size: 36px;
       color: $dark-blue;
@@ -38,6 +47,7 @@
     font-size: 24px;
 
     &--schedule {
+      width: 300px;
       font-weight: bold;
       margin-bottom: 20px;
 
