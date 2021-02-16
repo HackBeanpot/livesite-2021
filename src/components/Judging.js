@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import SelectSearch from "react-select-search";
+import Fuse from "fuse.js";
 
 import NonLiveDemoIndex from "../assets/non-live-index.svg";
 
@@ -171,6 +172,7 @@ const FindPerson = ({ personType, getOptions, setSelectedAndPage }) => {
         options={getOptions()}
         onChange={(e) => setSelectedAndPage(e)}
         search
+        filterOptions={fuzzySearch}
         placeholder="Select your name"
       />
     </Layout>
@@ -211,4 +213,19 @@ const TeamSchedule = ({ selectedPerson, personType, setCurrentPage }) => {
       <JudgingTable selectedPerson={selectedPerson} personType={personType} />
     </Layout>
   );
+};
+
+const fuzzySearch = (options) => {
+  const fuse = new Fuse(options, {
+    keys: ["name", "groupName"],
+    threshold: 0.3,
+  });
+
+  return (value) => {
+    if (!value.length) {
+      return options;
+    }
+
+    return fuse.search(value);
+  };
 };
