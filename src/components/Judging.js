@@ -79,7 +79,7 @@ const Judging = () => {
         <p className="welcome-title">{`Welcome, ${personType}!`}</p>
         <p className="welcome-subtitle">Find your name</p>
         <SelectSearch
-          className="judging-find-dropdown"
+          className="select-search"
           options={getOptions()}
           onChange={(e) => setSelectedAndPage(e)}
           search
