@@ -126,7 +126,11 @@ const JudgingTable = ({ selectedPerson, personType }) => {
       );
     }
 
-    rows.push(<div className={`table-row table-row-${row}`}>{cells}</div>);
+    rows.push(
+      <div key={`row-${row}`} className={`table-row table-row-${row}`}>
+        {cells}
+      </div>
+    );
   }
 
   return <div className="judging__table">{rows}</div>;
