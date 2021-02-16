@@ -4,7 +4,7 @@ import { ResourceItems } from "../data/resources";
 
 // Define the resource card object
 const ResourceCard = ({ name, link, image, imageALT, color })  => (
-  <Col md="3">
+  <Col md="4" lg="3" className="pt-3">
        <a href={link} target="_blank" rel="noreferrer" class="card-link">
        <Card className="resources__rounded-card"  style={{ backgroundColor: color }} >
          <label className="resources__card-label"> {name} </label>
@@ -13,10 +13,8 @@ const ResourceCard = ({ name, link, image, imageALT, color })  => (
           src={image}
           alt={imageALT}
           background-Color={color}
-          className="resources__rounded-card"
         />
       </Card>
-      
     </a>
   </Col>
    
