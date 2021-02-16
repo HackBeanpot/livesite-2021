@@ -133,10 +133,19 @@ const JudgingTable = ({ selectedPerson, personType }) => {
 
 export default Judging;
 
+const Layout = ({ title, children, isSchedule }) => {
+  const variant = isSchedule ? "--schedule" : "";
+  return (
+    <div className={"judging__layout" + variant}>
+      <p className={"judging__title" + variant}>{title}</p>
+      {children}
+    </div>
+  );
+};
+
 const WhoAreYou = ({ setPersonAndPage }) => {
   return (
-    <div className="judging__layout">
-      <p className="judging__title">Who are you?</p>
+    <Layout title="Who are you?">
       <button
         className="judging__button"
         onClick={() => setPersonAndPage("judge")}
@@ -149,14 +158,13 @@ const WhoAreYou = ({ setPersonAndPage }) => {
       >
         I am a hacker
       </button>
-    </div>
+    </Layout>
   );
 };
 
 const FindPerson = ({ personType, getOptions, setSelectedAndPage }) => {
   return (
-    <div className="judging__layout">
-      <p className="judging__title">{`Welcome, ${personType}!`}</p>
+    <Layout title={`Welcome, ${personType}!`}>
       <p className="judging__subtitle">Find your name</p>
       <SelectSearch
         className="select-search"
@@ -165,14 +173,13 @@ const FindPerson = ({ personType, getOptions, setSelectedAndPage }) => {
         search
         placeholder="Select your name"
       />
-    </div>
+    </Layout>
   );
 };
 
 const JudgeSchedule = ({ selectedPerson, personType, setCurrentPage }) => {
   return (
-    <div className="judging__layout--schedule">
-      <p className="judging__title--schedule">{`${selectedPerson}'s Schedule`}</p>
+    <Layout title={`${selectedPerson}'s Schedule`} isSchedule>
       <button
         className="judging__button--schedule"
         onClick={() => setCurrentPage("who-are-you")}
@@ -188,14 +195,13 @@ const JudgeSchedule = ({ selectedPerson, personType, setCurrentPage }) => {
         Team is in another timezone, inspect their video link
       </div>
       <JudgingTable selectedPerson={selectedPerson} personType={personType} />
-    </div>
+    </Layout>
   );
 };
 
 const TeamSchedule = ({ selectedPerson, personType, setCurrentPage }) => {
   return (
-    <div className="judging__layout--schedule">
-      <p className="judging__title--schedule">{`${selectedPerson}'s Schedule`}</p>
+    <Layout title={`${selectedPerson}'s Schedule`} isSchedule>
       <button
         className="judging__button--schedule"
         onClick={() => setCurrentPage("who-are-you")}
@@ -203,6 +209,6 @@ const TeamSchedule = ({ selectedPerson, personType, setCurrentPage }) => {
         Find Another Schedule
       </button>
       <JudgingTable selectedPerson={selectedPerson} personType={personType} />
-    </div>
+    </Layout>
   );
 };
