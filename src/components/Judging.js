@@ -56,77 +56,17 @@ const Judging = () => {
   };
 
   if (currentPage === "who-are-you") {
-    return (
-      <div className="judging-who-are-you">
-        <p className="who-are-you-title">Who are you?</p>
-        <button
-          className="who-are-you-button"
-          onClick={() => setPersonAndPage("judge")}
-        >
-          I am a judge
-        </button>
-        <button
-          className="who-are-you-button"
-          onClick={() => setPersonAndPage("hacker")}
-        >
-          I am a hacker
-        </button>
-      </div>
-    );
+    return <WhoAreYou setPersonAndPage={setPersonAndPage} />;
   } else if (currentPage === "find-person") {
-    return (
-      <div className="judging-find-person">
-        <p className="welcome-title">{`Welcome, ${personType}!`}</p>
-        <p className="welcome-subtitle">Find your name</p>
-        <SelectSearch
-          className="select-search"
-          options={getOptions()}
-          onChange={(e) => setSelectedAndPage(e)}
-          search
-          placeholder="Select your name"
-        />
-      </div>
-    );
+    return <FindPerson {...{ getOptions, personType, setSelectedAndPage }} />;
   } else if (currentPage === "schedule") {
     if (personType === "judge") {
       return (
-        <div className="judging-schedule">
-          <p className="schedule-title">{`${selectedPerson}'s Schedule`}</p>
-          <button
-            className="new-schedule-button"
-            onClick={() => setCurrentPage("who-are-you")}
-          >
-            Find Another Schedule
-          </button>
-          <div className="non-live-index">
-            <img
-              className="non-live-index-img"
-              src={NonLiveDemoIndex}
-              alt={"non-live index"}
-            />
-            Team is in another timezone, inspect their video link
-          </div>
-          <JudgingTable
-            selectedPerson={selectedPerson}
-            personType={personType}
-          />
-        </div>
+        <JudgeSchedule {...{ personType, selectedPerson, setCurrentPage }} />
       );
     } else {
       return (
-        <div className="project-schedule">
-          <p className="schedule-title">{`${selectedPerson}'s Schedule`}</p>
-          <button
-            className="new-schedule-button"
-            onClick={() => setCurrentPage("who-are-you")}
-          >
-            Find Another Schedule
-          </button>
-          <JudgingTable
-            selectedPerson={selectedPerson}
-            personType={personType}
-          />
-        </div>
+        <TeamSchedule {...{ personType, selectedPerson, setCurrentPage }} />
       );
     }
   }
@@ -188,13 +128,81 @@ const JudgingTable = ({ selectedPerson, personType }) => {
     rows.push(<div className={`table-row table-row-${row}`}>{cells}</div>);
   }
 
+  return <div className="judging__table">{rows}</div>;
+};
+
+export default Judging;
+
+const WhoAreYou = ({ setPersonAndPage }) => {
   return (
-    <div className="schedule-container">
-      <div className="schedule-table">
-        <div className="schedule-body">{rows}</div>
-      </div>
+    <div className="judging__layout">
+      <p className="judging__title">Who are you?</p>
+      <button
+        className="judging__button"
+        onClick={() => setPersonAndPage("judge")}
+      >
+        I am a judge
+      </button>
+      <button
+        className="judging__button"
+        onClick={() => setPersonAndPage("hacker")}
+      >
+        I am a hacker
+      </button>
     </div>
   );
 };
 
-export default Judging;
+const FindPerson = ({ personType, getOptions, setSelectedAndPage }) => {
+  return (
+    <div className="judging__layout">
+      <p className="judging__title">{`Welcome, ${personType}!`}</p>
+      <p className="judging__subtitle">Find your name</p>
+      <SelectSearch
+        className="select-search"
+        options={getOptions()}
+        onChange={(e) => setSelectedAndPage(e)}
+        search
+        placeholder="Select your name"
+      />
+    </div>
+  );
+};
+
+const JudgeSchedule = ({ selectedPerson, personType, setCurrentPage }) => {
+  return (
+    <div className="judging__layout--schedule">
+      <p className="judging__title--schedule">{`${selectedPerson}'s Schedule`}</p>
+      <button
+        className="judging__button--schedule"
+        onClick={() => setCurrentPage("who-are-you")}
+      >
+        Find Another Schedule
+      </button>
+      <div className="judging__non-live">
+        <img
+          className="judging__non-live__img"
+          src={NonLiveDemoIndex}
+          alt={"non-live index"}
+        />
+        Team is in another timezone, inspect their video link
+      </div>
+      <JudgingTable selectedPerson={selectedPerson} personType={personType} />
+    </div>
+  );
+};
+
+const TeamSchedule = ({ selectedPerson, personType, setCurrentPage }) => {
+  return (
+    <div className="judging__layout--schedule">
+      <p className="judging__title--schedule">{`${selectedPerson}'s Schedule`}</p>
+      <button
+        className="judging__button--schedule"
+        onClick={() => setCurrentPage("who-are-you")}
+      >
+        Find Another Schedule
+      </button>
+      <JudgingTable selectedPerson={selectedPerson} personType={personType} />
+    </div>
+  );
+};
