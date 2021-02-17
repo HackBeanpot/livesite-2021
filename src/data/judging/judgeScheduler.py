@@ -7,7 +7,7 @@ with open('./judges.json') as j:
 NUM_JUDGES = len(JUDGES)
 
 # Number of projects each judge can view
-TIME_FOR_ONE_PROJECT = 10
+TIME_FOR_ONE_PROJECT = 8
 TOTAL_TIME = 90
 NUM_PROJECTS_PER_JUDGE = int(TOTAL_TIME / TIME_FOR_ONE_PROJECT) - 1
 
