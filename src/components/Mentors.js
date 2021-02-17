@@ -161,7 +161,9 @@ export const Mentors = () => {
           </p>
         </Col>
       </Row>
-      <Row style={{display: "none"}}> {/* TODO: remove this style to show the mentors */}
+      <Row style={{ display: "none" }}>
+        {" "}
+        {/* TODO: remove this style to show the mentors */}
         <select
           defaultValue="all"
           id="mentors-position-filter"
@@ -202,7 +204,9 @@ export const Mentors = () => {
           ))}
         </select>
       </Row>
-      <Row style={{display: "none"}}> {/* TODO: remove this style to show the mentors */}
+      <Row style={{ display: "none" }}>
+        {" "}
+        {/* TODO: remove this style to show the mentors */}
         {
           isLoading && (
             <Spinner animation="border" variant="primary" />

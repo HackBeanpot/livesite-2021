@@ -11,28 +11,19 @@
     line-height: 33px;
   }
 
-
   &__rounded-card {
     border-radius: 18px;
     cursor: pointer;
     min-height: 100%;
     margin-bottom: 15px;
-    
+
     .card {
       margin-left: 10px;
       margin-bottom: 10px;
     }
-  img {
-width: 200px;
-margin: auto;
+    img {
+      width: 200px;
+      margin: auto;
     }
-
   }
-  
-
-
 }
- 
-
-
-
