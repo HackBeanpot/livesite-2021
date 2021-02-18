@@ -38,6 +38,22 @@ const Schedule = () => {
   const [width, setWidth] = useState(window.innerWidth);
   const [currentTime, setCurrentTime] = useState(new Date());
 
+  // Create the "Subscribe to Calendar" button
+  const defaultCopyButtonText = 'Subscribe to Calendar';
+  const [copyButtonText, setCopyButtonText] = useState(defaultCopyButtonText);
+  const copySubscribeLink = () => {
+    var textArea = document.createElement('textarea');
+    textArea.value = "https://calendar.google.com/calendar/ical/c_n3lvtno6l4rebktvvqus3vpb2c%40group.calendar.google.com/public/basic.ics";
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textArea);
+    setCopyButtonText('iCalendar Link Copied!');
+    setTimeout(() => {
+      setCopyButtonText(defaultCopyButtonText);
+    }, 1500);
+  };
+
   useEffect(() => {
     const updateSize = () => {
       setWidth(window.innerWidth);
@@ -61,8 +77,8 @@ const Schedule = () => {
           <h1>Event Schedule</h1>
         </Col>
         <Col>
-          <a href="https://calendar.google.com/calendar/ical/c_n3lvtno6l4rebktvvqus3vpb2c%40group.calendar.google.com/public/basic.ics">
             <button
+              onClick={copySubscribeLink}
               type="button"
               className="btn secondary-cta schedule__export"
             >
@@ -71,9 +87,8 @@ const Schedule = () => {
                 className="schedule__calendar"
                 alt="Calendar Icon"
               />
-              Subscribe to Calendar
+              {copyButtonText}
             </button>
-          </a>
         </Col>
       </Row>
       <Row>

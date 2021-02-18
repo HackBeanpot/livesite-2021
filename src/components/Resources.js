@@ -17,7 +17,6 @@ const ResourceCard = ({ name, link, image, imageALT, color })  => (
       </Card>
     </a>
   </Col>
-   
 );
 
 const Resources = () => (

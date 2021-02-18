@@ -1,0 +1,102 @@
+.judging {
+  &__layout {
+    &--normal {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      padding: 10rem;
+      background: $green;
+      align-items: center;
+    }
+
+    &--schedule {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      padding: 40px 100px;
+      background: white;
+    }
+  }
+
+  &__title {
+    &--normal {
+      font-weight: 900;
+      font-size: 64px;
+    }
+
+    &--schedule {
+      font-weight: 900;
+      font-size: 64px;
+      font-weight: bold;
+      font-size: 36px;
+      color: $dark-blue;
+    }
+  }
+
+  &__subtitle {
+    font-weight: 900;
+    font-style: italic;
+    font-size: 48px;
+  }
+
+  &__button {
+    width: 300px;
+    margin: 30px auto;
+    background: $dark-blue;
+    color: white;
+    font-size: 24px;
+
+    &--schedule {
+      width: 300px;
+      font-weight: bold;
+      margin-bottom: 20px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__non-live {
+    margin: 20px 0;
+
+    &__img {
+      margin-right: 20px;
+    }
+  }
+
+  &__table {
+    .table-row {
+      display: flex;
+    }
+
+    .a-row {
+      padding: 15px 60px;
+    }
+
+    .time-col {
+      border-left: 1px solid #e7e7e7;
+      border-right: 1px solid #e7e7e7;
+    }
+
+    .proj-col {
+      width: 350px;
+    }
+
+    .even {
+      background-color: #e7e7e7;
+    }
+
+    .odd {
+      background-color: #fafafa;
+    }
+
+    .non-live {
+      background-image: url("../assets/non-live-demo.svg");
+    }
+
+    .proj-link {
+      color: black;
+    }
+  }
+}
