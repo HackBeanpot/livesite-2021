@@ -155,7 +155,8 @@ const Challenges = () => {
                       Check out this tutorial
                     </a>{" "}
                     Check out this tutorial to get started.
-
+                  </p>
+                  <p>
                     The winning team will receive a $200 gift card to a place of the team's choosing. 
                     All participants get the free version of ZipperHQ which they can continue to use 
                     after the event.
