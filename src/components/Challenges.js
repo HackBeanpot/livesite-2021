@@ -127,6 +127,44 @@ const Challenges = () => {
             </Row>
           </div>
         </Carousel.Item>
+
+        <Carousel.Item>
+          <div className="carousel__item">
+            <Row>
+              <Col className="carousel__image">
+                <img
+                  src="https://tools.hackbeanpot.com/assets/logos/2021-sponsors/zipperHQ.png"
+                  alt="ZipperHQ logo"
+                />
+              </Col>
+              <Col className="carousel__item">
+                <div className="carousel__header">
+                  <h2>ZipperHQ Demo Video</h2>
+                </div>
+                <div className="carousel__caption">
+                  <p>
+                    ZipperHQ is offering a free version of their video marketing software through the{" "}
+                    <a href="https://docs.google.com/presentation/d/1MoRVZpJux-cD0X1jV60qNfjeCo3TD2Rqo7ec8aqE8vI/edit?usp=sharing">
+                      ZipperHQ App and Chrome Extension.
+                    </a>{" "}
+                    The challenge is to make a creative and engaging 
+                    demo video using the software, which offers screen-recording, video upload, and many 
+                    sharing capabilities. When you submit your project, you must include a ZipperHQ demo 
+                    link to be eligible.{" "}
+                    <a href="https://www.zhqland.com/media/landing?id=8386f9bd-a0df-4123-bf41-4aeb70b67487&tId=ab38916b-8ce7-4ed8-84ee-8be8988462ec">
+                      Check out this tutorial
+                    </a>{" "}
+                    Check out this tutorial to get started.
+
+                    The winning team will receive a $200 gift card to a place of the team's choosing. 
+                    All participants get the free version of ZipperHQ which they can continue to use 
+                    after the event.
+                  </p>
+                </div>
+              </Col>
+            </Row>
+          </div>
+        </Carousel.Item>
       </Carousel>
     </div>
   );
