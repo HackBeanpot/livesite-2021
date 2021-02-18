@@ -157,8 +157,13 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      color: #000;
       margin-bottom: 0;
+      color: $teal-blue;
+    }
+    &__zoom:hover {
+      color: $teal-blue !important;
+      font-weight: bold;
+      text-decoration: none;
     }
   }
 

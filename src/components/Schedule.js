@@ -197,7 +197,9 @@ const Schedule = () => {
                             </Accordion.Toggle>
                             <Accordion.Collapse eventKey={idx.toString()}>
                               <Card.Body>
-                                <p>{event.description}</p>
+                                <Col lg="8">
+                                  <p>{event.description}</p>
+                                </Col>
                                 {width < 1000 && (
                                   <AdditionalAttributes event={event} />
                                 )}
