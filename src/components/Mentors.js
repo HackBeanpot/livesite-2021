@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { Card } from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
 import { Col, Container, Row, Spinner } from "react-bootstrap";
 import useAirtableAPI from "../hooks/api-hook";
+import { format, isWithinInterval, parseISO } from "date-fns";
 
 const MentorModal = ({ mentor, setShow }) => {
   const {
@@ -36,7 +37,6 @@ const MentorModal = ({ mentor, setShow }) => {
                   <li key={time}>{time}</li>
                 ))}
               </ul>
-              {/* TODO use some date-time library to deal with shifts and filtering */}
             </div>
             <div className="mentor-modal__info-section">
               <p className="mentor-modal__heading">Expertise</p>
@@ -71,7 +71,7 @@ const MentorCard = ({ mentor }) => {
       <Card className="mentor-card" onClick={() => setShow(true)}>
         <Card.Img
           variant="top"
-          src={imageURL[0].url}
+          src={imageURL && imageURL[0].url}
           alt={`Mentor profile photo: ${name}`}
         />
         <Card.Body>
@@ -103,16 +103,35 @@ const getMentorAttrs = (data, attr) => [
   ),
 ];
 
+// TODO: use the util already made for this
+function isTimeBetween(start, end) {
+  // used different date to capture screenshots
+  // using now means all will be filtered out
+  const currentTime = new Date();
+  // return false if either the start or end is undefined
+  const range_defined = start !== undefined && end !== undefined;
+  // check if the current time is within the given interval
+  return range_defined && isWithinInterval(currentTime, {
+    start: parseISO(start),
+    end: parseISO(end),
+  });
+}
+
 export const Mentors = () => {
-  const { data, isLoading } = useAirtableAPI("appexkZgUcQ9vucI9", "mentors");
+  const [onShift, setOnShift] = useState(false);
+  const { data, isLoading } = useAirtableAPI("appexkZgUcQ9vucI9", "mentor shifts");
+//  console.log(data);
+  const { shift, shiftsLoading } = useAirtableAPI("appexkZgUcQ9vucI9", "mentor shifts");
 
   const expertises = getMentorAttrs(data, (mentor) => mentor.fields.expertise);
   const positions = getMentorAttrs(data, (mentor) => mentor.fields.position);
   const companies = getMentorAttrs(data, (mentor) => mentor.fields.company);
+  const shift_start = getMentorAttrs(data, mentor => mentor.fields.shift_start)
+  const shift_end = getMentorAttrs(data, mentor => mentor.fields.shift_end)
 
   const [filterAttrs, setFilterAttrs] = useState([]);
 
-  // I abbreviate as: (e)xpertises, (p)ositions, (c)ompanies
+  // I abbreviate as: (e)xpertises, (p)ositions, (c)ompanies, st(shift start), sE(shift end)
   // which mentors should we keep?
   const shouldShowMentor = (mentor) => {
     // make sure they are truthy fields
@@ -122,10 +141,10 @@ export const Mentors = () => {
     const allAttrs = [...new Set([...mentorEs, ...mentorP, ...mentorC])];
 
     // all filter requirements must be satisfied
-    const andMap = filterAttrs.filter((attr) => attr !== "all");
-
-    return andMap.every((mentorAttr) => allAttrs.includes(mentorAttr));
-  };
+    const andMap = filterAttrs.filter(attr => attr !== 'all');
+    const active = onShift ? isTimeBetween(mentor.fields.shift_start[0], mentor.fields.shift_end[0]) : true
+    return andMap.every(mentorAttr => allAttrs.includes(mentorAttr)) && active;
+  }
 
   const handleChange = (e) => {
     const allOptions = Array.from(e.target.options, (option) => option.value);
@@ -160,6 +179,34 @@ export const Mentors = () => {
             Coming Soon!
           </p>
         </Col>
+      </Row>
+      <Row> {/* TODO: remove this style to show the mentors */}
+        <div class="form-check">
+          <input
+              class="form-check-input"
+              type="radio"
+              onClick={() => setOnShift(false)}
+              name="flexRadioDefault"
+              id="flexRadioDefault1"
+              checked={!onShift}
+              />
+          <label class="form-check-label" for="flexRadioDefault1">
+            All Mentors
+          </label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            onClick={() => setOnShift(true)}
+            type="radio"
+            name="flexRadioDefault"
+            id="flexRadioDefault2"
+            checked={onShift}
+            />
+          <label class="form-check-label" for="flexRadioDefault2">
+            Active Mentors
+          </label>
+        </div>
       </Row>
       <Row style={{display: "none"}}> {/* TODO: remove this style to show the mentors */}
         <select
@@ -202,7 +249,7 @@ export const Mentors = () => {
           ))}
         </select>
       </Row>
-      <Row style={{display: "none"}}> {/* TODO: remove this style to show the mentors */}
+      <Row> {/* TODO: remove this style to show the mentors */}
         {
           isLoading && (
             <Spinner animation="border" variant="primary" />
