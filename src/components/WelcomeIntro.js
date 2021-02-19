@@ -131,8 +131,7 @@ const WelcomeIntro = () => {
             </a>
             <a
               className="btn primary-cta mt-2"
-              // TODO: Check that this is the correct link once gathertown is set up
-              href="https://gather.town/hackbeanpot2021"
+              href="https://gather.town/app/yX70iHwE8AAy7y0K/campbeanpot"
               target="_blank"
               rel="noreferrer"
             >
