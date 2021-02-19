@@ -89,7 +89,7 @@ const RelevantRightNow = () => {
         <Col>
           <h1 id="relevant">Relevant Right Now</h1>
           <h3 className="schedule__note">
-            Dates and times are displayed in your local timezone.
+            Times are displayed in your local timezone.
           </h3>
         </Col>
       </Row>
