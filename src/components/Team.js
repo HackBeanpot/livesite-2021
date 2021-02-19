@@ -115,7 +115,6 @@ const Team = () => {
         </Row>
         <Container>
           <Row className="py-3">
-            <Col lg="1"></Col>
             {
               isLoading && (
                 <Spinner animation="border" variant="primary" />
