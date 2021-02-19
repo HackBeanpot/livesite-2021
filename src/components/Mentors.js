@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { Card, Button } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import { Col, Container, Row, Spinner } from "react-bootstrap";
 import useAirtableAPI from "../hooks/api-hook";
-import { format, isWithinInterval, parseISO } from "date-fns";
 import { dateExtractor, timeExtractor } from "../utils/utils";
 import { isTimeBetween } from "../components/RelevantRightNow";
 
@@ -122,20 +121,10 @@ export const Mentors = () => {
     "appexkZgUcQ9vucI9",
     "mentor shifts"
   );
-  //  console.log(data);
-  const { shift, shiftsLoading } = useAirtableAPI(
-    "appexkZgUcQ9vucI9",
-    "mentor shifts"
-  );
 
   const expertises = getMentorAttrs(data, (mentor) => mentor.fields.expertise);
   const positions = getMentorAttrs(data, (mentor) => mentor.fields.position);
   const companies = getMentorAttrs(data, (mentor) => mentor.fields.company);
-  const shift_start = getMentorAttrs(
-    data,
-    (mentor) => mentor.fields.shift_start
-  );
-  const shift_end = getMentorAttrs(data, (mentor) => mentor.fields.shift_end);
 
   const [filterAttrs, setFilterAttrs] = useState([]);
 
