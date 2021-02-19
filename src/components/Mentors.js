@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Card } from "react-bootstrap";
 import { Col, Container, Row, Spinner } from "react-bootstrap";
 import useAirtableAPI from "../hooks/api-hook";
+import { dateExtractor, timeExtractor } from "../utils/utils";
+import { isTimeBetween } from "../components/RelevantRightNow";
 
 const MentorModal = ({ mentor, setShow }) => {
   const {
@@ -9,11 +11,20 @@ const MentorModal = ({ mentor, setShow }) => {
     position,
     company,
     imageURL,
-    availability = "",
+    shift_start,
+    shift_end,
     expertise = [],
     slack,
   } = mentor;
-  const availabilityList = availability.split(", ");
+  let availabilityList = [];
+  var i;
+  for (i = 0; i < shift_start.length; i++) {
+    const start = shift_start[i];
+    const end = shift_end[i];
+    // sorry I know this looks rough
+    availabilityList.push(dateExtractor(start) + " " + timeExtractor(start) +
+        " - " + dateExtractor(end) + " " + timeExtractor(end));
+  }
 
   return (
     <div className={"modal fade show mentor-modal"}>
@@ -36,7 +47,6 @@ const MentorModal = ({ mentor, setShow }) => {
                   <li key={time}>{time}</li>
                 ))}
               </ul>
-              {/* TODO use some date-time library to deal with shifts and filtering */}
             </div>
             <div className="mentor-modal__info-section">
               <p className="mentor-modal__heading">Expertise</p>
@@ -47,7 +57,7 @@ const MentorModal = ({ mentor, setShow }) => {
               </ul>
             </div>
             <a
-              href={slack}
+              href={"https://slackbeanpot2021.slack.com/team/" + slack}
               className="btn primary-cta"
               role="button"
               target="_blank"
@@ -71,12 +81,14 @@ const MentorCard = ({ mentor }) => {
       <Card className="mentor-card" onClick={() => setShow(true)}>
         <Card.Img
           variant="top"
-          src={imageURL[0].url}
+          src={imageURL && imageURL[0].url}
           alt={`Mentor profile photo: ${name}`}
         />
         <Card.Body>
           <Card.Title>
-            <h3>{name}</h3>
+            <h3>
+              {name}
+            </h3>
           </Card.Title>
           <Card.Text>
             {position}, {company}
@@ -104,7 +116,11 @@ const getMentorAttrs = (data, attr) => [
 ];
 
 export const Mentors = () => {
-  const { data, isLoading } = useAirtableAPI("appexkZgUcQ9vucI9", "mentors");
+  const [onShift, setOnShift] = useState(false);
+  const { data, isLoading } = useAirtableAPI(
+    "appexkZgUcQ9vucI9",
+    "mentor shifts"
+  );
 
   const expertises = getMentorAttrs(data, (mentor) => mentor.fields.expertise);
   const positions = getMentorAttrs(data, (mentor) => mentor.fields.position);
@@ -112,19 +128,32 @@ export const Mentors = () => {
 
   const [filterAttrs, setFilterAttrs] = useState([]);
 
-  // I abbreviate as: (e)xpertises, (p)ositions, (c)ompanies
+  // I abbreviate as: (e)xpertises, (p)ositions, (c)ompanies, st(shift start), sE(shift end)
   // which mentors should we keep?
   const shouldShowMentor = (mentor) => {
     // make sure they are truthy fields
     const mentorEs = mentor.fields.expertise || [];
-    const mentorP = mentor.fields.position ? [mentor.fields.position] : [];
-    const mentorC = mentor.fields.company ? [mentor.fields.company] : [];
+    const mentorP = mentor.fields.position || [];
+    const mentorC = mentor.fields.company || [];
     const allAttrs = [...new Set([...mentorEs, ...mentorP, ...mentorC])];
 
     // all filter requirements must be satisfied
     const andMap = filterAttrs.filter((attr) => attr !== "all");
+    let active = false;
+    var i;
+    if (onShift) {
+        for (i = 0; i < mentor.fields.shift_start.length; i++) {
+          if (isTimeBetween(mentor.fields.shift_start[i], mentor.fields.shift_end[i])){
+            active = true;
+          }
+        }
+    } else {
+        active = true;
+    }
 
-    return andMap.every((mentorAttr) => allAttrs.includes(mentorAttr));
+    return (
+      andMap.every((mentorAttr) => allAttrs.includes(mentorAttr)) && active
+    );
   };
 
   const handleChange = (e) => {
@@ -156,14 +185,39 @@ export const Mentors = () => {
         <Col>
           <h1>Mentors</h1>
           <p className="mentor-subheader">
-            {/* Click on a mentor's photo for more details */}
-            Coming Soon!
+            Click on a mentor's photo for more details
           </p>
         </Col>
       </Row>
-      <Row style={{ display: "none" }}>
-        {" "}
-        {/* TODO: remove this style to show the mentors */}
+      <Row className="mb-3">
+        <div className="col-auto mentor-filter-radio">
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              onClick={() => setOnShift(false)}
+              name="flexRadioDefault"
+              id="flexRadioDefault1"
+              checked={!onShift}
+            />
+            <label class="form-check-label" for="flexRadioDefault1">
+              All Mentors
+            </label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              onClick={() => setOnShift(true)}
+              type="radio"
+              name="flexRadioDefault"
+              id="flexRadioDefault2"
+              checked={onShift}
+            />
+            <label class="form-check-label" for="flexRadioDefault2">
+              Active Mentors
+            </label>
+          </div>
+        </div>
         <select
           defaultValue="all"
           id="mentors-position-filter"
@@ -204,7 +258,7 @@ export const Mentors = () => {
           ))}
         </select>
       </Row>
-      <Row style={{ display: "none" }}>
+      <Row>
         {" "}
         {/* TODO: remove this style to show the mentors */}
         {

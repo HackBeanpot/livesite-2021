@@ -139,7 +139,16 @@
   border: none;
   width: auto;
   height: 60px;
-  margin: 1em;
+  margin: 0.5rem;
   background-color: $teal-blue;
   color: white;
+
+  option {
+    background-color: white;
+    color: black;
+  }
+}
+
+.mentor-filter-radio {
+  margin: 0.5rem;
 }
