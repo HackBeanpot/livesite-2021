@@ -88,6 +88,9 @@ const RelevantRightNow = () => {
       <Row>
         <Col>
           <h1 id="relevant">Relevant Right Now</h1>
+          <h3 className="schedule__note">
+            Dates and times are displayed in your local timezone.
+          </h3>
         </Col>
       </Row>
       <div className="scrolling-wrapper row flex-row flex-nowrap pb-4 pt-2">
