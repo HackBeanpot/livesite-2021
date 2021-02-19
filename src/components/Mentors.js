@@ -3,6 +3,7 @@ import { Card, Button } from "react-bootstrap";
 import { Col, Container, Row, Spinner } from "react-bootstrap";
 import useAirtableAPI from "../hooks/api-hook";
 import { format, isWithinInterval, parseISO } from "date-fns";
+import { dateExtractor, timeExtractor } from "../utils/utils";
 
 const MentorModal = ({ mentor, setShow }) => {
   const {
@@ -10,11 +11,20 @@ const MentorModal = ({ mentor, setShow }) => {
     position,
     company,
     imageURL,
-    availability = "",
+    shift_start,
+    shift_end,
     expertise = [],
     slack,
   } = mentor;
-  const availabilityList = availability.split(", ");
+  let availabilityList = [];
+  var i;
+  for (i = 0; i < shift_start.length; i++) {
+    const start = shift_start[i];
+    const end = shift_end[i];
+    // sorry I know this looks rough
+    availabilityList.push(dateExtractor(start) + " " + timeExtractor(start) +
+        " - " + dateExtractor(end) + " " + timeExtractor(end));
+  }
 
   return (
     <div className={"modal fade show mentor-modal"}>
@@ -76,7 +86,9 @@ const MentorCard = ({ mentor }) => {
         />
         <Card.Body>
           <Card.Title>
-            <h3>{name}</h3>
+            <h3>
+              {name}
+            </h3>
           </Card.Title>
           <Card.Text>
             {position}, {company}
@@ -111,23 +123,35 @@ function isTimeBetween(start, end) {
   // return false if either the start or end is undefined
   const range_defined = start !== undefined && end !== undefined;
   // check if the current time is within the given interval
-  return range_defined && isWithinInterval(currentTime, {
-    start: parseISO(start),
-    end: parseISO(end),
-  });
+  return (
+    range_defined &&
+    isWithinInterval(currentTime, {
+      start: parseISO(start),
+      end: parseISO(end),
+    })
+  );
 }
 
 export const Mentors = () => {
   const [onShift, setOnShift] = useState(false);
-  const { data, isLoading } = useAirtableAPI("appexkZgUcQ9vucI9", "mentor shifts");
-//  console.log(data);
-  const { shift, shiftsLoading } = useAirtableAPI("appexkZgUcQ9vucI9", "mentor shifts");
+  const { data, isLoading } = useAirtableAPI(
+    "appexkZgUcQ9vucI9",
+    "mentor shifts"
+  );
+  //  console.log(data);
+  const { shift, shiftsLoading } = useAirtableAPI(
+    "appexkZgUcQ9vucI9",
+    "mentor shifts"
+  );
 
   const expertises = getMentorAttrs(data, (mentor) => mentor.fields.expertise);
   const positions = getMentorAttrs(data, (mentor) => mentor.fields.position);
   const companies = getMentorAttrs(data, (mentor) => mentor.fields.company);
-  const shift_start = getMentorAttrs(data, mentor => mentor.fields.shift_start)
-  const shift_end = getMentorAttrs(data, mentor => mentor.fields.shift_end)
+  const shift_start = getMentorAttrs(
+    data,
+    (mentor) => mentor.fields.shift_start
+  );
+  const shift_end = getMentorAttrs(data, (mentor) => mentor.fields.shift_end);
 
   const [filterAttrs, setFilterAttrs] = useState([]);
 
@@ -141,10 +165,23 @@ export const Mentors = () => {
     const allAttrs = [...new Set([...mentorEs, ...mentorP, ...mentorC])];
 
     // all filter requirements must be satisfied
-    const andMap = filterAttrs.filter(attr => attr !== 'all');
-    const active = onShift ? isTimeBetween(mentor.fields.shift_start[0], mentor.fields.shift_end[0]) : true
-    return andMap.every(mentorAttr => allAttrs.includes(mentorAttr)) && active;
-  }
+    const andMap = filterAttrs.filter((attr) => attr !== "all");
+    let active = false;
+    var i;
+    if (onShift) {
+        for (i = 0; i < mentor.fields.shift_start.length; i++) {
+          if (isTimeBetween(mentor.fields.shift_start[i], mentor.fields.shift_end[i])){
+            active = true;
+          }
+        }
+    } else {
+        active = true;
+    }
+
+    return (
+      andMap.every((mentorAttr) => allAttrs.includes(mentorAttr)) && active
+    );
+  };
 
   const handleChange = (e) => {
     const allOptions = Array.from(e.target.options, (option) => option.value);
@@ -180,16 +217,18 @@ export const Mentors = () => {
           </p>
         </Col>
       </Row>
-      <Row> {/* TODO: remove this style to show the mentors */}
+      <Row>
+        {" "}
+        {/* TODO: remove this style to show the mentors */}
         <div class="form-check">
           <input
-              class="form-check-input"
-              type="radio"
-              onClick={() => setOnShift(false)}
-              name="flexRadioDefault"
-              id="flexRadioDefault1"
-              checked={!onShift}
-              />
+            class="form-check-input"
+            type="radio"
+            onClick={() => setOnShift(false)}
+            name="flexRadioDefault"
+            id="flexRadioDefault1"
+            checked={!onShift}
+          />
           <label class="form-check-label" for="flexRadioDefault1">
             All Mentors
           </label>
@@ -202,13 +241,15 @@ export const Mentors = () => {
             name="flexRadioDefault"
             id="flexRadioDefault2"
             checked={onShift}
-            />
+          />
           <label class="form-check-label" for="flexRadioDefault2">
             Active Mentors
           </label>
         </div>
       </Row>
-      <Row style={{display: "none"}}> {/* TODO: remove this style to show the mentors */}
+      <Row>
+        {" "}
+        {/* TODO: remove this style to show the mentors */}
         <select
           defaultValue="all"
           id="mentors-position-filter"
@@ -249,7 +290,9 @@ export const Mentors = () => {
           ))}
         </select>
       </Row>
-      <Row> {/* TODO: remove this style to show the mentors */}
+      <Row>
+        {" "}
+        {/* TODO: remove this style to show the mentors */}
         {
           isLoading && (
             <Spinner animation="border" variant="primary" />
