@@ -58,7 +58,7 @@ const MentorModal = ({ mentor, setShow }) => {
               </ul>
             </div>
             <a
-              href={slack}
+              href={"https://slackbeanpot2021.slack.com/team/" + slack}
               className="btn primary-cta"
               role="button"
               target="_blank"
