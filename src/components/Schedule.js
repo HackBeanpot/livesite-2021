@@ -39,16 +39,17 @@ const Schedule = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
 
   // Create the "Subscribe to Calendar" button
-  const defaultCopyButtonText = 'Subscribe to Calendar';
+  const defaultCopyButtonText = "Subscribe to Calendar";
   const [copyButtonText, setCopyButtonText] = useState(defaultCopyButtonText);
   const copySubscribeLink = () => {
-    var textArea = document.createElement('textarea');
-    textArea.value = "https://calendar.google.com/calendar/ical/c_n3lvtno6l4rebktvvqus3vpb2c%40group.calendar.google.com/public/basic.ics";
+    var textArea = document.createElement("textarea");
+    textArea.value =
+      "https://calendar.google.com/calendar/ical/c_n3lvtno6l4rebktvvqus3vpb2c%40group.calendar.google.com/public/basic.ics";
     document.body.appendChild(textArea);
     textArea.select();
-    document.execCommand('copy');
+    document.execCommand("copy");
     document.body.removeChild(textArea);
-    setCopyButtonText('iCalendar Link Copied!');
+    setCopyButtonText("iCalendar Link Copied!");
     setTimeout(() => {
       setCopyButtonText(defaultCopyButtonText);
     }, 1500);
@@ -77,24 +78,38 @@ const Schedule = () => {
           <h1>Event Schedule</h1>
         </Col>
         <Col>
-            <button
-              onClick={copySubscribeLink}
-              type="button"
-              className="btn secondary-cta schedule__export"
-            >
-              <img
-                src={CalendarIcon}
-                className="schedule__calendar"
-                alt="Calendar Icon"
-              />
-              {copyButtonText}
-            </button>
+          <button
+            onClick={copySubscribeLink}
+            type="button"
+            className="btn secondary-cta schedule__export"
+          >
+            <img
+              src={CalendarIcon}
+              className="schedule__calendar"
+              alt="Calendar Icon"
+            />
+            {copyButtonText}
+          </button>
         </Col>
       </Row>
       <Row>
         <Col>
+          <h3 className="schedule__note">
+            Dates and times are displayed in your local timezone. Schedule in
+            EST can be found{" "}
+            <a
+              href="https://hackbeanpot.com/schedule.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {" "}
+              here
+            </a>
+            . 
+            <br/>The password for all Zoom meetings can be found pinned in the #announcements Slack channel.
+          </h3>
           <h3 className="schedule__warning">
-            Please be sure to attend all events labeled "Everyone"
+            Please be sure to attend all events labeled "Everyone".
           </h3>
         </Col>
       </Row>
