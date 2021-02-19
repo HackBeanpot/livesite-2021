@@ -4,6 +4,7 @@ import { Col, Container, Row, Spinner } from "react-bootstrap";
 import useAirtableAPI from "../hooks/api-hook";
 import { format, isWithinInterval, parseISO } from "date-fns";
 import { dateExtractor, timeExtractor } from "../utils/utils";
+import { isTimeBetween } from "../components/RelevantRightNow";
 
 const MentorModal = ({ mentor, setShow }) => {
   const {
@@ -115,23 +116,6 @@ const getMentorAttrs = (data, attr) => [
   ),
 ];
 
-// TODO: use the util already made for this
-function isTimeBetween(start, end) {
-  // used different date to capture screenshots
-  // using now means all will be filtered out
-  const currentTime = new Date();
-  // return false if either the start or end is undefined
-  const range_defined = start !== undefined && end !== undefined;
-  // check if the current time is within the given interval
-  return (
-    range_defined &&
-    isWithinInterval(currentTime, {
-      start: parseISO(start),
-      end: parseISO(end),
-    })
-  );
-}
-
 export const Mentors = () => {
   const [onShift, setOnShift] = useState(false);
   const { data, isLoading } = useAirtableAPI(
@@ -160,8 +144,8 @@ export const Mentors = () => {
   const shouldShowMentor = (mentor) => {
     // make sure they are truthy fields
     const mentorEs = mentor.fields.expertise || [];
-    const mentorP = mentor.fields.position ? [mentor.fields.position] : [];
-    const mentorC = mentor.fields.company ? [mentor.fields.company] : [];
+    const mentorP = mentor.fields.position || [];
+    const mentorC = mentor.fields.company || [];
     const allAttrs = [...new Set([...mentorEs, ...mentorP, ...mentorC])];
 
     // all filter requirements must be satisfied
@@ -212,44 +196,39 @@ export const Mentors = () => {
         <Col>
           <h1>Mentors</h1>
           <p className="mentor-subheader">
-            {/* Click on a mentor's photo for more details */}
-            Coming Soon!
+            Click on a mentor's photo for more details
           </p>
         </Col>
       </Row>
-      <Row>
-        {" "}
-        {/* TODO: remove this style to show the mentors */}
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="radio"
-            onClick={() => setOnShift(false)}
-            name="flexRadioDefault"
-            id="flexRadioDefault1"
-            checked={!onShift}
-          />
-          <label class="form-check-label" for="flexRadioDefault1">
-            All Mentors
-          </label>
+      <Row className="mb-3">
+        <div className="col-auto mentor-filter-radio">
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              onClick={() => setOnShift(false)}
+              name="flexRadioDefault"
+              id="flexRadioDefault1"
+              checked={!onShift}
+            />
+            <label class="form-check-label" for="flexRadioDefault1">
+              All Mentors
+            </label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              onClick={() => setOnShift(true)}
+              type="radio"
+              name="flexRadioDefault"
+              id="flexRadioDefault2"
+              checked={onShift}
+            />
+            <label class="form-check-label" for="flexRadioDefault2">
+              Active Mentors
+            </label>
+          </div>
         </div>
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            onClick={() => setOnShift(true)}
-            type="radio"
-            name="flexRadioDefault"
-            id="flexRadioDefault2"
-            checked={onShift}
-          />
-          <label class="form-check-label" for="flexRadioDefault2">
-            Active Mentors
-          </label>
-        </div>
-      </Row>
-      <Row>
-        {" "}
-        {/* TODO: remove this style to show the mentors */}
         <select
           defaultValue="all"
           id="mentors-position-filter"

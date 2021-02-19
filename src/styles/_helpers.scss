@@ -30,6 +30,10 @@
   margin-bottom: 16px;
   border-width: 0;
 
+  .card-img-top {
+    border-radius: 10px 10px 0px 0px;
+  }
+
   .card-title {
     font-size: 18px;
     font-weight: bold;
