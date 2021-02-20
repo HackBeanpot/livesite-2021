@@ -22,8 +22,15 @@ const MentorModal = ({ mentor, setShow }) => {
     const start = shift_start[i];
     const end = shift_end[i];
     // sorry I know this looks rough
-    availabilityList.push(dateExtractor(start) + " " + timeExtractor(start) +
-        " - " + dateExtractor(end) + " " + timeExtractor(end));
+    availabilityList.push(
+      dateExtractor(start) +
+        " " +
+        timeExtractor(start) +
+        " - " +
+        dateExtractor(end) +
+        " " +
+        timeExtractor(end)
+    );
   }
 
   return (
@@ -86,9 +93,7 @@ const MentorCard = ({ mentor }) => {
         />
         <Card.Body>
           <Card.Title>
-            <h3>
-              {name}
-            </h3>
+            <h3>{name}</h3>
           </Card.Title>
           <Card.Text>
             {position}, {company}
@@ -142,13 +147,18 @@ export const Mentors = () => {
     let active = false;
     var i;
     if (onShift) {
-        for (i = 0; i < mentor.fields.shift_start.length; i++) {
-          if (isTimeBetween(mentor.fields.shift_start[i], mentor.fields.shift_end[i])){
-            active = true;
-          }
+      for (i = 0; i < mentor.fields.shift_start.length; i++) {
+        if (
+          isTimeBetween(
+            mentor.fields.shift_start[i],
+            mentor.fields.shift_end[i]
+          )
+        ) {
+          active = true;
         }
+      }
     } else {
-        active = true;
+      active = true;
     }
 
     return (
