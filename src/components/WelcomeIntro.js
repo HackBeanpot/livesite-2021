@@ -9,15 +9,24 @@ import MagicBean from "../assets/MagicBean.svg";
 import CabinCupLogo from "../assets/CabinCupLogo.svg";
 import Airtable from "airtable";
 
-
 const WelcomeIntro = () => {
-  const [data, setData] = useState({
-    "Jelly Beans": 0,
-    "Cocoa Beans": 0,
-    "Soy Beans": 0,
-    "Garden Beans": 0,
-    "Magic Beans": 0,
-  });
+  const [data, setData] = useState(
+    {
+      "Jelly Beans": 0,
+      "Cocoa Beans": 0,
+      "Soy Beans": 0,
+      "Garden Beans": 0,
+      "Magic Beans": 0,
+     }
+    );
+
+  const cabinPoints = {
+                          "Jelly Beans": 0,
+                          "Cocoa Beans": 0,
+                          "Soy Beans": 0,
+                          "Garden Beans": 0,
+                          "Magic Beans": 0,
+                        }
 
   var base = new Airtable({
     apiKey: process.env.REACT_APP_AIRTABLE_KEY,
@@ -33,12 +42,8 @@ const WelcomeIntro = () => {
         // This function (`page`) will get called for each page of records.
         records.forEach(function (record) {
           const cabin = record.fields["Cabins"];
-          data[cabin] += 1;
-
-          //                  data.push(record);
-          setData(data);
+          cabinPoints[cabin] += 1;
         });
-        console.log(data);
 
         // To fetch the next page of records, call `fetchNextPage`.
         // If there are more records, `page` will get called again.
@@ -50,7 +55,8 @@ const WelcomeIntro = () => {
           console.error(err);
           return;
         } else {
-          setData(data);
+          setData(cabinPoints);
+
         }
       }
     );
@@ -63,7 +69,7 @@ const WelcomeIntro = () => {
             <Col md={{ span: 7, offset: 1 }}>
               <h2>Cabin Cup</h2>
               <p>
-                Earn points for your cabin by bonding with you cabin mates and
+                Earn points for your cabin by bonding with your cabin mates and
                 participating in cabin events! Use your points in the end to
                 enter raffles for awesome prizes!
               </p>
