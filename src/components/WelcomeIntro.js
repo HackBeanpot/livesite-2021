@@ -10,23 +10,21 @@ import CabinCupLogo from "../assets/CabinCupLogo.svg";
 import Airtable from "airtable";
 
 const WelcomeIntro = () => {
-  const [data, setData] = useState(
-    {
-      "Jelly Beans": 0,
-      "Cocoa Beans": 0,
-      "Soy Beans": 0,
-      "Garden Beans": 0,
-      "Magic Beans": 0,
-     }
-    );
+  const [data, setData] = useState({
+    "Jelly Beans": 0,
+    "Cocoa Beans": 0,
+    "Soy Beans": 0,
+    "Garden Beans": 0,
+    "Magic Beans": 0,
+  });
 
   const cabinPoints = {
-                          "Jelly Beans": 0,
-                          "Cocoa Beans": 0,
-                          "Soy Beans": 0,
-                          "Garden Beans": 0,
-                          "Magic Beans": 0,
-                        }
+    "Jelly Beans": 0,
+    "Cocoa Beans": 0,
+    "Soy Beans": 0,
+    "Garden Beans": 0,
+    "Magic Beans": 0,
+  };
 
   var base = new Airtable({
     apiKey: process.env.REACT_APP_AIRTABLE_KEY,
@@ -56,7 +54,6 @@ const WelcomeIntro = () => {
           return;
         } else {
           setData(cabinPoints);
-
         }
       }
     );
