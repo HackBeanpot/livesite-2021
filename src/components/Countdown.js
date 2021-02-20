@@ -11,7 +11,7 @@ const calculateTimeLeft = (difference) => {
   let year = new Date().getFullYear();
   // const endTime = new Date(year, 1, 21, 9, 30, 0, 0); // Feb 21, 9:30am
   const startTime = new Date(year, 1, 19, 20, 30, 0, 0); // Feb 19, 8:30pm
-  const endTimeInEST = new Date('Feb 21 2021 09:30:00 EST');
+  const endTimeInEST = new Date("Feb 21 2021 09:30:00 EST");
   difference["startDifference"] = +startTime - +new Date();
   difference["endDifference"] = +endTimeInEST - +new Date();
 

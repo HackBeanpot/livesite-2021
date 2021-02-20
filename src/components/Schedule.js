@@ -105,8 +105,10 @@ const Schedule = () => {
               {" "}
               here
             </a>
-            . 
-            <br/>The password for all Zoom meetings can be found pinned in the #announcements Slack channel.
+            .
+            <br />
+            The password for all Zoom meetings can be found pinned in the
+            #announcements Slack channel.
           </h3>
           <h3 className="schedule__warning">
             Please be sure to attend all events labeled "Everyone".
