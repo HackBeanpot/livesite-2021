@@ -201,29 +201,29 @@ export const Mentors = () => {
       </Row>
       <Row className="mb-3">
         <div className="col-auto mentor-filter-radio">
-          <div class="form-check">
+          <div className="form-check">
             <input
-              class="form-check-input"
+              className="form-check-input"
               type="radio"
               onClick={() => setOnShift(false)}
               name="flexRadioDefault"
               id="flexRadioDefault1"
               checked={!onShift}
             />
-            <label class="form-check-label" for="flexRadioDefault1">
+            <label className="form-check-label" for="flexRadioDefault1">
               All Mentors
             </label>
           </div>
-          <div class="form-check">
+          <div className="form-check">
             <input
-              class="form-check-input"
+              className="form-check-input"
               onClick={() => setOnShift(true)}
               type="radio"
               name="flexRadioDefault"
               id="flexRadioDefault2"
               checked={onShift}
             />
-            <label class="form-check-label" for="flexRadioDefault2">
+            <label className="form-check-label" for="flexRadioDefault2">
               Active Mentors
             </label>
           </div>
