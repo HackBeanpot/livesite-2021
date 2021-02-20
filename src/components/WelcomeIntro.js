@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import {Col, Container, Row } from "react-bootstrap";
 import CocoaBean from "../assets/CocoaBean.svg";
 import JellyBean from "../assets/JellyBean.svg";
 import GardenBean from "../assets/GardenBean.svg";
@@ -45,9 +45,9 @@ const WelcomeIntro = () => {
           </Row>
           <Row className="justify-content-center">
             <Col xs="auto" className="px-0">
-              <p className="cabin-cup__points">
+              {/* <p className="cabin-cup__points">
                 {cabinPoints["Jelly Beans"]}pts{" "}
-              </p>
+              </p> */}
               <img
                 src={JellyBean}
                 alt="Jelly Bean"
@@ -55,9 +55,9 @@ const WelcomeIntro = () => {
               />
             </Col>
             <Col xs="auto" className="px-0">
-              <p className="cabin-cup__points">
+              {/* <p className="cabin-cup__points">
                 {cabinPoints["Cocoa Beans"]}pts
-              </p>
+              </p> */}
               <img
                 src={CocoaBean}
                 alt="Cocoa Bean"
@@ -67,9 +67,9 @@ const WelcomeIntro = () => {
           </Row>
           <Row className="justify-content-center">
             <Col xs="auto" className="px-0">
-              <p className="cabin-cup__points">
+              {/* <p className="cabin-cup__points">
                 {cabinPoints["Garden Beans"]}pts
-              </p>
+              </p> */}
               <img
                 src={GardenBean}
                 alt="Garden Bean"
@@ -77,18 +77,28 @@ const WelcomeIntro = () => {
               />
             </Col>
             <Col xs="auto" className="px-0">
-              <p className="cabin-cup__points">{cabinPoints["Soy Beans"]}pts</p>
+              {/* <p className="cabin-cup__points">{cabinPoints["Soy Beans"]}pts</p> */}
               <img src={SoyBean} alt="Soy Bean" className="cabin-cup__bean" />
             </Col>
             <Col xs="auto" className="px-0">
-              <p className="cabin-cup__points">
+              {/* <p className="cabin-cup__points">
                 {cabinPoints["Magic Beans"]}pts
-              </p>
+              </p> */}
               <img
                 src={MagicBean}
                 alt="Magic Bean"
                 className="cabin-cup__bean"
               />
+            </Col>
+            <Col xs="auto" className="px-0">
+            <a
+              className="btn primary-cta mr-3 mt-2"
+              href="https://airtable.com/shrmrHXAKcHHmT9No"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Score Sheet
+            </a>
             </Col>
           </Row>
         </Col>
