@@ -9,8 +9,6 @@ import MagicBean from "../assets/MagicBean.svg";
 import CabinCupLogo from "../assets/CabinCupLogo.svg";
 import Airtable from "airtable";
 
-import useAirtableAPI from "../hooks/api-hook";
-import useAirtableAPI2 from "../hooks/api-hook-2";
 
 const WelcomeIntro = () => {
   const [data, setData] = useState({
