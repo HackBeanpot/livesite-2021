@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import CocoaBean from "../assets/CocoaBean.svg";
 import JellyBean from "../assets/JellyBean.svg";
