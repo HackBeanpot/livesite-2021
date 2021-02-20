@@ -1,16 +1,22 @@
 import React from "react";
-import {Col, Container, Row } from "react-bootstrap";
+import { useState } from "react";
+import { Col, Container, Row } from "react-bootstrap";
 import CocoaBean from "../assets/CocoaBean.svg";
 import JellyBean from "../assets/JellyBean.svg";
 import GardenBean from "../assets/GardenBean.svg";
 import SoyBean from "../assets/SoyBean.svg";
 import MagicBean from "../assets/MagicBean.svg";
 import CabinCupLogo from "../assets/CabinCupLogo.svg";
-
-import useAirtableAPI from "../hooks/api-hook";
+import Airtable from "airtable";
 
 const WelcomeIntro = () => {
-  const { data } = useAirtableAPI("appLHUnzVRxpj7Nx1", "Raffle");
+  const [data, setData] = useState({
+    "Jelly Beans": 0,
+    "Cocoa Beans": 0,
+    "Soy Beans": 0,
+    "Garden Beans": 0,
+    "Magic Beans": 0,
+  });
 
   const cabinPoints = {
     "Jelly Beans": 0,
@@ -20,10 +26,37 @@ const WelcomeIntro = () => {
     "Magic Beans": 0,
   };
 
-  for (const cabinPoint of data) {
-    const cabin = cabinPoint.fields["Cabins"];
-    cabinPoints[cabin] += 1;
-  }
+  var base = new Airtable({
+    apiKey: process.env.REACT_APP_AIRTABLE_KEY,
+  }).base("appLHUnzVRxpj7Nx1");
+
+  base("Raffle")
+    .select({
+      // Selecting the first 3 records in Grid view:
+      view: "Grid view",
+    })
+    .eachPage(
+      function page(records, fetchNextPage) {
+        // This function (`page`) will get called for each page of records.
+        records.forEach(function (record) {
+          const cabin = record.fields["Cabins"];
+          cabinPoints[cabin] += 1;
+        });
+
+        // To fetch the next page of records, call `fetchNextPage`.
+        // If there are more records, `page` will get called again.
+        // If there are no more records, `done` will get called.
+        fetchNextPage();
+      },
+      function done(err) {
+        if (err) {
+          console.error(err);
+          return;
+        } else {
+          setData(cabinPoints);
+        }
+      }
+    );
 
   return (
     <Container>
@@ -33,7 +66,7 @@ const WelcomeIntro = () => {
             <Col md={{ span: 7, offset: 1 }}>
               <h2>Cabin Cup</h2>
               <p>
-                Earn points for your cabin by bonding with you cabin mates and
+                Earn points for your cabin by bonding with your cabin mates and
                 participating in cabin events! Use your points in the end to
                 enter raffles for awesome prizes!
               </p>
@@ -45,9 +78,7 @@ const WelcomeIntro = () => {
           </Row>
           <Row className="justify-content-center">
             <Col xs="auto" className="px-0">
-              {/* <p className="cabin-cup__points">
-                {cabinPoints["Jelly Beans"]}pts{" "}
-              </p> */}
+              <p className="cabin-cup__points">{data["Jelly Beans"]}pts </p>
               <img
                 src={JellyBean}
                 alt="Jelly Bean"
@@ -55,9 +86,7 @@ const WelcomeIntro = () => {
               />
             </Col>
             <Col xs="auto" className="px-0">
-              {/* <p className="cabin-cup__points">
-                {cabinPoints["Cocoa Beans"]}pts
-              </p> */}
+              <p className="cabin-cup__points">{data["Cocoa Beans"]}pts</p>
               <img
                 src={CocoaBean}
                 alt="Cocoa Bean"
@@ -67,9 +96,7 @@ const WelcomeIntro = () => {
           </Row>
           <Row className="justify-content-center">
             <Col xs="auto" className="px-0">
-              {/* <p className="cabin-cup__points">
-                {cabinPoints["Garden Beans"]}pts
-              </p> */}
+              <p className="cabin-cup__points">{data["Garden Beans"]}pts</p>
               <img
                 src={GardenBean}
                 alt="Garden Bean"
@@ -77,28 +104,16 @@ const WelcomeIntro = () => {
               />
             </Col>
             <Col xs="auto" className="px-0">
-              {/* <p className="cabin-cup__points">{cabinPoints["Soy Beans"]}pts</p> */}
+              <p className="cabin-cup__points">{data["Soy Beans"]}pts</p>
               <img src={SoyBean} alt="Soy Bean" className="cabin-cup__bean" />
             </Col>
             <Col xs="auto" className="px-0">
-              {/* <p className="cabin-cup__points">
-                {cabinPoints["Magic Beans"]}pts
-              </p> */}
+              <p className="cabin-cup__points">{data["Magic Beans"]}pts</p>
               <img
                 src={MagicBean}
                 alt="Magic Bean"
                 className="cabin-cup__bean"
               />
-            </Col>
-            <Col xs="auto" className="px-0">
-            <a
-              className="btn primary-cta mr-3 mt-2"
-              href="https://airtable.com/shrmrHXAKcHHmT9No"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Score Sheet
-            </a>
             </Col>
           </Row>
         </Col>
