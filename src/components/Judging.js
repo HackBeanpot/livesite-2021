@@ -11,10 +11,10 @@ import JudgeSchedules from "../data/judging/results.json";
 import ProjectSchedules from "../data/judging/projectResults.json";
 
 const TIME_SLOTS = [
-  "10:30",
-  "10:38",
-  "10:46",
-  "10:54",
+  "10:32",
+  "10:40",
+  "10:48",
+  "10:56",
   "11:04",
   "11:12",
   "11:20",
