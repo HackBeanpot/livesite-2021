@@ -11,17 +11,17 @@ import JudgeSchedules from "../data/judging/results.json";
 import ProjectSchedules from "../data/judging/projectResults.json";
 
 const TIME_SLOTS = [
-  "10:30",
-  "10:38",
-  "10:46",
-  "10:54",
-  "11:04",
-  "11:12",
-  "11:20",
-  "11:28",
-  "11:36",
-  "11:44",
-  "11:52",
+  "10:32",
+  "10:45",
+  "10:53",
+  "11:01",
+  "11:09",
+  "11:17",
+  "11:25",
+  "11:33",
+  "11:41",
+  "11:49",
+  "11:57",
 ];
 
 const Judging = () => {
@@ -41,7 +41,7 @@ const Judging = () => {
 
   const getOptions = () => {
     if (personType === "judge") {
-      const res = Judges.map((j) => {
+      const res = Object.keys(Judges).map((j) => {
         return {
           name: j,
           value: j,
@@ -105,8 +105,9 @@ const JudgingTable = ({ selectedPerson, personType }) => {
       cells.push(
         <div
           className={`a-row proj-col ${oddOrEven} cell${row}${
-            JudgeSchedules[selectedPerson][row]["liveDemo"] ||
-            projectName === "Break Time"
+            (JudgeSchedules[selectedPerson][row]["liveDemo"] !== "No" ||
+              projectName === "Break Time") &&
+            projectName !== "Smokey Bot"
               ? " "
               : " non-live"
           }`}
@@ -123,7 +124,12 @@ const JudgingTable = ({ selectedPerson, personType }) => {
     } else {
       cells.push(
         <div className={`a-row proj-col ${oddOrEven} cell${row}`}>
-          {ProjectSchedules[selectedPerson][row]}
+          <a
+            className="proj-link"
+            href={Judges[ProjectSchedules[selectedPerson][row]]}
+          >
+            {ProjectSchedules[selectedPerson][row]}
+          </a>
         </div>
       );
     }

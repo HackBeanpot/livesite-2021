@@ -48,7 +48,7 @@ const MentorModal = ({ mentor, setShow }) => {
 
           <div className="mentor-modal__info">
             <div className="mentor-modal__info-section">
-              <p className="mentor-modal__heading">Shifts</p>
+              <p className="mentor-modal__heading">Shifts (in local time)</p>
               <ul>
                 {availabilityList.map((time) => (
                   <li key={time}>{time}</li>
