@@ -105,7 +105,7 @@ const JudgingTable = ({ selectedPerson, personType }) => {
       cells.push(
         <div
           className={`a-row proj-col ${oddOrEven} cell${row}${
-            (JudgeSchedules[selectedPerson][row]["liveDemo"] ||
+            (JudgeSchedules[selectedPerson][row]["liveDemo"] !== "No" ||
               projectName === "Break Time") &&
             projectName !== "Smokey Bot"
               ? " "
