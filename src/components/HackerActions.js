@@ -2,7 +2,7 @@ import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 
 const HackerActions = () => (
-  <Container className="mt-5">
+  <Container className="mt-5 hacker-actions">
     <Row>
       <Col md="6" className="mb-5">
         <h2>Send us your feedback</h2>

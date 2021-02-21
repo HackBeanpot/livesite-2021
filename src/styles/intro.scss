@@ -7,10 +7,19 @@
   text-align: center;
 }
 
+.introTitle {
+  color: $white;
+}
+
 .introText {
   line-height: 1.2;
+  color: $white;
 
   &__link {
     text-decoration: underline;
   }
+}
+
+.hacker-actions p {
+  color: $white;
 }
