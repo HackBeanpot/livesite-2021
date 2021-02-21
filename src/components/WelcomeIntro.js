@@ -120,7 +120,7 @@ const WelcomeIntro = () => {
                 className="cabin-cup__bean"
               />
             </Col>
-            <Col xs="auto" className="px-0">
+            {/* <Col xs="auto" className="px-0">
               <a
                 className="btn primary-cta mr-3 mt-2"
                 href="https://airtable.com/shrmrHXAKcHHmT9No"
@@ -129,7 +129,7 @@ const WelcomeIntro = () => {
               >
                 Score Sheet
               </a>
-            </Col>
+            </Col> */}
           </Row>
         </Col>
 
