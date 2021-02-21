@@ -116,14 +116,14 @@ const WelcomeIntro = () => {
               />
             </Col>
             <Col xs="auto" className="px-0">
-             <a
-               className="btn primary-cta mr-3 mt-2"
-               href="https://airtable.com/shrmrHXAKcHHmT9No"
-               target="_blank"
-               rel="noreferrer"
-             >
-               Score Sheet
-             </a>
+              <a
+                className="btn primary-cta mr-3 mt-2"
+                href="https://airtable.com/shrmrHXAKcHHmT9No"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Score Sheet
+              </a>
             </Col>
           </Row>
         </Col>
@@ -170,7 +170,7 @@ const WelcomeIntro = () => {
               target="_blank"
               rel="noreferrer"
             >
-              Visit the Hacker Lounges
+              Visit the Hacker Lounge
             </a>
           </div>
         </Col>
