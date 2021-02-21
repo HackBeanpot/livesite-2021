@@ -4,10 +4,9 @@ body {
   font-family: $font-body;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url("/assets/stars.png");
 
   h1 {
-    color: $light-blue;
+    color: $dark-green;
     font-size: 60px;
     margin-bottom: 2rem;
     font-weight: bold;
@@ -16,7 +15,6 @@ body {
   h2 {
     font-size: 40px;
     font-weight: bold;
-    color: $white;
   }
 
   h3 {
