@@ -41,7 +41,7 @@ const Judging = () => {
 
   const getOptions = () => {
     if (personType === "judge") {
-      const res = Judges.map((j) => {
+      const res = Object.keys(Judges).map((j) => {
         return {
           name: j,
           value: j,
@@ -105,8 +105,9 @@ const JudgingTable = ({ selectedPerson, personType }) => {
       cells.push(
         <div
           className={`a-row proj-col ${oddOrEven} cell${row}${
-            JudgeSchedules[selectedPerson][row]["liveDemo"] ||
-            projectName === "Break Time"
+            (JudgeSchedules[selectedPerson][row]["liveDemo"] ||
+              projectName === "Break Time") &&
+            projectName !== "Smokey Bot"
               ? " "
               : " non-live"
           }`}
@@ -123,7 +124,12 @@ const JudgingTable = ({ selectedPerson, personType }) => {
     } else {
       cells.push(
         <div className={`a-row proj-col ${oddOrEven} cell${row}`}>
-          {ProjectSchedules[selectedPerson][row]}
+          <a
+            className="proj-link"
+            href={Judges[ProjectSchedules[selectedPerson][row]]}
+          >
+            {ProjectSchedules[selectedPerson][row]}
+          </a>
         </div>
       );
     }

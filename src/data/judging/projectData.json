@@ -1,9 +1,275 @@
 [
   {
-    "projectName": "projectName",
-    "submissionLink": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    "tryItOutLink": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    "videoDemoLink": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    "liveDemo": true
+    "projectName": "FriendForest",
+    "submissionLink": "https://hackbeanpot-2021.devpost.com/submissions/209600-friendforest",
+    "tryItOutLink": "https://github.com/clwang28/hack-beanpot-2021, https://marvelapp.com/prototype/50756g4/screen/76984218, https://docs.google.com/presentation/d/1lmrMajunnDD-k8EFk34WBG2iB8sMPKBw_FFyRz6kHzs/edit?usp=sharing",
+    "videoDemoLink": "",
+    "liveDemo": ""
+  },
+  {
+    "projectName": "NUfriends",
+    "submissionLink": "https://hackbeanpot-2021.devpost.com/submissions/209789-nufriends",
+    "tryItOutLink": "https://www.figma.com/file/Eq5oFMA2hi8YFKp5ecH6yr/App-Preview?node-id=0%3A1, https://github.com/alan-xiao/HBP2021v2",
+    "videoDemoLink": "https://youtu.be/a93g7-CXLv4",
+    "liveDemo": "Yes"
+  },
+  {
+    "projectName": "Campanion",
+    "submissionLink": "https://hackbeanpot-2021.devpost.com/submissions/209797-campanion",
+    "tryItOutLink": "https://www.figma.com/file/r5jEvMrrNCAZgKLnWLnbzJ/Campanion?node-id=0%3A1, https://www.zhqland.com/media/landing?id=1ba88137-f2b0-4721-8d9f-3eeac9ac7a56&tId=85ae082a-e1b8-400b-9e55-77e790f123df",
+    "videoDemoLink": "",
+    "liveDemo": ""
+  },
+  {
+    "projectName": "Book Toons",
+    "submissionLink": "https://hackbeanpot-2021.devpost.com/submissions/209800-book-toons",
+    "tryItOutLink": "https://jzhzhang66.github.io/hackbeanpot2021/#/, https://github.com/jzhzhang66/hackbeanpot2021.git",
+    "videoDemoLink": "",
+    "liveDemo": ""
+  },
+  {
+    "projectName": "YarnSpin",
+    "submissionLink": "https://hackbeanpot-2021.devpost.com/submissions/209814-yarnspin",
+    "tryItOutLink": "https://github.com/JDWilson73/yarnspin, https://www.figma.com/file/rnaMLhbl4Tfc7eP440zmN5/Hack-Bean-2021?node-id=0%3A1",
+    "videoDemoLink": "",
+    "liveDemo": ""
+  },
+  {
+    "projectName": "Planting your Life",
+    "submissionLink": "https://hackbeanpot-2021.devpost.com/submissions/209822-planting-your-life",
+    "tryItOutLink": "https://github.com/lucademian/plantingapp.git",
+    "videoDemoLink": "",
+    "liveDemo": ""
+  },
+  {
+    "projectName": "Family Fridge",
+    "submissionLink": "https://hackbeanpot-2021.devpost.com/submissions/209826-family-fridge",
+    "tryItOutLink": "https://github.com/smerlino/FamilyFridge, https://www.figma.com/file/bXTpGcVg4fDzVqxORmMcO8/Family-Fridge?node-id=6%3A1",
+    "videoDemoLink": "https://youtu.be/3jEevwhHYZs",
+    "liveDemo": ""
+  },
+  {
+    "projectName": "Foster Friends",
+    "submissionLink": "https://hackbeanpot-2021.devpost.com/submissions/209827-foster-friends",
+    "tryItOutLink": "https://github.com/Abby-Dennin/hacking-huskies",
+    "videoDemoLink": "https://youtu.be/4iZg723RGYo",
+    "liveDemo": ""
+  },
+  {
+    "projectName": "dogGo: find your match!",
+    "submissionLink": "https://hackbeanpot-2021.devpost.com/submissions/209906-doggo-find-your-match",
+    "tryItOutLink": "https://gitlab.com/deirdre_murphy/hackbeanpot",
+    "videoDemoLink": "",
+    "liveDemo": ""
+  },
+  {
+    "projectName": "Hiking With Dad",
+    "submissionLink": "https://hackbeanpot-2021.devpost.com/submissions/209909-hiking-with-dad",
+    "tryItOutLink": "https://github.com/seb-fousse/hiking-with-dad",
+    "videoDemoLink": "",
+    "liveDemo": ""
+  },
+  {
+    "projectName": "Twinflame",
+    "submissionLink": "https://hackbeanpot-2021.devpost.com/submissions/209910-twinflame",
+    "tryItOutLink": "https://github.com/aschimmichanga/Twinflame",
+    "videoDemoLink": "",
+    "liveDemo": "Yes"
+  },
+  {
+    "projectName": "Spotify Discovery Network",
+    "submissionLink": "https://hackbeanpot-2021.devpost.com/submissions/209945-spotify-discovery-network",
+    "tryItOutLink": "https://jcorf.github.io/spotify-network/, https://github.com/jcorf/spotify-network",
+    "videoDemoLink": "",
+    "liveDemo": ""
+  },
+  {
+    "projectName": "spotiFYE",
+    "submissionLink": "https://hackbeanpot-2021.devpost.com/submissions/209994-spotifye",
+    "tryItOutLink": "https://github.com/thomas-purcell/spotiFYE",
+    "videoDemoLink": "https://youtu.be/VAd5wXtuk6k",
+    "liveDemo": ""
+  },
+  {
+    "projectName": "Binge Watch Calculator",
+    "submissionLink": "https://hackbeanpot-2021.devpost.com/submissions/210010-binge-watch-calculator",
+    "tryItOutLink": "https://bingewatchcalculator.netlify.app/, https://github.com/angelinahan/binge-watch-calculator",
+    "videoDemoLink": "",
+    "liveDemo": "Yes"
+  },
+  {
+    "projectName": "Smid the Smore",
+    "submissionLink": "https://hackbeanpot-2021.devpost.com/submissions/210078-smid-the-smore",
+    "tryItOutLink": "https://discord.com/api/oauth2/authorize?client_id=812511357597384764&permissions=8&scope=bot, https://github.com/clucidojr123/SmidTheSmore",
+    "videoDemoLink": "",
+    "liveDemo": ""
+  },
+  {
+    "projectName": "Your Board",
+    "submissionLink": "https://hackbeanpot-2021.devpost.com/submissions/210111-your-board",
+    "tryItOutLink": "https://github.com/vincentspitale/Figma-New-Tab-Page",
+    "videoDemoLink": "https://www.youtube.com/watch?v=D1mgZuRShQs",
+    "liveDemo": ""
+  },
+  {
+    "projectName": "Covid Data Compiler (CDC)",
+    "submissionLink": "https://hackbeanpot-2021.devpost.com/submissions/210115-covid-data-compiler-cdc",
+    "tryItOutLink": "https://github.com/kristinafuji/beanies",
+    "videoDemoLink": "",
+    "liveDemo": ""
+  },
+  {
+    "projectName": "Sustainability Check Chrome Extension",
+    "submissionLink": "https://hackbeanpot-2021.devpost.com/submissions/210168-sustainability-check-chrome-extension",
+    "tryItOutLink": "https://github.com/birkenesl/SustainabilityCheck.git",
+    "videoDemoLink": "https://vimeo.com/514878730",
+    "liveDemo": ""
+  },
+  {
+    "projectName": "EstimatedTimeOfArrival",
+    "submissionLink": "https://hackbeanpot-2021.devpost.com/submissions/210198-estimatedtimeofarrival",
+    "tryItOutLink": "https://github.com/tsquares/Estimated-Time-of-Arrival.git",
+    "videoDemoLink": "",
+    "liveDemo": ""
+  },
+  {
+    "projectName": "Smokey Bot",
+    "submissionLink": "https://hackbeanpot-2021.devpost.com/submissions/210209-smokey-bot",
+    "tryItOutLink": "https://github.com/christofuy/Smokey_Bot",
+    "videoDemoLink": "https://youtu.be/GGxmDlaUfBM",
+    "liveDemo": ""
+  },
+  {
+    "projectName": "LocalRelief",
+    "submissionLink": "https://hackbeanpot-2021.devpost.com/submissions/210217-localrelief",
+    "tryItOutLink": "https://github.com/RahulR100/hackbeanpot2021",
+    "videoDemoLink": "",
+    "liveDemo": ""
+  },
+  {
+    "projectName": "AudioPartyTogether",
+    "submissionLink": "https://hackbeanpot-2021.devpost.com/submissions/210230-audiopartytogether",
+    "tryItOutLink": "",
+    "videoDemoLink": "",
+    "liveDemo": "Yes"
+  },
+  {
+    "projectName": "Name That 90's Music Video!",
+    "submissionLink": "https://hackbeanpot-2021.devpost.com/submissions/210298-name-that-90-s-music-video",
+    "tryItOutLink": "https://github.ccs.neu.edu/jeannillehici/hackbean_name_that_video",
+    "videoDemoLink": "",
+    "liveDemo": ""
+  },
+  {
+    "projectName": "NattyTracker",
+    "submissionLink": "https://hackbeanpot-2021.devpost.com/submissions/210352-nattytracker",
+    "tryItOutLink": "https://github.com/chessmyers/NattyTracker",
+    "videoDemoLink": "",
+    "liveDemo": "Yes"
+  },
+  {
+    "projectName": "Where to go when",
+    "submissionLink": "https://hackbeanpot-2021.devpost.com/submissions/210363-where-to-go-when",
+    "tryItOutLink": "https://where-to-go-when.netlify.app/, https://github.com/jansim/where-to-go-when",
+    "videoDemoLink": "",
+    "liveDemo": "Yes"
+  },
+  {
+    "projectName": "Spotifinder",
+    "submissionLink": "https://hackbeanpot-2021.devpost.com/submissions/210390-spotifinder",
+    "tryItOutLink": "https://github.com/srobin31/HackBeanpot2021, https://xd.adobe.com/view/0867ccfd-6860-4c61-4b69-4d15f60ba036-7e56/?fullscreen",
+    "videoDemoLink": "",
+    "liveDemo": "Yes"
+  },
+  {
+    "projectName": "Ambiance",
+    "submissionLink": "https://hackbeanpot-2021.devpost.com/submissions/210395-ambiance",
+    "tryItOutLink": "https://github.com/liam923/ambiance-backend",
+    "videoDemoLink": "",
+    "liveDemo": "Yes"
+  },
+  {
+    "projectName": "CampfireQueue",
+    "submissionLink": "https://hackbeanpot-2021.devpost.com/submissions/210414-campfirequeue",
+    "tryItOutLink": "https://campfire-hbp.herokuapp.com/, https://hackbeanpot-backend.herokuapp.com/, https://github.com/AshwinKAshok/hackbeanpot-react-frontend, https://github.com/AshwinKAshok/hackbeanpot-backend",
+    "videoDemoLink": "",
+    "liveDemo": "Yes"
+  },
+  {
+    "projectName": "Glampsite",
+    "submissionLink": "https://hackbeanpot-2021.devpost.com/submissions/210423-glampsite",
+    "tryItOutLink": "https://github.com/jrosen081/CampingAR",
+    "videoDemoLink": "https://youtu.be/r84tNJ040DY",
+    "liveDemo": "Yes"
+  },
+  {
+    "projectName": "CoviDex",
+    "submissionLink": "https://hackbeanpot-2021.devpost.com/submissions/210430-covidex",
+    "tryItOutLink": "http://www.covidex.live/, https://naughty-dubinsky-7cb6ec.netlify.app/",
+    "videoDemoLink": "",
+    "liveDemo": "Yes"
+  },
+  {
+    "projectName": "Search Sustainable",
+    "submissionLink": "https://hackbeanpot-2021.devpost.com/submissions/210445-search-sustainable",
+    "tryItOutLink": "https://mia-ktlk.github.io/hbp2021process/, https://github.com/mia-ktlk/tEEHMsearchsustainable.git",
+    "videoDemoLink": "",
+    "liveDemo": "Yes"
+  },
+  {
+    "projectName": "SmartTravel",
+    "submissionLink": "https://hackbeanpot-2021.devpost.com/submissions/210454-smarttravel",
+    "tryItOutLink": "https://github.com/Gkimatov/SmartTravel",
+    "videoDemoLink": "",
+    "liveDemo": "Yes"
+  },
+  {
+    "projectName": "Track N' Plan",
+    "submissionLink": "https://hackbeanpot-2021.devpost.com/submissions/210469-track-n-plan",
+    "tryItOutLink": "",
+    "videoDemoLink": "",
+    "liveDemo": "Yes"
+  },
+  {
+    "projectName": "beanme",
+    "submissionLink": "https://hackbeanpot-2021.devpost.com/submissions/210482-beanme",
+    "tryItOutLink": "https://github.com/wwohlers/beanme-native, https://github.com/SutterButter4/BeanMeBackend, https://api.billwohlers.com",
+    "videoDemoLink": "",
+    "liveDemo": "Yes"
+  },
+  {
+    "projectName": "COVID-19 Vaccine Waste Tracker",
+    "submissionLink": "https://hackbeanpot-2021.devpost.com/submissions/210492-covid-19-vaccine-waste-tracker",
+    "tryItOutLink": "https://github.com/elainaphalen/HPB2021",
+    "videoDemoLink": "",
+    "liveDemo": "Yes"
+  },
+  {
+    "projectName": "Crowd Feud",
+    "submissionLink": "https://hackbeanpot-2021.devpost.com/submissions/210498-crowd-feud",
+    "tryItOutLink": "https://github.com/grago1999/mts",
+    "videoDemoLink": "https://youtu.be/qR08y6c7Wco",
+    "liveDemo": "Yes"
+  },
+  {
+    "projectName": "Safe Electronics",
+    "submissionLink": "https://hackbeanpot-2021.devpost.com/submissions/210516-safe-electronics",
+    "tryItOutLink": "https://drive.google.com/file/d/1r64-T7K7vpMfol9Y3b6pa7ZFF7sdP8kF/view?usp=sharing",
+    "videoDemoLink": "",
+    "liveDemo": "Yes"
+  },
+  {
+    "projectName": "Sprout",
+    "submissionLink": "https://hackbeanpot-2021.devpost.com/submissions/210522-sprout",
+    "tryItOutLink": "https://docs.google.com/presentation/d/1YSHJo4cWuHUVF8ly5S9vaCto1ZJKmnYlMCurWN5mOf0/edit?usp=sharing, http://project-growth-omega.vercel.app",
+    "videoDemoLink": "",
+    "liveDemo": "Yes"
+  },
+  {
+    "projectName": "VibeBeans",
+    "submissionLink": "https://hackbeanpot-2021.devpost.com/submissions/210539-vibebeans",
+    "tryItOutLink": "https://github.com/Stevenl1221/findMusicTogether",
+    "videoDemoLink": "",
+    "liveDemo": "Yes"
   }
 ]
