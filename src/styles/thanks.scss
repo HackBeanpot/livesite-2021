@@ -1,0 +1,35 @@
+.thanks {
+  display: flex;
+  height: 100vh;
+  padding: 0 16px;
+
+  &__body {
+    margin: 50px auto auto;
+    text-align: center;
+
+    @media (max-width: $sm) {
+      margin-top: 100px;
+    }
+
+    .thanks__img {
+      width: 350px;
+
+      @media (max-width: $sm) {
+        width: 200px;
+      }
+    }
+
+    h1 {
+      font-size: 100px;
+      @media (max-width: $sm) {
+        font-size: 48px;
+      }
+    }
+
+    h4 {
+      @media (max-width: $sm) {
+        font-size: 20px;
+      }
+    }
+  }
+}
