@@ -1,0 +1,17 @@
+.thanks {
+  display: flex;
+  height: 100vh;
+
+  &__body {
+    margin: 50px auto auto;
+    text-align: center;
+
+    .thanks__img {
+      width: 350px;
+    }
+
+    h1 {
+      font-size: 100px;
+    }
+  }
+}

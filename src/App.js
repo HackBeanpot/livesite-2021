@@ -11,6 +11,7 @@ import Countdown from "./components/Countdown";
 import RelevantRightNow from "./components/RelevantRightNow";
 import WelcomeIntro from "./components/WelcomeIntro";
 import Judging from "./components/Judging";
+import Thanks from "./components/Thanks";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path="/judging">
           <Judging />
         </Route>
+        <Route path="/thanks/:name" children={<Thanks />} />
         <Route path="/">
           <div>
             <Navbar />
