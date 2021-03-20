@@ -21,6 +21,9 @@ First and foremost, make sure you have [Node](https://nodejs.org/) installed.
 
 In order to run this locally, you will need an Airtable API key which you can obtain from our Airtable account page (the login for this page can be found in lastpass). Create a file at the root directory (with the gitignore and stuff, NOT in the /src folder!) called `.env`. The contents of this file should just be the line `REACT_APP_AIRTABLE_KEY=<your api key>`. Don't put quotation marks or anything around the key value. **DO NOT** commit this file to github!! If you need help with this, message @sarah
 
+### Using Airtable API in your code
+You can use the [custom React hook](/src/hooks/api-hook.js) that we created which will handle the asynchronous call and fetch the data. You will have to pass in two variable that we call `basePath` and `tableQuery`, which you can find in table's URL: `https://api.airtable.com/v0/[basePath]/[tableQuery]`.
+
 ## A Guide for Contributers
 
 1. Create a branch, named something like `name-typeofchanges` (ex. `sarah-navbar`)
